@@ -64,7 +64,7 @@ public class DruidDataSourceBuilder {
 	private String filters;
 
 	// 通过connectProperties属性来打开mergeSql功能；慢SQL记录
-	@Value("druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500")
+	@Value("druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500;")
 	private String connectionProperties;
 
 	public DruidDataSource getDruidDataSource(String username, String password, String url, String driverClassName) {

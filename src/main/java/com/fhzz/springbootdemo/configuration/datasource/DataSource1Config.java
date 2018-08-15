@@ -72,7 +72,7 @@ public class DataSource1Config {
 		SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
 
 		Properties sqlSessionFactoryProperties = new Properties();
-		sqlSessionFactoryProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle9Dialect");
+		sqlSessionFactoryProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
 		sqlSessionFactoryProperties.setProperty("hibernate.show_sql", "true");
 		sqlSessionFactoryProperties.setProperty("hibernate.format_sql", "true");
 		bean.setConfigurationProperties(sqlSessionFactoryProperties);
