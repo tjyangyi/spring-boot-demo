@@ -2,17 +2,13 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     master:
-      type: com.alibaba.druid.pool.DruidDataSource
-      driver-class-name: oracle.jdbc.driver.OracleDriver
-      name: master
-      jdbc-url: jdbc:oracle:thin:@10.1.111.135:1521:MEDB
+      driverClassName: oracle.jdbc.driver.OracleDriver
+      url: jdbc:oracle:thin:@10.1.111.135:1521:MEDB
       username: springboot
       password: 123456
     slave1:
-      type: com.alibaba.druid.pool.DruidDataSource
-      driver-class-name: com.mysql.jdbc.Driver
-      name: slave1
-      jdbc-url: jdbc:mysql://10.2.212.148:3306/medb?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://10.2.212.148:3306/medb?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
       username: root
       password: 123456
       

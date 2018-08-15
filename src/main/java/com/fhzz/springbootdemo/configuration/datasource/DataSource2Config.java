@@ -15,10 +15,9 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateSettings;
 import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -40,11 +39,25 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(entityManagerFactoryRef = "slave1EntityManagerFactory", transactionManagerRef = "savle1JPATransactionManager", basePackages = {
 		"com.fhzz.springbootdemo.dao.slave1.jpa" }) // 设置Repository所在位置
 public class DataSource2Config {
+	@Autowired
+	private DruidDataSourceBuilder druidDataSourceBuilder;
+
+	@Value("${spring.datasource.slave1.username}")
+	private String username;
+
+	@Value("${spring.datasource.slave1.password}")
+	private String password;
+
+	@Value("${spring.datasource.slave1.url}")
+	private String url;
+
+	@Value("${spring.datasource.slave1.driverClassName}")
+	private String driverClassName;
 
 	@Bean(name = "slave1DataSource")
-	@ConfigurationProperties(prefix = "spring.datasource.slave1")
+	@Qualifier("slave1DataSource")
 	public DataSource slave1DataSource() {
-		return DataSourceBuilder.create().build();
+		return druidDataSourceBuilder.getDruidDataSource(username, password, url, driverClassName);
 	}
 
 	@Bean(name = "slave1SqlSessionFactory")
@@ -85,18 +98,21 @@ public class DataSource2Config {
 	}
 
 	@Bean(name = "slave1EntityManagerFactory")
-	public LocalContainerEntityManagerFactoryBean slave1EntityManagerFactory(EntityManagerFactoryBuilder builder) {
-		return builder.dataSource(slave1DataSource()).packages("com.fhzz.springbootdemo.entity.slave1") // 设置实体类所在位置
+	public LocalContainerEntityManagerFactoryBean slave1EntityManagerFactory(EntityManagerFactoryBuilder builder,
+			@Qualifier("slave1DataSource") DataSource dataSource) {
+		return builder.dataSource(dataSource).packages("com.fhzz.springbootdemo.entity.slave1") // 设置实体类所在位置
 				.persistenceUnit("slave1PersistenceUnit").properties(getVendorProperties()).build();
 	}
 
 	@Bean(name = "savle1EntityManager")
-	public EntityManager entityManager(EntityManagerFactoryBuilder builder) {
-		return slave1EntityManagerFactory(builder).getObject().createEntityManager();
+	public EntityManager entityManager(EntityManagerFactoryBuilder builder,
+			@Qualifier("slave1DataSource") DataSource dataSource) {
+		return slave1EntityManagerFactory(builder, dataSource).getObject().createEntityManager();
 	}
 
 	@Bean(name = "savle1JPATransactionManager")
-	public PlatformTransactionManager savle1JPATransactionManager(EntityManagerFactoryBuilder builder) {
-		return new JpaTransactionManager(slave1EntityManagerFactory(builder).getObject());
+	public PlatformTransactionManager savle1JPATransactionManager(EntityManagerFactoryBuilder builder,
+			@Qualifier("slave1DataSource") DataSource dataSource) {
+		return new JpaTransactionManager(slave1EntityManagerFactory(builder, dataSource).getObject());
 	}
 }

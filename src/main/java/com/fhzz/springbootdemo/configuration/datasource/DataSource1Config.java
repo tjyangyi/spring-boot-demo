@@ -15,10 +15,9 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateSettings;
 import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -41,14 +40,31 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(entityManagerFactoryRef = "masterEntityManagerFactory", transactionManagerRef = "masterJPATransactionManager", basePackages = {
 		"com.fhzz.springbootdemo.dao.master.jpa" }) // 设置Repository所在位置
 public class DataSource1Config {
+	@Autowired
+	private DruidDataSourceBuilder druidDataSourceBuilder;
+	
+	@Value("${spring.datasource.master.url}")
+	private String dbUrl;
 
+	@Value("${spring.datasource.master.username}")
+	private String username;
+
+	@Value("${spring.datasource.master.password}")
+	private String password;
+
+	@Value("${spring.datasource.master.driverClassName}")
+	private String driverClassName;
+
+	//--------- Druid 数据源配置----------
 	@Bean(name = "masterDataSource")
-	@ConfigurationProperties(prefix = "spring.datasource.master")
+	@Qualifier("masterDataSource")
 	@Primary
-	public DataSource masterDataSource() {
-		return DataSourceBuilder.create().build();
+	public DataSource dataSource() {
+		return druidDataSourceBuilder.getDruidDataSource(username, password, dbUrl, driverClassName);
 	}
+	//--------- Druid 数据源配置----------
 
+	//--------- Mybatis配置 -------------
 	@Bean(name = "masterSqlSessionFactory")
 	@Primary
 	public SqlSessionFactory setSqlSessionFactory(@Qualifier("masterDataSource") DataSource dataSource)
@@ -79,9 +95,9 @@ public class DataSource1Config {
 			@Qualifier("masterSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
 		return new SqlSessionTemplate(sqlSessionFactory);
 	}
+	//--------- Mybatis配置 -------------
 
-	// ------------------JPA--------------------
-
+	// ---------JPA配置--------------------
 	@Autowired
 	private JpaProperties jpaProperties;
 
@@ -91,21 +107,24 @@ public class DataSource1Config {
 
 	@Primary
 	@Bean(name = "masterEntityManagerFactory")
-	public LocalContainerEntityManagerFactoryBean masterEntityManagerFactory(EntityManagerFactoryBuilder builder) {
-		return builder.dataSource(masterDataSource()).packages("com.fhzz.springbootdemo.entity.master") // 设置实体类所在位置
+	public LocalContainerEntityManagerFactoryBean masterEntityManagerFactory(EntityManagerFactoryBuilder builder,
+			@Qualifier("masterDataSource") DataSource dataSource) {
+		return builder.dataSource(dataSource).packages("com.fhzz.springbootdemo.entity.master") // 设置实体类所在位置
 				.persistenceUnit("masterPersistenceUnit").properties(getVendorProperties()).build();
 	}
 
 	@Primary
 	@Bean(name = "masterEntityManager")
-	public EntityManager entityManager(EntityManagerFactoryBuilder builder) {
-		return masterEntityManagerFactory(builder).getObject().createEntityManager();
+	public EntityManager entityManager(EntityManagerFactoryBuilder builder,
+			@Qualifier("masterDataSource") DataSource dataSource) {
+		return masterEntityManagerFactory(builder, dataSource).getObject().createEntityManager();
 	}
 
 	@Primary
 	@Bean(name = "masterJPATransactionManager")
-	public PlatformTransactionManager masterJPATransactionManager(EntityManagerFactoryBuilder builder) {
-		return new JpaTransactionManager(masterEntityManagerFactory(builder).getObject());
+	public PlatformTransactionManager masterJPATransactionManager(EntityManagerFactoryBuilder builder,
+			@Qualifier("masterDataSource") DataSource dataSource) {
+		return new JpaTransactionManager(masterEntityManagerFactory(builder, dataSource).getObject());
 	}
 
 }
