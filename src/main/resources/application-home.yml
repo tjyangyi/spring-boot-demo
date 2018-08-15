@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    master:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      url: jdbc:oracle:thin:@10.2.108.238:1521:ORCL
+      username: C##PSOPUSER
+      password: 123456
+    slave1:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://10.2.108.238:3306/medb?serverTimezone=Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
+      username: root
+      password: Fhzz@123456
