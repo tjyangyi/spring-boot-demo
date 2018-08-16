@@ -5,47 +5,46 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.fhzz.springbootdemo.dao.master.jpa.UserRepository;
-import com.fhzz.springbootdemo.dao.master.mybatis.UserMapper;
-import com.fhzz.springbootdemo.dao.slave1.jpa.MysqlTabelTestRepository;
-import com.fhzz.springbootdemo.dao.slave1.mybatis.MysqlTableTestMapper;
-import com.fhzz.springbootdemo.entity.master.Users;
-import com.fhzz.springbootdemo.entity.slave1.MysqlTableTest;
+import com.fhzz.springbootdemo.dao.master.jpa.OracleDemoTableJpa;
+import com.fhzz.springbootdemo.dao.master.mybatis.OracleDemoTableMapper;
+import com.fhzz.springbootdemo.dao.slave1.jpa.MysqlDemoTableJpa;
+import com.fhzz.springbootdemo.dao.slave1.mybatis.MysqlDemoTableMapper;
+import com.fhzz.springbootdemo.entity.master.OracleDemoTable;
+import com.fhzz.springbootdemo.entity.slave1.MysqlDemoTable;
 import com.fhzz.springbootdemo.service.druid.DruidService;
 
 @Service
 public class DruidServiceImpl implements DruidService {
 	@Autowired
-	private UserRepository userRepository;
-	
+	private OracleDemoTableJpa oracleDemoTableJpa;
+
 	@Autowired
-	private UserMapper userMapper;
-	
+	private OracleDemoTableMapper oracleDemoTableMapper;
+
 	@Autowired
-	private MysqlTabelTestRepository mysqlTabelTestRepository;
-	
+	private MysqlDemoTableJpa mysqlDemoTableJpa;
+
 	@Autowired
-	private MysqlTableTestMapper mysqlTableTestMapper;
-	
-	
+	private MysqlDemoTableMapper mysqlDemoTableMapper;
+
 	@Override
-	public List<Users> getAllByMasterJpa() {
-		return userRepository.findAll();
+	public List<OracleDemoTable> getAllByMasterJpa() {
+		return oracleDemoTableJpa.findAll();
 	}
 
 	@Override
-	public List<Users> getAllByMasterMybatis() {
-		return userMapper.getAll();
+	public List<OracleDemoTable> getAllByMasterMybatis() {
+		return oracleDemoTableMapper.getAll();
 	}
 
 	@Override
-	public List<MysqlTableTest> getAllBySlave1Jpa() {
-		return mysqlTabelTestRepository.findAll();
+	public List<MysqlDemoTable> getAllBySlave1Jpa() {
+		return mysqlDemoTableJpa.findAll();
 	}
 
 	@Override
-	public List<MysqlTableTest> getAllBySlave1Mybatis() {
-		return mysqlTableTestMapper.getAll();
+	public List<MysqlDemoTable> getAllBySlave1Mybatis() {
+		return mysqlDemoTableMapper.getAll();
 	}
 
 }

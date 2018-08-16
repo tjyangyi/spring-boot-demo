@@ -5,8 +5,8 @@ package com.fhzz.springbootdemo.service.druid;
 
 import java.util.List;
 
-import com.fhzz.springbootdemo.entity.master.Users;
-import com.fhzz.springbootdemo.entity.slave1.MysqlTableTest;
+import com.fhzz.springbootdemo.entity.master.OracleDemoTable;
+import com.fhzz.springbootdemo.entity.slave1.MysqlDemoTable;
 
 /**
  * @author Administrator
@@ -14,12 +14,12 @@ import com.fhzz.springbootdemo.entity.slave1.MysqlTableTest;
  */
 public interface DruidService {
 
-	List<Users> getAllByMasterJpa();
+	List<OracleDemoTable> getAllByMasterJpa();
 
-	List<Users> getAllByMasterMybatis();
+	List<OracleDemoTable> getAllByMasterMybatis();
 
-	List<MysqlTableTest> getAllBySlave1Jpa();
+	List<MysqlDemoTable> getAllBySlave1Jpa();
 
-	List<MysqlTableTest> getAllBySlave1Mybatis();
+	List<MysqlDemoTable> getAllBySlave1Mybatis();
 
 }
