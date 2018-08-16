@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper
-	namespace="com.fhzz.springbootdemo.dao.slave1.mybatis.MysqlDemoTableMapper">
+	namespace="com.fhzz.springbootdemo.dao.master.mybatis.OracleDemoTableMapper">
 	<resultMap id="BaseResultMap"
-		type="com.fhzz.springbootdemo.entity.slave1.MysqlDemoTable">
+		type="com.fhzz.springbootdemo.entity.master.OracleDemoTable">
 		<id column="id" property="ID" jdbcType="varchar" />
 		<result column="content" property="CONTENT" jdbcType="varchar" />
 		<result column="num" property="NUM" jdbcType="int" />
@@ -17,13 +17,13 @@
 	<select id="getAll" resultMap="BaseResultMap">
 		SELECT
 		<include refid="Base_Column_List" />
-		FROM mysql_demo_table
+		FROM ORACLE_DEMO_TABLE
 	</select>
 
 	<select id="getOne" parameterType="java.lang.String" resultMap="BaseResultMap">
 		SELECT
 		<include refid="Base_Column_List" />
-		FROM mysql_demo_table
+		FROM ORACLE_DEMO_TABLE
 		WHERE id =
 		#{id}
 	</select>
