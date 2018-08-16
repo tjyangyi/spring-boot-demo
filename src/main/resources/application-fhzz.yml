@@ -11,6 +11,9 @@ spring:
       url: jdbc:mysql://10.2.212.148:3306/medb?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
       username: root
       password: 123456
+  thymeleaf:
+    cache: false
+    
 jpa:
     show-sql: true
       

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="common/base">
+<meta charset="utf-8" />
+<title>首页</title>
+<script type="text/javascript">
+	$('#menu1').load('/index');
+</script>
+</head>
+<body>
+	<h1 class="text-center">欢迎进入Spring-boot的世界</h1>
+	<hr />
+	<div class="container">
+		<ul class="nav nav-tabs">
+			<li class="active"><a data-toggle="tab" href="#menu1">普通导航1</a></li>
+			<li><a data-toggle="tab" href="#menu2">普通导航2</a></li>
+			<li><a data-toggle="tab" href="#menu3">普通导航3</a></li>
+		</ul>
+		<div class="tab-content">
+			<div id="menu1" class="tab-pane fade in active">
+				<h3>普通导航1</h3>
+			</div>
+			<div id="menu2" class="tab-pane fade">
+				<h3>普通导航2</h3>
+			</div>
+			<div id="menu3" class="tab-pane fade">
+				<h3>普通导航3</h3>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
