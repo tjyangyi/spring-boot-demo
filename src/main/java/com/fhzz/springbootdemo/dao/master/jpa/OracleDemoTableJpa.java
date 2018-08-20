@@ -8,5 +8,4 @@ public interface OracleDemoTableJpa extends JpaRepository<OracleDemoTable, Integ
 
 	OracleDemoTable findById(String id);
 
-	String deleteById(String id);
 }

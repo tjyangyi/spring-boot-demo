@@ -6,8 +6,11 @@ import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 
 /**
  * OracleDemoTable entity. @author MyEclipse Persistence Tools
@@ -44,6 +47,8 @@ public class OracleDemoTable implements java.io.Serializable {
 
 	// Property accessors
 	@Id
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
+	@GeneratedValue(generator = "system-uuid")
 	@Column(name = "ID", unique = true, nullable = false)
 	public String getId() {
 		return this.id;

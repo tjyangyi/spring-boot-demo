@@ -1,4 +1,4 @@
-package com.fhzz.springbootdemo.controller.druid;
+package com.fhzz.springbootdemo.controller.demo.druid;
 
 import java.util.List;
 
@@ -11,7 +11,8 @@ import com.fhzz.springbootdemo.entity.slave1.MysqlDemoTable;
 import com.fhzz.springbootdemo.service.druid.DruidService;
 
 @RestController
-public class DruidController {
+@RequestMapping("/demo/druid")
+public class DruidRestController {
 	@Autowired
 	private DruidService druidService;
 

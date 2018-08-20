@@ -4,14 +4,14 @@
 	namespace="com.fhzz.springbootdemo.dao.slave1.mybatis.MysqlDemoTableMapper">
 	<resultMap id="BaseResultMap"
 		type="com.fhzz.springbootdemo.entity.slave1.MysqlDemoTable">
-		<id column="id" property="ID" jdbcType="varchar" />
-		<result column="content" property="CONTENT" jdbcType="varchar" />
-		<result column="num" property="NUM" jdbcType="int" />
-		<result column="createTime" property="CREATE_TIME" jdbcType="datetime" />
+		<id column="id" property="ID" javaType="String" />
+		<result column="content" property="CONTENT" javaType="String" />
+		<result column="num" property="NUM" javaType="double" />
+		<result column="createTime" property="CREATE_TIME" javaType="java.sql.Timestamp" />
 	</resultMap>
 
 	<sql id="Base_Column_List">
-		id, content, num, createTime
+		ID, CONTENT, NUM, CREATE_TIME
 	</sql>
 
 	<select id="getAll" resultMap="BaseResultMap">

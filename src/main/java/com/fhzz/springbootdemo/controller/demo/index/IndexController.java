@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.fhzz.springbootdemo.controller.index;
+package com.fhzz.springbootdemo.controller.demo.index;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,21 +12,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
  *
  */
 @Controller
+@RequestMapping("/demo/index")
 public class IndexController {
-
-	@RequestMapping("/")
-	public String index() {
-		return "redirect:/index";
-	}
-		
 		
 	@RequestMapping("/index")
 	public String index(Model model) {
-		return "index/index";
+		return "demo/index/index";
 	}
 	
 	@RequestMapping("/index2")
 	public String index2(Model model) {
-		return "index/index2";
+		return "demo/index/index2";
 	}
 }

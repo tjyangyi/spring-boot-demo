@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>userList</title>
+<link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/bootstrap/css/bootstrap-table.css}" rel="stylesheet" />
+<link th:href="@{/bootstrap/css/bootstrap-dialog.css}" rel="stylesheet" />
+<script th:src="@{/jquery/jquery-3.3.1.min.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap-table.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap-dialog.js}"></script>
+<script th:src="@{/js/common/fadingTip.js}"></script>
+<script th:src="@{/js/common/boostrapI18N.js}"></script>
+</head>
+<body>
+	<div class="panel-body" style="padding-bottom:0px;">
+		<div class="panel panel-default" style="margin-top: 10px;">
+			<div class="panel-heading">查询条件</div>
+			<div class="panel-body">
+				<form class="form-inline" role="form"
+					style="float: left; width: 100%;margin-left: 20px;" method="post"
+					id="queryForm">
+					<div class="form-group">
+						<label for="content">查询内容：</label> <input type="text"
+							class="form-control" name="content" id="content"
+							placeholder="请输入CONTENT" />
+					</div>
+					<div class="form-group">
+						<label for="num">查询数字：</label> <input type="text"
+							class="form-control" name="num" id="num" placeholder="请输入num" />
+					</div>
+					<div class="form-group">
+						<button type="button" id="queryBtn" onclick="doQuery();"
+							class="btn btn-primary">查询</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<table id="demo-table" style="margin-top: -50px;">
+		</table>
+	</div>
+	<script th:inline="javascript">
+		$(function() {
+			initTable();
+		});
+	
+		function doQuery() {
+			$('#demo-table').bootstrapTable('refresh');
+		}
+	
+		// 单行的操作列
+		function operate(id) {
+			var confirmTitle = "是否操作该行？ID=" + id;
+			BootstrapDialog.confirm(confirmTitle, function(result) {});
+		}
+	
+		function initTable() {
+			$('#demo-table').bootstrapTable({
+				url : "/demo/jpa/queryList",
+				height : $(window.parent.document).find("#wrapper").height() - 252,
+				width : $(window).width(),
+				showColumns : true,
+				formId : "queryForm",
+				pagination : true,
+				sortName : 'id',
+				sortOrder : 'desc',
+				clickToSelect : true, // 单击某一行的时候选中某一条记录
+				pageSize : 10,
+				toolbars : [
+					{
+						text : '添加',
+						iconCls : 'glyphicon glyphicon-plus',
+						handler : function() {
+							$.ajax({
+								type : 'POST',
+								url : "/demo/jpa/toAdd",
+								cache : false,
+								success : function(response) {
+									BootstrapDialog.show({
+										message : function(dialog) {
+											var $message = $('<div></div>');
+											$message.html(response); // 把传回来的页面作为message返回
+											return $message;
+										},
+										title : "添加",
+										draggable : true,
+										buttons : [ {
+											label : '保存',
+											autospin : true,
+											cssClass : 'btn-primary',
+											action : function(dialogRef) {
+												dialogRef.enableButtons(false);
+												dialogRef.setClosable(false);
+												submitAddForm(function susccessCallback() {
+													dialogRef.close();
+													doQuery();
+												});
+											}
+										}, {
+											label : '取消',
+											action : function(dialogRef) {
+												dialogRef.close();
+											}
+										} ]
+									})
+								}
+							});
+						}
+					},
+					{
+						text : '修改',
+						iconCls : 'glyphicon glyphicon-pencil',
+						handler : function() {
+							var rows = $('#demo-table').bootstrapTable('getSelections');
+							if (rows.length == 0 || rows.length > 1) {
+								fadingTip('请选择一条需要修改的数据!');
+								return false;
+							}
+							$.ajax({
+								type : 'POST',
+								url : "/demo/jpa/toEdit?id=" + rows[0].id,
+								cache : false,
+								success : function(response) {
+									BootstrapDialog.show({
+										message : function(dialog) {
+											var $message = $('<div></div>');
+											$message.html(response); // 把传回来的页面作为message返回
+											return $message;
+										},
+										title : "修改",
+										draggable : true,
+										buttons : [ {
+											label : '保存',
+											autospin : true,
+											cssClass : 'btn-primary',
+											action : function(dialogRef) {
+												dialogRef.enableButtons(false);
+												dialogRef.setClosable(false);
+												submitEditForm(function susccessCallback() {
+													dialogRef.close();
+													doQuery();
+												});
+											}
+										}, {
+											label : '取消',
+											action : function(dialogRef) {
+												dialogRef.close();
+											}
+										} ]
+									})
+								}
+							});
+						}
+					},
+					{
+						text : '删除',
+						iconCls : 'glyphicon glyphicon-remove',
+						handler : function() {
+							var rows = $('#demo-table').bootstrapTable('getSelections');
+							if (rows.length == 0) {
+								fadingTip('请选择一条需要删除的数据!');
+								return false;
+							}
+							BootstrapDialog.confirm('是否要删除您当前所勾选的？', function(result) {
+								if (result) {
+									$.post("/demo/jpa/delete", {
+										json : JSON.stringify(rows)
+									}, function(response) {
+										if (response.result) {
+											fadingTip(response.msg);
+											doQuery();
+										}
+									});
+								}
+							});
+						}
+					}
+				],
+				columns : [
+					{
+						checkbox : true
+					},
+					{
+						field : '',
+						title : '序号',
+						formatter : function(value, row, index) {
+							return index + 1;
+						}
+					},
+					{
+						field : 'id',
+						title : 'ID',
+						align : 'center',
+						valign : 'middle',
+						hide : false,
+						sortable : true
+					},
+					{
+						field : 'content',
+						title : '内容',
+						align : 'center',
+						valign : 'middle',
+						sortable : true
+					},
+					{
+						field : 'num',
+						title : '数字',
+						align : 'center',
+						valign : 'middle',
+						sortable : true
+					},
+					{
+						field : 'operations',
+						title : '操作',
+						align : 'center',
+						valign : 'middle',
+						formatter : function(value, row, index) {
+							return '<a href="#" onclick="operate(\'' + row.id + '\')" >对该行的操作</a>';
+						}
+					} ]
+			});
+		}
+	</script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.fhzz.springbootdemo.controller.login;
+package com.fhzz.springbootdemo.controller.demo.login;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
  *
  */
 @Controller
+@RequestMapping("/demo/login")
 public class LoginController {
+
 	@RequestMapping("/login")
 	public String index(Model model) {
-		return "login/login";
+		return "demo/login/login";
 	}
 }

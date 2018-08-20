@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>userList</title>
+<link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+<script th:src="@{/jquery/jquery-3.3.1.min.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+
+<script type="text/javascript">
+	function showDialog(tabId, url) {
+		$('#maintab a[href="#' + tabId + '"]').tab('show'); // 显示点击的tab页面 
+		if ($('#' + tabId).html().length < 1) { // 当tab页面内容小于20个字节时ajax加载新页面 
+			$('#' + tabId).html('<br>' + loadimg + ' 页面加载中，请稍后...'); // 设置页面加载时的loading图片 
+			$('#' + tabId).load(url); // ajax加载页面 
+		}
+	}
+</script>
+
+</head>
+<body class="container">
+	<br />
+	<h1>数据列表</h1>
+	<br />
+	<br />
+	<div class="with:80%">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>CONTENT</th>
+					<th>NUM</th>
+					<th>CREATE_TIME</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="oracleDemoTable : ${oracleDemoTables}">
+					<th scope="row" th:text="${oracleDemoTable.id}">id</th>
+					<td th:text="${oracleDemoTable.content}">content</td>
+					<td th:text="${oracleDemoTable.num}">num</td>
+					<td th:text="${oracleDemoTable.createTime}">createTime</td>
+					<td><a th:href="@{/demo/jpa/toEdit(id=${oracleDemoTable.id})}">edit</a></td>
+					<td><a th:href="@{/demo/jpa/delete(id=${oracleDemoTable.id})}">delete</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<button id="addButton" onclick="showDialog()" class="btn btn-primary btn-lg" data-toggle="modal"
+		data-target="#myModal">开始演示模态框</button>
+
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+	</div>
+
+
+</body>
+</html>
