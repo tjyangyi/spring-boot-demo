@@ -47,4 +47,9 @@ public class JpaServiceImpl implements JpaService {
 		oracleDemoTableJpa.delete(oracleDemoTable);
 	}
 
+	@Override
+	public List<OracleDemoTable> findByContentOrNum(String content, Double num) {
+		return oracleDemoTableJpa.findByContentOrNum(content, num);
+	}
+
 }

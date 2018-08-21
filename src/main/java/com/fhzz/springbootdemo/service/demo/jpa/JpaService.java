@@ -23,4 +23,6 @@ public interface JpaService {
 
 	void delete(OracleDemoTable oracleDemoTable);
 
+	List<OracleDemoTable> findByContentOrNum(String content, Double num);
+
 }

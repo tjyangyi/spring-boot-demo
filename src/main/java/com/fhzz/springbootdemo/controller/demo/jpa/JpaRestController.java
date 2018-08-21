@@ -19,19 +19,16 @@ public class JpaRestController {
 	@Autowired
 	private JpaService jpaService;
 
-	@RequestMapping("/operate")
-	public Map<String, Object> operate(OracleDemoTable oracleDemoTable) {
-		Map<String, Object> result = new HashMap<String, Object>();
-		result.put(SystemStaticConst.RESULT, SystemStaticConst.SUCCESS);
-		result.put(SystemStaticConst.MSG, "更新用户状态成功！");
-		result.put("oracleDemoTable", oracleDemoTable);
-		return result;
-	}
-
 	@RequestMapping("/queryList")
 	public Map<String, Object> list(OracleDemoTable oracleDemoTable) {
 		Map<String, Object> result = new HashMap<String, Object>();
-		List<OracleDemoTable> list = jpaService.getAllList();
+		List<OracleDemoTable> list;
+		if (!"".equals(oracleDemoTable.getContent()) || oracleDemoTable.getNum() != null) {
+			list = jpaService.findByContentOrNum(oracleDemoTable.getContent(), oracleDemoTable.getNum());
+		} else {
+			list = jpaService.getAllList();
+		}
+
 		result.put("totalCount", list.size());
 		result.put("result", list);
 		return result;
