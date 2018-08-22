@@ -109,6 +109,18 @@
 			<classifier>jdk15</classifier>
 		</dependency>
 
+		<!-- 开启spring-security的支持 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<!-- 开启thymeleaf的spring-security的支持 -->
+		<dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-springsecurity4</artifactId>
+		</dependency>
+
+
 	</dependencies>
 
 	<dependencyManagement>

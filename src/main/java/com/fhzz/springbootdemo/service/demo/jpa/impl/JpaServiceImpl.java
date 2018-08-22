@@ -8,7 +8,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.fhzz.springbootdemo.dao.master.jpa.OracleDemoTableJpa;
+import com.fhzz.springbootdemo.dao.master.demo.jpa.OracleDemoTableJpa;
 import com.fhzz.springbootdemo.entity.master.OracleDemoTable;
 import com.fhzz.springbootdemo.service.demo.jpa.JpaService;
 

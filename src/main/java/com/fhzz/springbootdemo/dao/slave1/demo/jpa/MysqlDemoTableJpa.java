@@ -1,4 +1,4 @@
-package com.fhzz.springbootdemo.dao.slave1.jpa;
+package com.fhzz.springbootdemo.dao.slave1.demo.jpa;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

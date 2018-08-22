@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper
+	namespace="com.fhzz.springbootdemo.dao.master.security.mapper.TUserMapper">
+	<resultMap id="TUserResultMap"
+		type="com.fhzz.springbootdemo.entity.master.security.TUser">
+		<id column="ID" property="id" javaType="java.lang.String" />
+		<result column="USERNAME" property="username" javaType="java.lang.String" />
+		<result column="PASSWORD" property="password" javaType="java.lang.String" />
+		<result column="REALNAME" property="realname" javaType="java.lang.String" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		ID, USERNAME, PASSWORD, REALNAME
+	</sql>
+
+	<select id="findByUsername" parameterType="java.lang.String"
+		resultMap="TUserResultMap">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM T_USER
+		WHERE USERNAME =
+		#{username}
+	</select>
+
+</mapper>

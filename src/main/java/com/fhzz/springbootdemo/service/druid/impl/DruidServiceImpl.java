@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.fhzz.springbootdemo.dao.master.jpa.OracleDemoTableJpa;
-import com.fhzz.springbootdemo.dao.master.mybatis.OracleDemoTableMapper;
-import com.fhzz.springbootdemo.dao.slave1.jpa.MysqlDemoTableJpa;
-import com.fhzz.springbootdemo.dao.slave1.mybatis.MysqlDemoTableMapper;
+import com.fhzz.springbootdemo.dao.master.demo.jpa.OracleDemoTableJpa;
+import com.fhzz.springbootdemo.dao.master.demo.mapper.OracleDemoTableMapper;
+import com.fhzz.springbootdemo.dao.slave1.demo.jpa.MysqlDemoTableJpa;
+import com.fhzz.springbootdemo.dao.slave1.demo.mapper.MysqlDemoTableMapper;
 import com.fhzz.springbootdemo.entity.master.OracleDemoTable;
 import com.fhzz.springbootdemo.entity.slave1.MysqlDemoTable;
 import com.fhzz.springbootdemo.service.druid.DruidService;
