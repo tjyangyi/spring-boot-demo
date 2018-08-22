@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>首页</title>
+<link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/bootstrap/css/bootstrap-select.css}" rel="stylesheet" />
+<link th:href="@{/bootstrap/css/bootstrap-fileinput.css}"
+	rel="stylesheet" />
+
+<script th:src="@{/jquery/jquery-3.3.1.min.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap-select.js}"></script>
+
+<script th:src="@{/bootstrap/js/bootstrap-fileinput.js}"></script>
+
+
+<script th:src="@{/js/attendance/admin.js}"></script>
+
+</head>
+<body>
+	<h1 class="text-center">管理界面</h1>
+
+	<div class="container">
+		<select class="selectpicker" id="year_select">
+			<option value="2018">2018</option>
+			<option value="2019">2019</option>
+			<option value="2020">2020</option>
+		</select> 年 <select class="selectpicker" id="month_select">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+		</select> 月 <input id="fileInput" name="fileInput" type="file"
+			data-show-preview="false" multiple>
+	</div>
+
+
+</body>
+</html>

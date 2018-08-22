@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:include="common/base">
 <meta charset="utf-8" />
 <title>BootstrapDemo合集</title>
+<link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+<script th:src="@{/jquery/jquery-3.3.1.min.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
 </head>
 <body>
 	<h1 class="text-center">Bootstrap按钮组件</h1>
@@ -619,9 +621,6 @@
 	</div>
 	<hr />
 
-	<script src="js/jquery-3.1.0.js"></script>
-	<script src="js/bootstrap.js"></script>
-	<script src="js/holder.js"></script>
 	<script type="text/javascript">
 		// 模态框Modal添加属性
 		$("#myModal1").modal({
