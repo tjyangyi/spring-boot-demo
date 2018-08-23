@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -55,6 +56,25 @@ public class AttendanceServiceImpl implements AttendanceService {
 	@Override
 	public List<TAttendanceDetail> queryAttendanceDetails(String attendanceId) {
 		return attendanceDetailJpa.findByAttendaceIdOrderByIndexNumberAsc(attendanceId);
+	}
+
+	@Override
+	public List<TAttendanceDetail> queryAttendanceDetailsByYearMonth(String year, String month) {
+		TAttendance attendance = attendanceJpa.findByYearAndMonth(year, month);
+		if (attendance == null) {
+			return new ArrayList<TAttendanceDetail>();
+		}
+		return this.queryAttendanceDetails(attendance.getId());
+	}
+
+	@Override
+	public List<TAttendanceDetail> queryAttendanceDetailsByYearMonthUsername(String year, String month,
+			String username) {
+		TAttendance attendance = attendanceJpa.findByYearAndMonth(year, month);
+		if (attendance == null) {
+			return new ArrayList<TAttendanceDetail>();
+		}
+		return attendanceDetailJpa.findByAttendaceIdAndUsernameOrderByIndexNumberAsc(attendance.getId(), username);
 	}
 
 	@Override

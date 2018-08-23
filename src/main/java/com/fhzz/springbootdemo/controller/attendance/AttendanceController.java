@@ -46,7 +46,7 @@ public class AttendanceController {
 		if ("admin".equals(username)) {
 			return "attendance/admin";
 		} else {
-			return "attendance/index";
+			return "attendance/normal";
 		}
 	}
 
@@ -89,6 +89,22 @@ public class AttendanceController {
 	public Map<String, Object> queryAttendanceDetails(String attendanceId) {
 		Map<String, Object> result = new HashMap<String, Object>();
 		List<TAttendanceDetail> list = attendanceService.queryAttendanceDetails(attendanceId);
+		result.put("totalCount", list.size());
+		result.put("result", list);
+		return result;
+	}
+
+	@RequestMapping("/queryAttendanceDetailsByYearMonth")
+	@ResponseBody
+	public Map<String, Object> queryAttendanceDetailsByYearMonth(String year, String month, String username) {
+		System.out.println(year + month + username);
+		Map<String, Object> result = new HashMap<String, Object>();
+		List<TAttendanceDetail> list;
+		if ("".equals(username)) {
+			list = attendanceService.queryAttendanceDetailsByYearMonth(year, month);
+		} else {
+			list = attendanceService.queryAttendanceDetailsByYearMonthUsername(year, month, username);
+		}
 		result.put("totalCount", list.size());
 		result.put("result", list);
 		return result;

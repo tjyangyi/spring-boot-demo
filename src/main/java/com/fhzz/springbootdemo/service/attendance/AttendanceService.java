@@ -18,4 +18,8 @@ public interface AttendanceService {
 
 	File generateNewFile(String attendanceId);
 
+	List<TAttendanceDetail> queryAttendanceDetailsByYearMonth(String year, String month);
+
+	List<TAttendanceDetail> queryAttendanceDetailsByYearMonthUsername(String year, String month, String username);
+
 }

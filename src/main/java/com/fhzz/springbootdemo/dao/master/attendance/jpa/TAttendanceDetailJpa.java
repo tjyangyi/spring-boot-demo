@@ -11,4 +11,6 @@ public interface TAttendanceDetailJpa extends JpaRepository<TAttendanceDetail, I
 
 	TAttendanceDetail findByAttendaceIdAndUsername(String attendanceId, String username);
 
+	List<TAttendanceDetail> findByAttendaceIdAndUsernameOrderByIndexNumberAsc(String id, String username);
+
 }
