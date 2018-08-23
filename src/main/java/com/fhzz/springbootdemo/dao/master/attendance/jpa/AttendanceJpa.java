@@ -4,6 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.fhzz.springbootdemo.entity.master.attendance.TAttendance;
 
-public interface AttendanceJpa extends JpaRepository<TAttendance, Integer> {
+public interface AttendanceJpa extends JpaRepository<TAttendance, String> {
+	
 	TAttendance findByYearAndMonth(String year, String month);
 }

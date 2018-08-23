@@ -4,13 +4,16 @@ package com.fhzz.springbootdemo.entity.master.security;
 
 import java.sql.Timestamp;
 import java.util.Collection;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -28,9 +31,9 @@ public class TUser implements UserDetails {
 	private String password;
 	private String realname;
 	private String state;
-	private Timestamp lastLoginDate;
-	private Timestamp createTime;
-	private Timestamp updateTime;
+	private Date lastLoginDate;
+	private Date createTime;
+	private Date updateTime;
 
 	// Constructors
 
@@ -58,7 +61,8 @@ public class TUser implements UserDetails {
 
 	// Property accessors
 	@Id
-
+	@GenericGenerator(name = "system-uuid", strategy = "uuid")
+	@GeneratedValue(generator = "system-uuid")
 	@Column(name = "ID", unique = true, nullable = false)
 
 	public String getId() {
@@ -111,31 +115,31 @@ public class TUser implements UserDetails {
 
 	@Column(name = "LAST_LOGIN_DATE", length = 7)
 
-	public Timestamp getLastLoginDate() {
+	public Date getLastLoginDate() {
 		return this.lastLoginDate;
 	}
 
-	public void setLastLoginDate(Timestamp lastLoginDate) {
+	public void setLastLoginDate(Date lastLoginDate) {
 		this.lastLoginDate = lastLoginDate;
 	}
 
 	@Column(name = "CREATE_TIME", length = 7)
 
-	public Timestamp getCreateTime() {
+	public Date getCreateTime() {
 		return this.createTime;
 	}
 
-	public void setCreateTime(Timestamp createTime) {
+	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
 	}
 
 	@Column(name = "UPDATE_TIME", length = 7)
 
-	public Timestamp getUpdateTime() {
+	public Date getUpdateTime() {
 		return this.updateTime;
 	}
 
-	public void setUpdateTime(Timestamp updateTime) {
+	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
 	}
 

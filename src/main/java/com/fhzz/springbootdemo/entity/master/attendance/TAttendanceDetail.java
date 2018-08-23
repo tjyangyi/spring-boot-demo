@@ -28,6 +28,9 @@ public class TAttendanceDetail implements java.io.Serializable {
 	private Double c;
 	private Double d;
 	private Double e;
+	private Double f;
+	private Double g;
+	private Integer indexNumber;
 
 	// Constructors
 
@@ -157,6 +160,35 @@ public class TAttendanceDetail implements java.io.Serializable {
 
 	public void setE(Double e) {
 		this.e = e;
+	}
+
+	@Column(name = "F", precision = 0)
+
+	public Double getF() {
+		return this.f;
+	}
+
+	public void setF(Double f) {
+		this.f = f;
+	}
+
+	@Column(name = "G", precision = 0)
+
+	public Double getG() {
+		return this.g;
+	}
+
+	public void setG(Double g) {
+		this.g = g;
+	}
+
+	@Column(name = "INDEX_NUMBER", precision = 0)
+	public Integer getIndexNumber() {
+		return indexNumber;
+	}
+
+	public void setIndexNumber(Integer indexNumber) {
+		this.indexNumber = indexNumber;
 	}
 
 }
