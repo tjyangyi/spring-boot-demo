@@ -37,4 +37,14 @@ public class TUserServiceImpl implements TUserService {
 		userJpa.save(user);
 	}
 
+	@Override
+	public void updateUser(TUser user) {
+		userJpa.save(user);
+	}
+
+	@Override
+	public TUser findByUsername(String username) {
+		return userJpa.findByUsername(username);
+	}
+
 }

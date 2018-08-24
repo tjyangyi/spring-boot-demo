@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,13 +18,17 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.CellType;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.fhzz.springbootdemo.dao.master.attendance.jpa.AttendanceJpa;
 import com.fhzz.springbootdemo.dao.master.attendance.jpa.TAttendanceDetailJpa;
+import com.fhzz.springbootdemo.dao.master.attendance.jpa.TAttendanceRecordJpa;
 import com.fhzz.springbootdemo.entity.master.attendance.TAttendance;
 import com.fhzz.springbootdemo.entity.master.attendance.TAttendanceDetail;
+import com.fhzz.springbootdemo.entity.master.attendance.TAttendanceRecord;
 import com.fhzz.springbootdemo.service.attendance.AttendanceService;
 import com.fhzz.springbootdemo.service.sercurity.TUserService;
 
@@ -44,6 +49,9 @@ public class AttendanceServiceImpl implements AttendanceService {
 
 	@Autowired
 	private TAttendanceDetailJpa attendanceDetailJpa;
+
+	@Autowired
+	private TAttendanceRecordJpa attendanceRecordJpa;
 
 	@Autowired
 	private TUserService userService;
@@ -89,8 +97,27 @@ public class AttendanceServiceImpl implements AttendanceService {
 	}
 
 	@Override
-	public void modifyAttendanceDetails(TAttendanceDetail attendanceDetail) {
+	public void modifyAttendanceDetails(TAttendanceDetail attendanceDetail, String loginIp) {
+		this.recordModifyTAttendanceDetail(attendanceDetail, loginIp);
 		attendanceDetailJpa.save(attendanceDetail);
+	}
+
+	private void recordModifyTAttendanceDetail(TAttendanceDetail attendanceDetail, String loginIp) {
+		Optional<TAttendanceDetail> o = attendanceDetailJpa.findById(attendanceDetail.getId());
+		TAttendanceDetail old = o.get();
+		TAttendanceRecord record = new TAttendanceRecord();
+		UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		record.setUsername(userDetails.getUsername());
+		record.setLoginIp(loginIp);
+		record.setModifyDetailId(attendanceDetail.getId());
+		record.setPreB(old.getB());
+		record.setPreC(old.getC());
+		record.setPreG(old.getG());
+		record.setNewB(attendanceDetail.getB());
+		record.setNewC(attendanceDetail.getC());
+		record.setNewG(attendanceDetail.getG());
+		record.setModifyTime(new Date());
+		attendanceRecordJpa.save(record);
 	}
 
 	@Override

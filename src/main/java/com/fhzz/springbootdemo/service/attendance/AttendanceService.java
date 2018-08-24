@@ -24,7 +24,7 @@ public interface AttendanceService {
 
 	TAttendanceDetail queryTAttendanceDetailById(String id);
 
-	void modifyAttendanceDetails(TAttendanceDetail attendanceDetail);
+	void modifyAttendanceDetails(TAttendanceDetail attendanceDetail, String loginIp);
 
 	String getTitleTip(String year, String month);
 

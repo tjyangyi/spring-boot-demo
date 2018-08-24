@@ -43,6 +43,12 @@ function initTable() {
 		sortOrder : 'desc',
 		clickToSelect : true, // 单击某一行的时候选中某一条记录
 		pageSize : 10,
+		rowStyle : function(row, index) {
+			//这里有5个取值代表5中颜色['active', 'success', 'info', 'warning', 'danger'];
+			return {
+				classes : "info"
+			}
+		},
 		columns : [
 			{
 				field : '',
@@ -89,7 +95,7 @@ function initTable() {
 				formatter : function(value, row, index) {
 					return '<a href="#" onclick="view(\'' + row.id + '\')" >查看详细</a>' +
 						' | ' +
-						'<a href="/attendance/download?attendanceId='+ row.id + '">生成下载</a>';
+						'<a href="/attendance/download?attendanceId=' + row.id + '">生成下载</a>';
 				}
 			} ]
 	});

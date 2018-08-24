@@ -19,14 +19,22 @@
 <script th:src="@{/bootstrap/local/zh.js}"></script>
 
 <script th:src="@{/js/common/fadingTip.js}"></script>
+<script th:src="@{/js/common/user.js}"></script>
 <script th:src="@{/js/attendance/admin.js}"></script>
+
 
 </head>
 <body>
-	<h1 class="text-center">管理界面</h1>
 	<div class="container">
+		<h2 class="text-center">管理界面</h2>
+		<div class="span12" style="text-align:right;">
+			<button type="button" id="modifyPasswordBtn"
+				onclick="modifyPassword();" class="btn btn-primary">修改密码</button>
+			<button type="button" id="modifyPasswordBtn" onclick="logout();"
+				class="btn btn-primary">退出登录</button>
+		</div>
 		<div class="panel-body" style="padding-bottom:0px;">
-			<div class="panel panel-default" style="margin-top: 10px;">
+			<div class="panel panel-primary" style="margin-top: 10px;">
 				<div class="panel-heading">上传</div>
 				<div class="panel-body">
 					<form class="form-inline" role="form"

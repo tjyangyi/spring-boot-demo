@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,7 @@ import com.fhzz.springbootdemo.entity.master.attendance.TAttendance;
 import com.fhzz.springbootdemo.entity.master.attendance.TAttendanceDetail;
 import com.fhzz.springbootdemo.service.attendance.AttendanceService;
 import com.fhzz.springbootdemo.util.SystemStaticConst;
+import com.fhzz.springbootdemo.util.login.IpUtil;
 
 /**
  * @author Administrator
@@ -73,10 +75,10 @@ public class AttendanceController {
 
 	@RequestMapping("/modifyAttendanceDetails")
 	@ResponseBody
-	public Map<String, Object> modifyAttendanceDetails(TAttendanceDetail attendanceDetail) {
+	public Map<String, Object> modifyAttendanceDetails(TAttendanceDetail attendanceDetail,HttpServletRequest request) {
 		Map<String, Object> result = new HashMap<String, Object>();
 		try {
-			attendanceService.modifyAttendanceDetails(attendanceDetail);
+			attendanceService.modifyAttendanceDetails(attendanceDetail,IpUtil.getIpAddr(request));
 			result.put(SystemStaticConst.RESULT, SystemStaticConst.SUCCESS);
 			result.put(SystemStaticConst.MSG, "更新数据成功！");
 		} catch (Exception e) {

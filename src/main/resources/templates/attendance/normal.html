@@ -16,59 +16,67 @@
 <script th:src="@{/bootstrap/js/bootstrap-select.js}"></script>
 <script th:src="@{/js/common/fadingTip.js}"></script>
 <script th:src="@{/js/attendance/normal.js}"></script>
+<script th:src="@{/js/common/user.js}"></script>
 </head>
 <body>
 	<span sec:authentication="principal.username" id="usernameSpan"
 		style="display:none"></span>
-	<h1 class="text-center">考勤修改</h1>
-	<div class="panel-body" style="padding-bottom:0px;">
-		<div class="panel panel-primary" style="margin-top: 10px;">
-			<div class="panel-heading">查询条件</div>
-			<div class="panel-body">
-				<form class="form-inline" role="form"
-					style="float: left; width: 100%;margin-left: 20px;" method="post"
-					id="queryForm">
-					<div class="form-group">
-						<label for="username">年份：</label> <select class="selectpicker"
-							id="year_select">
-							<option value="2018">2018</option>
-							<option value="2019">2019</option>
-							<option value="2020">2020</option>
-						</select>
-					</div>
-					<div class="form-group" style="padding-left:20px">
-						<label for="username">月份：</label> <select class="selectpicker"
-							id="month_select">
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-							<option value="10">10</option>
-							<option value="11">11</option>
-							<option value="12">12</option>
-						</select>
-					</div>
-					<div class="form-group" style="padding-left:20px">
-						<label for="username">工号：</label> <input type="text"
-							class="form-control" name="username" id="username"
-							placeholder="请输入工号" />
-					</div>
-					<div class="form-group" style="padding-left:20px">
-						<button type="button" id="queryBtn" onclick="doQuery();"
-							class="btn btn-primary">查询</button>
-					</div>
-				</form>
-			</div>
+	<div class="container">
+		<h2 class="text-center">考勤修改</h2>
+		<div class="span12" style="text-align:right;">
+			<button type="button" id="modifyPasswordBtn"
+				onclick="modifyPassword();" class="btn btn-primary">修改密码</button>
+			<button type="button" id="modifyPasswordBtn" onclick="logout();"
+				class="btn btn-primary">退出登录</button>
 		</div>
-		<h4 id="titleTip">
-			</h2>
+		<div class="panel-body" style="padding-bottom:0px;">
+			<div class="panel panel-primary" style="margin-top: 10px;">
+				<div class="panel-heading">查询条件</div>
+				<div class="panel-body">
+					<form class="form-inline" role="form"
+						style="float: left; width: 100%;margin-left: 20px;" method="post"
+						id="queryForm">
+						<div class="form-group">
+							<label for="username">年份：</label> <select class="selectpicker"
+								id="year_select">
+								<option value="2018">2018</option>
+								<option value="2019">2019</option>
+								<option value="2020">2020</option>
+							</select>
+						</div>
+						<div class="form-group" style="padding-left:20px">
+							<label for="username">月份：</label> <select class="selectpicker"
+								id="month_select">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+							</select>
+						</div>
+						<div class="form-group" style="padding-left:20px">
+							<label for="username">工号：</label> <input type="text"
+								class="form-control" name="username" id="username"
+								placeholder="请输入工号" />
+						</div>
+						<div class="form-group" style="padding-left:20px">
+							<button type="button" id="queryBtn" onclick="doQuery();"
+								class="btn btn-primary">查询</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<h4 id="titleTip"></h4>
 			<table id="table">
 			</table>
+		</div>
 	</div>
 </body>
 </html>
