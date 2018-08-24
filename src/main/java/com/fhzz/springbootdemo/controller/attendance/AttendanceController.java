@@ -27,6 +27,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.fhzz.springbootdemo.entity.master.attendance.TAttendance;
 import com.fhzz.springbootdemo.entity.master.attendance.TAttendanceDetail;
 import com.fhzz.springbootdemo.service.attendance.AttendanceService;
+import com.fhzz.springbootdemo.util.SystemStaticConst;
 
 /**
  * @author Administrator
@@ -50,11 +51,40 @@ public class AttendanceController {
 		}
 	}
 
+	@RequestMapping("/getTitleTip")
+	@ResponseBody
+	public String getTitleTip(String year, String month) {
+		return attendanceService.getTitleTip(year,month);
+	}
+
 	@RequestMapping("/openAttendanceDetails")
 	public String openAttendanceDetails(Model model, String attendanceId) {
-		System.out.println(attendanceId);
 		model.addAttribute("attendanceId", attendanceId);
 		return "attendance/attendance-details";
+	}
+
+	@RequestMapping("/openModifyAttendanceDetails")
+	public String openModifyAttendanceDetails(Model model, String attendanceDetailId) {
+		model.addAttribute("attendanceDetailId", attendanceDetailId);
+		TAttendanceDetail attendanceDetail = attendanceService.queryTAttendanceDetailById(attendanceDetailId);
+		model.addAttribute("attendanceDetail", attendanceDetail);
+		return "attendance/modify-attendanced-details";
+	}
+
+	@RequestMapping("/modifyAttendanceDetails")
+	@ResponseBody
+	public Map<String, Object> modifyAttendanceDetails(TAttendanceDetail attendanceDetail) {
+		Map<String, Object> result = new HashMap<String, Object>();
+		try {
+			attendanceService.modifyAttendanceDetails(attendanceDetail);
+			result.put(SystemStaticConst.RESULT, SystemStaticConst.SUCCESS);
+			result.put(SystemStaticConst.MSG, "更新数据成功！");
+		} catch (Exception e) {
+			e.printStackTrace();
+			result.put(SystemStaticConst.RESULT, SystemStaticConst.FAIL);
+			result.put(SystemStaticConst.MSG, "更新数据失败！");
+		}
+		return result;
 	}
 
 	/**
@@ -97,7 +127,6 @@ public class AttendanceController {
 	@RequestMapping("/queryAttendanceDetailsByYearMonth")
 	@ResponseBody
 	public Map<String, Object> queryAttendanceDetailsByYearMonth(String year, String month, String username) {
-		System.out.println(year + month + username);
 		Map<String, Object> result = new HashMap<String, Object>();
 		List<TAttendanceDetail> list;
 		if ("".equals(username)) {

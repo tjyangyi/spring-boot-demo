@@ -23,13 +23,13 @@ public class TAttendanceDetail implements java.io.Serializable {
 	private String username;
 	private String realname;
 	private String cardNumber;
-	private Double a;
-	private Double b;
-	private Double c;
-	private Double d;
-	private Double e;
-	private Double f;
-	private Double g;
+	private Integer a;
+	private Integer b;
+	private Integer c;
+	private Integer d;
+	private Integer e;
+	private Integer f;
+	private Integer g;
 	private Integer indexNumber;
 
 	// Constructors
@@ -45,7 +45,7 @@ public class TAttendanceDetail implements java.io.Serializable {
 
 	/** full constructor */
 	public TAttendanceDetail(String id, String attendaceId, String username, String realname, String cardNumber,
-			Double a, Double b, Double c, Double d, Double e) {
+			Integer a, Integer b, Integer c, Integer d, Integer e) {
 		this.id = id;
 		this.attendaceId = attendaceId;
 		this.username = username;
@@ -114,71 +114,71 @@ public class TAttendanceDetail implements java.io.Serializable {
 
 	@Column(name = "A", precision = 0)
 
-	public Double getA() {
+	public Integer getA() {
 		return this.a;
 	}
 
-	public void setA(Double a) {
+	public void setA(Integer a) {
 		this.a = a;
 	}
 
 	@Column(name = "B", precision = 0)
 
-	public Double getB() {
+	public Integer getB() {
 		return this.b;
 	}
 
-	public void setB(Double b) {
+	public void setB(Integer b) {
 		this.b = b;
 	}
 
 	@Column(name = "C", precision = 0)
 
-	public Double getC() {
+	public Integer getC() {
 		return this.c;
 	}
 
-	public void setC(Double c) {
+	public void setC(Integer c) {
 		this.c = c;
 	}
 
 	@Column(name = "D", precision = 0)
 
-	public Double getD() {
+	public Integer getD() {
 		return this.d;
 	}
 
-	public void setD(Double d) {
+	public void setD(Integer d) {
 		this.d = d;
 	}
 
 	@Column(name = "E", precision = 0)
 
-	public Double getE() {
+	public Integer getE() {
 		return this.e;
 	}
 
-	public void setE(Double e) {
+	public void setE(Integer e) {
 		this.e = e;
 	}
 
 	@Column(name = "F", precision = 0)
 
-	public Double getF() {
+	public Integer getF() {
 		return this.f;
 	}
 
-	public void setF(Double f) {
+	public void setF(Integer f) {
 		this.f = f;
 	}
 
 	@Column(name = "G", precision = 0)
 
-	public Double getG() {
+	public Integer getG() {
 		return this.g;
 	}
 
-	public void setG(Double g) {
+	public void setG(Integer g) {
 		this.g = g;
 	}
 

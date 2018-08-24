@@ -59,6 +59,11 @@ public class AttendanceServiceImpl implements AttendanceService {
 	}
 
 	@Override
+	public String getTitleTip(String year, String month) {
+		return attendanceJpa.findByYearAndMonth(year, month).getTitle();
+	}
+
+	@Override
 	public List<TAttendanceDetail> queryAttendanceDetailsByYearMonth(String year, String month) {
 		TAttendance attendance = attendanceJpa.findByYearAndMonth(year, month);
 		if (attendance == null) {
@@ -75,6 +80,17 @@ public class AttendanceServiceImpl implements AttendanceService {
 			return new ArrayList<TAttendanceDetail>();
 		}
 		return attendanceDetailJpa.findByAttendaceIdAndUsernameOrderByIndexNumberAsc(attendance.getId(), username);
+	}
+
+	@Override
+	public TAttendanceDetail queryTAttendanceDetailById(String id) {
+		Optional<TAttendanceDetail> o = attendanceDetailJpa.findById(id);
+		return o.get();
+	}
+
+	@Override
+	public void modifyAttendanceDetails(TAttendanceDetail attendanceDetail) {
+		attendanceDetailJpa.save(attendanceDetail);
 	}
 
 	@Override
@@ -128,19 +144,23 @@ public class AttendanceServiceImpl implements AttendanceService {
 			e.printStackTrace();
 			return "保存文件失败";
 		}
-		// 3写数据库
+		// 3构建考勤
 		TAttendance attendance = this.buildTAttendance(year, month, fileName);
-		attendance = attendanceJpa.save(attendance);
 		// 4解析文件
 		HSSFWorkbook workbook = null;
 		FileInputStream excelFileInputStream = null;
 		try {
+			// 4解析EXCEL文件
 			excelFileInputStream = new FileInputStream(uploadPath + fileName);
 			workbook = new HSSFWorkbook(new POIFSFileSystem(excelFileInputStream));
 			HSSFSheet sheet = workbook.getSheetAt(workbook.getNumberOfSheets() - 1);
+			// 5保存考勤
+			attendance.setTitle(sheet.getRow(1).getCell(0).getStringCellValue());
+			attendance = attendanceJpa.save(attendance);
 			for (int i = 3, numberOfRows = sheet.getPhysicalNumberOfRows(); i < numberOfRows; i++) {
 				HSSFRow row = sheet.getRow(i);
 				TAttendanceDetail detail = buildTAttendanceDetail(attendance.getId(), row);
+				// 6保存考勤详细
 				attendanceDetailJpa.save(detail);
 				userService.saveNewUser(detail.getUsername(), detail.getRealname());
 			}
@@ -179,17 +199,17 @@ public class AttendanceServiceImpl implements AttendanceService {
 		detail.setUsername(row.getCell(4).getStringCellValue());
 		detail.setRealname(row.getCell(5).getStringCellValue());
 		detail.setCardNumber(row.getCell(6).getStringCellValue());
-		detail.setA(row.getCell(7).getNumericCellValue());
+		detail.setA((int) row.getCell(7).getNumericCellValue());
 		if (row.getCell(8).getCellTypeEnum() == CellType.NUMERIC)
-			detail.setB(row.getCell(8).getNumericCellValue());
+			detail.setB((int) row.getCell(8).getNumericCellValue());
 		if (row.getCell(9).getCellTypeEnum() == CellType.NUMERIC)
-			detail.setC(row.getCell(9).getNumericCellValue());
+			detail.setC((int) row.getCell(9).getNumericCellValue());
 		if (row.getCell(10).getCellTypeEnum() == CellType.NUMERIC)
-			detail.setD(row.getCell(10).getNumericCellValue());
+			detail.setD((int) row.getCell(10).getNumericCellValue());
 		if (row.getCell(11).getCellTypeEnum() == CellType.NUMERIC)
-			detail.setE(row.getCell(11).getNumericCellValue());
-		detail.setF(row.getCell(12).getNumericCellValue());
-		detail.setG(row.getCell(13).getNumericCellValue());
+			detail.setE((int) row.getCell(11).getNumericCellValue());
+		detail.setF((int) row.getCell(12).getNumericCellValue());
+		detail.setG((int) row.getCell(13).getNumericCellValue());
 		return detail;
 	}
 
@@ -198,19 +218,19 @@ public class AttendanceServiceImpl implements AttendanceService {
 		cell.setCellType(CellType.STRING);
 		String username = cell.getStringCellValue();
 		TAttendanceDetail attendanceDetail = attendanceDetailJpa.findByAttendaceIdAndUsername(attendanceId, username);
-		Double b = attendanceDetail.getB();
+		Integer b = attendanceDetail.getB();
 		if (b != null)
 			row.getCell(8).setCellValue(b);
-		Double c = attendanceDetail.getC();
+		Integer c = attendanceDetail.getC();
 		if (c != null)
 			row.getCell(9).setCellValue(c);
-		Double d = attendanceDetail.getD();
+		Integer d = attendanceDetail.getD();
 		row.getCell(10).setCellValue(d);
-		Double e = attendanceDetail.getE();
+		Integer e = attendanceDetail.getE();
 		row.getCell(11).setCellValue(e);
-		Double f = attendanceDetail.getF();
+		Integer f = attendanceDetail.getF();
 		row.getCell(12).setCellValue(f);
-		Double g = attendanceDetail.getG();
+		Integer g = attendanceDetail.getG();
 		row.getCell(13).setCellValue(g);
 	}
 

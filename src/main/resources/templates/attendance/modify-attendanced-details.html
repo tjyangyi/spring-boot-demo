@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>考勤详情</title>
+<script th:src="@{/js/attendance/modify-attendanced-details.js}"></script>
+</head>
+<body class="container">
+	<div class="with:80%">
+		<form id="editForm" class="form-horizontal"
+			th:action="@{/attendance/modifyAttendanceDetails}"
+			th:object="${attendanceDetail}" method="post">
+			<input type="hidden" name="id" th:value="*{id}" /> <input
+				type="hidden" name="attendaceId" th:value="*{attendaceId}" /> <input
+				type="hidden" name="indexNumber" th:value="*{indexNumber}" />
+			<div class="form-group">
+				<label for="username" class="col-sm-2 control-label">员工编号</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" name="username"
+						id="username" th:value="*{username}" placeholder="工号"
+						readonly="readonly" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="realname" class="col-sm-2 control-label">员工姓名</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" name="realname"
+						id="realname" th:value="*{realname}" placeholder="员工姓名"
+						readonly="readonly" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="cardNumber" class="col-sm-2 control-label">餐卡编号</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" name="cardNumber"
+						id="cardNumber" th:value="*{cardNumber}" placeholder="餐卡编号"
+						readonly="readonly" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="a" class="col-sm-2 control-label">出勤天数A</label>
+				<div class="col-sm-10">
+					<input type="number" class="form-control" name="a" id="a" step="1"
+						th:value="*{a}" placeholder="出勤天数A" readonly="readonly" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="b" class="col-sm-2 control-label">修正天数B</label>
+				<div class="col-sm-10">
+					<input type="number" onchange="onDayFixed();" class="form-control"
+						name="b" id="b" th:value="*{b}" placeholder="出勤天数B" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="c" class="col-sm-2 control-label">出差天数C</label>
+				<div class="col-sm-10">
+					<input type="number" onchange="onDayFixed();" class="form-control"
+						name="c" id="c" th:value="*{c}" placeholder="出差天数C" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="d" class="col-sm-2 control-label">扣减上月D</label>
+				<div class="col-sm-10">
+					<input type="number" class="form-control" name="d" id="d"
+						th:value="*{d}" placeholder="扣减上月D" readonly="readonly" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="e" class="col-sm-2 control-label">预发下月E</label>
+				<div class="col-sm-10">
+					<input type="number" class="form-control" name="e" id="e"
+						th:value="*{e}" placeholder="预发下月E" readonly="readonly" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="f" class="col-sm-2 control-label">实际出勤A</label>
+				<div class="col-sm-10">
+					<input type="number" class="form-control" name="f" id="f"
+						th:value="*{f}" placeholder="实际出勤A" readonly="readonly" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="g" class="col-sm-2 control-label">晚餐补贴</label>
+				<div class="col-sm-10">
+					<input type="number" class="form-control" name="g" id="g"
+						th:value="*{g}" placeholder="晚餐补贴" />
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,6 +1,7 @@
 $(function() {
 	initSelect();
 	initTable();
+	initTitleTip();
 });
 
 function initSelect() {
@@ -10,6 +11,20 @@ function initSelect() {
 	$('#year_select').val(year);
 	$('#month_select').val(month);
 	$('#username').val($('#usernameSpan').text());
+}
+
+function initTitleTip() {
+	var year = $('#year_select').val();
+	var month = $('#month_select').val();
+	$.ajax({
+		type : 'POST',
+		url : "/attendance/getTitleTip?year=" + year + "&month=" + month,
+		cache : false,
+		success : function(response) {
+			$('#titleTip').text(response);
+		}
+	});
+
 }
 
 function initTable() {
@@ -23,6 +38,19 @@ function initTable() {
 		formId : "queryForm",
 		pagination : true,
 		pageSize : 300,
+		striped : true, //是否显示行间隔色
+		rowStyle : function(row, index) {
+			//这里有5个取值代表5中颜色['active', 'success', 'info', 'warning', 'danger'];
+			if (index % 2 == 0) {
+				return {
+					classes : "info"
+				}
+			} else {
+				return {
+					classes : "warning"
+				}
+			}
+		},
 		columns : [
 			{
 				field : 'id',
@@ -119,4 +147,38 @@ function doQuery() {
 }
 
 function modify(attendanceDetailId) {
+	$.ajax({
+		type : 'POST',
+		url : "/attendance/openModifyAttendanceDetails?attendanceDetailId=" + attendanceDetailId,
+		cache : false,
+		success : function(response) {
+			BootstrapDialog.show({
+				message : function(dialog) {
+					var $message = $('<div></div>');
+					$message.html(response); // 把传回来的页面作为message返回
+					return $message;
+				},
+				title : "修改",
+				draggable : true,
+				buttons : [ {
+					label : '保存',
+					autospin : true,
+					cssClass : 'btn-primary',
+					action : function(dialogRef) {
+						dialogRef.enableButtons(false);
+						dialogRef.setClosable(false);
+						submitEditForm(function susccessCallback() {
+							dialogRef.close();
+							doQuery();
+						});
+					}
+				}, {
+					label : '取消',
+					action : function(dialogRef) {
+						dialogRef.close();
+					}
+				} ]
+			})
+		}
+	});
 }

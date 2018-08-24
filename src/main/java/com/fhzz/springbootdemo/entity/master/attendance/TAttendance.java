@@ -23,7 +23,7 @@ public class TAttendance implements java.io.Serializable {
 	private String year;
 	private String month;
 	private String fileName;
-	private String filePath;
+	private String title;
 
 	// Constructors
 
@@ -37,12 +37,12 @@ public class TAttendance implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public TAttendance(String id, String year, String month, String fileName, String filePath) {
+	public TAttendance(String id, String year, String month, String fileName, String title) {
 		this.id = id;
 		this.year = year;
 		this.month = month;
 		this.fileName = fileName;
-		this.filePath = filePath;
+		this.title = title;
 	}
 
 	// Property accessors
@@ -89,14 +89,14 @@ public class TAttendance implements java.io.Serializable {
 		this.fileName = fileName;
 	}
 
-	@Column(name = "FILE_PATH")
+	@Column(name = "TITLE")
 
-	public String getFilePath() {
-		return this.filePath;
+	public String getTitle() {
+		return this.title;
 	}
 
-	public void setFilePath(String filePath) {
-		this.filePath = filePath;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 }

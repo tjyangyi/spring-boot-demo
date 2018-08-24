@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.fhzz.springbootdemo.entity.master.attendance.TAttendanceDetail;
 
-public interface TAttendanceDetailJpa extends JpaRepository<TAttendanceDetail, Integer> {
-	List<TAttendanceDetail> findByAttendaceIdOrderByIndexNumberAsc (String attendaceId);
+public interface TAttendanceDetailJpa extends JpaRepository<TAttendanceDetail, String> {
+	List<TAttendanceDetail> findByAttendaceIdOrderByIndexNumberAsc(String attendaceId);
 
 	TAttendanceDetail findByAttendaceIdAndUsername(String attendanceId, String username);
 

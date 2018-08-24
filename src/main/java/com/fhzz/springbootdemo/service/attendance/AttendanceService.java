@@ -22,4 +22,10 @@ public interface AttendanceService {
 
 	List<TAttendanceDetail> queryAttendanceDetailsByYearMonthUsername(String year, String month, String username);
 
+	TAttendanceDetail queryTAttendanceDetailById(String id);
+
+	void modifyAttendanceDetails(TAttendanceDetail attendanceDetail);
+
+	String getTitleTip(String year, String month);
+
 }
