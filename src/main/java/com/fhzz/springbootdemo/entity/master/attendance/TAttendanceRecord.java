@@ -22,6 +22,7 @@ public class TAttendanceRecord implements java.io.Serializable {
 	private static final long serialVersionUID = -1512307125415859730L;
 	private String id;
 	private String username;
+	private String targetUsername;
 	private String loginIp;
 	private String modifyDetailId;
 	private Integer preB;
@@ -81,6 +82,16 @@ public class TAttendanceRecord implements java.io.Serializable {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	@Column(name = "TARGET_USERNAME")
+
+	public String getTargetUsername() {
+		return targetUsername;
+	}
+
+	public void setTargetUsername(String targetUsername) {
+		this.targetUsername = targetUsername;
 	}
 
 	@Column(name = "LOGIN_IP", length = 64)

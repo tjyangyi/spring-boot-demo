@@ -113,6 +113,7 @@ public class AttendanceServiceImpl implements AttendanceService {
 		record.setPreB(old.getB());
 		record.setPreC(old.getC());
 		record.setPreG(old.getG());
+		record.setTargetUsername(attendanceDetail.getUsername());
 		record.setNewB(attendanceDetail.getB());
 		record.setNewC(attendanceDetail.getC());
 		record.setNewG(attendanceDetail.getG());
