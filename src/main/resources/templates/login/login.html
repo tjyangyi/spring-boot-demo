@@ -49,14 +49,14 @@ body {
 					style="margin-top:10px;width:340px" />
 				<div class="form-group" style="padding-left:20px">
 					<button type="button" id="downloadChrome" onclick="download();"
-						class="btn btn-primary">请使用Chrome浏览器,您可点此下载,谢谢</button>
+						class="btn btn-primary">请使用Chrome/FireFox登录,您可点此下载,谢谢</button>
 				</div>
 			</form>
 		</div>
 	</div>
 	<script type="text/javascript">
 		var explorer = navigator.userAgent;
-		if (explorer.indexOf("Chrome") >= 0) {
+		if (explorer.indexOf("Chrome") >= 0 || explorer.indexOf("Firefox") >= 0) {
 			$('#login').show();
 			$('#downloadChrome').hide();
 		} else {
