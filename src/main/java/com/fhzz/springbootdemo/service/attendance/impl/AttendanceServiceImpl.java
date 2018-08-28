@@ -2,6 +2,7 @@ package com.fhzz.springbootdemo.service.attendance.impl;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,9 +19,11 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.CellType;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.system.ApplicationHome;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ClassUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.fhzz.springbootdemo.dao.master.attendance.jpa.AttendanceJpa;
@@ -34,10 +37,16 @@ import com.fhzz.springbootdemo.service.sercurity.TUserService;
 
 @Service
 public class AttendanceServiceImpl implements AttendanceService {
-	private static final String uploadPath = "E:/uploadFile/";
+	private static String uploadPath = null;
 
 	@PostConstruct
-	public void init() {
+	public void init() throws FileNotFoundException {
+		ApplicationHome home = new ApplicationHome(getClass());
+		File jarFile = home.getSource();
+		uploadPath=	jarFile.getParentFile().toString();
+		
+		uploadPath = uploadPath + "/uploadFile/";
+		System.out.println(uploadPath);
 		File dest = new File(uploadPath);
 		if (!dest.exists()) { // 判断文件父目录是否存在
 			dest.mkdir();
@@ -130,7 +139,7 @@ public class AttendanceServiceImpl implements AttendanceService {
 		FileInputStream excelFileInputStream = null;
 		FileOutputStream excelFileOutputStream = null;
 		try {
-			excelFileInputStream = new FileInputStream(uploadPath + fileName);// 读取原excel
+			excelFileInputStream = new FileInputStream(uploadPath  + fileName);// 读取原excel
 			excelFileOutputStream = new FileOutputStream(uploadPath + "新_" + fileName);// 写入新excel
 			workbook = new HSSFWorkbook(new POIFSFileSystem(excelFileInputStream));
 			HSSFSheet sheet = workbook.getSheetAt(workbook.getNumberOfSheets() - 1);// 获取最后一个sheet页

@@ -19,5 +19,6 @@ jpa:
       
 logging:
   level:
-     com.fhzz.springbootdemo.dao : debug
-      
+     com.fhzz.springbootdemo : debug
+  file: ./logs/log.log
+  root: INFO

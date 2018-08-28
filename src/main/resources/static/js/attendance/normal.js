@@ -9,7 +9,9 @@ function initSelect() {
 	var year = date.getFullYear();
 	var month = date.getMonth() + 1;
 	$('#year_select').val(year);
+	$('#year_select').selectpicker('refresh');
 	$('#month_select').val(month);
+	$('#month_select').selectpicker('refresh');
 	$('#username').val($('#usernameSpan').text());
 }
 
