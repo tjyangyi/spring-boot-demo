@@ -14,6 +14,18 @@ public class JpaController {
 	@Autowired
 	private JpaService jpaService;
 
+	@RequestMapping("/openMainContent")
+	public String openMainContent() {
+		return "demo/jpa/mainContent";
+	}
+	
+	@RequestMapping("/openIntro")
+	public String openIntro() {
+		return "demo/jpa/intro";
+	}
+	
+	
+	
 	@RequestMapping("/openList")
 	public String list(Model model) {
 		return "demo/jpa/list";

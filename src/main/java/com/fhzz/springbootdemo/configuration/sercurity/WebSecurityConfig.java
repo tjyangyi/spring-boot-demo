@@ -40,7 +40,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.headers().frameOptions().disable();
 		http.csrf().disable().authorizeRequests().anyRequest().authenticated().and().formLogin().loginPage("/login")
-				.defaultSuccessUrl("/attendance/index").failureUrl("/login?error=true").permitAll().and().logout()
+				.defaultSuccessUrl("/demo/index/index").failureUrl("/login?error=true").permitAll().and().logout()
 				.logoutSuccessUrl("/login").permitAll();
 	}
 
