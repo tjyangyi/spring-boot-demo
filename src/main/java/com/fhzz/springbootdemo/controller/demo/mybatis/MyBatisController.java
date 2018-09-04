@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fhzz.springbootdemo.entity.master.OracleDemoTable;
 import com.fhzz.springbootdemo.service.demo.mybatis.MyBatisService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 
 @Controller
 @RequestMapping("/demo/mybatis")
@@ -37,12 +39,14 @@ public class MyBatisController {
 
 	@RequestMapping("/queryList")
 	@ResponseBody
-	public Map<String, Object> list(OracleDemoTable oracleDemoTable) {
+	public Map<String, Object> list(OracleDemoTable oracleDemoTable, int pageNum, int pageSize) {
 		Map<String, Object> result = new HashMap<String, Object>();
-		List<OracleDemoTable> list;
-		list = myBatisService.findByContentOrNum(oracleDemoTable.getContent(), oracleDemoTable.getNum());
-		result.put("totalCount", list.size());
-		result.put("result", list);
+		PageHelper.startPage(pageNum, pageSize);
+		List<OracleDemoTable> list = myBatisService.findByContentOrNum(oracleDemoTable.getContent(),
+				oracleDemoTable.getNum());
+		PageInfo<OracleDemoTable> pageList = new PageInfo<OracleDemoTable>(list);
+		result.put("totalCount", pageList.getTotal());
+		result.put("result", pageList.getList());
 		return result;
 	}
 }
