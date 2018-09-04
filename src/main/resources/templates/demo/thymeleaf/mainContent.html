@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Mybatis首页</title>
+<script th:src="@{/js/demo/main-content.js}"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2">
+				<ul class="nav nav-pills nav-stacked">
+					<li id="left_li1"><a id="a1" href="#"
+						onclick='showRightContent(1,"/demo/thymeleaf/openIntro")'>thymeleaf介绍</a></li>
+					<li id="left_li2"><a href="#"
+						onclick='showRightContent(2,"/demo/thymeleaf/openExpress")'>标准表达式语法</a></li>
+					<li id="left_li3"><a href="#"
+						onclick='showRightContent(3,"/demo/thymeleaf/openThLabel")'>常用的th标签</a></li>
+					<li id="left_li3"><a href="#"
+						onclick='showRightContent(4,"/demo/thymeleaf/openUsage")'>常用的使用方法</a></li>
+					<li id="left_li3"><a href="#"
+						onclick='showRightContent(5,"/demo/thymeleaf/openLayout")'>使用thymeleaf布局</a></li>
+				</ul>
+			</div>
+			<div id="rightContent" class="col-md-10"></div>
+		</div>
+	</div>
+</body>
+</html>

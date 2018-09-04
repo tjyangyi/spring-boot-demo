@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title></title>
+</head>
+<body>
+	<h3 id="1赋值字符串拼接">1、赋值、字符串拼接</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;p</span>  <span class="na">th:text=</span><span class="s">"${collect.description}"</span><span class="nt">&gt;</span>description<span class="nt">&lt;/p&gt;</span>
+ <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"'Welcome to our application, ' + ${user.name} + '!'"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+<p>字符串拼接还有另外一种简洁的写法</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"|Welcome to our application, ${user.name}!|"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h3 id="2条件判断-ifunless">2、条件判断 If/Unless</h3>
+
+<p>Thymeleaf中使用th:if和th:unless属性进行条件判断，下面的例子中，<code class="highlighter-rouge">&lt;a&gt;</code>标签只有在<code class="highlighter-rouge">th:if</code>中条件成立时才显示：</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">th:if=</span><span class="s">"${myself=='yes'}"</span> <span class="nt">&gt;</span> <span class="nt">&lt;/i&gt;</span> <span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">th:unless=</span><span class="s">${session.user</span> <span class="err">!=</span> <span class="na">null</span><span class="err">}</span> <span class="na">th:href=</span><span class="s">"@{/login}"</span> <span class="nt">&gt;</span>Login<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+<p>th:unless于th:if恰好相反，只有表达式中的条件不成立，才会显示其内容。</p>
+
+<p>也可以使用  <code class="highlighter-rouge">(if) ? (then) : (else)</code> 这种语法来判断显示的内容</p>
+
+<h3 id="3for-循环">3、for 循环</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;tr</span>  <span class="na">th:each=</span><span class="s">"collect,iterStat : ${collects}"</span><span class="nt">&gt;</span> 
+     <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"row"</span> <span class="na">th:text=</span><span class="s">"${collect.id}"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/th&gt;</span>
+     <span class="nt">&lt;td</span> <span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">th:src=</span><span class="s">"${collect.webLogo}"</span><span class="nt">/&gt;</span>
+     <span class="nt">&lt;/td&gt;</span>
+     <span class="nt">&lt;td</span> <span class="na">th:text=</span><span class="s">"${collect.url}"</span><span class="nt">&gt;</span>Mark<span class="nt">&lt;/td&gt;</span>
+     <span class="nt">&lt;td</span> <span class="na">th:text=</span><span class="s">"${collect.title}"</span><span class="nt">&gt;</span>Otto<span class="nt">&lt;/td&gt;</span>
+     <span class="nt">&lt;td</span> <span class="na">th:text=</span><span class="s">"${collect.description}"</span><span class="nt">&gt;</span>@mdo<span class="nt">&lt;/td&gt;</span>
+     <span class="nt">&lt;td</span> <span class="na">th:text=</span><span class="s">"${terStat.index}"</span><span class="nt">&gt;</span>index<span class="nt">&lt;/td&gt;</span>
+ <span class="nt">&lt;/tr&gt;</span>
+</code></pre></div></div>
+
+<p>iterStat称作状态变量，属性有：</p>
+
+<ul>
+  <li>index:当前迭代对象的index（从0开始计算）</li>
+  <li>count: 当前迭代对象的index(从1开始计算)</li>
+  <li>size:被迭代对象的大小</li>
+  <li>current:当前迭代变量</li>
+  <li>even/odd:布尔值，当前循环是否是偶数/奇数（从0开始计算）</li>
+  <li>first:布尔值，当前循环是否是第一个</li>
+  <li>last:布尔值，当前循环是否是最后一个</li>
+</ul>
+
+<h3 id="4url">4、URL</h3>
+
+<p>URL在Web应用模板中占据着十分重要的地位，需要特别注意的是Thymeleaf对于URL的处理是通过语法@{…}来处理的。
+如果需要Thymeleaf对URL进行渲染，那么务必使用th:href，th:src等属性，下面是一个例子</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Will produce 'http://localhost:8080/standard/unread' (plus rewriting) --&gt;</span>
+ <span class="nt">&lt;a</span>  <span class="na">th:href=</span><span class="s">"@{/standard/{type}(type=${type})}"</span><span class="nt">&gt;</span>view<span class="nt">&lt;/a&gt;</span>
+
+<span class="c">&lt;!-- Will produce '/gtvg/order/3/details' (plus rewriting) --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"details.html"</span> <span class="na">th:href=</span><span class="s">"@{/order/{orderId}/details(orderId=${o.id})}"</span><span class="nt">&gt;</span>view<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+<p>设置背景</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">th:style=</span><span class="s">"'background:url(' + @{/&lt;path-to-image&gt;} + ');'"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>根据属性值改变背景</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"media-object resource-card-image"</span>  <span class="na">th:style=</span><span class="s">"'background:url(' + @{(${collect.webLogo}=='' ? 'img/favicon.png' : ${collect.webLogo})} + ')'"</span> <span class="nt">&gt;&lt;/div&gt;</span>
+</code></pre></div></div>
+<p>几点说明：</p>
+
+<ul>
+  <li>上例中URL最后的<code class="highlighter-rouge">(orderId=${o.id})</code> 表示将括号内的内容作为URL参数处理，该语法避免使用字符串拼接，大大提高了可读性</li>
+  <li><code class="highlighter-rouge">@{...}</code>表达式中可以通过<code class="highlighter-rouge">{orderId}</code>访问Context中的orderId变量</li>
+  <li><code class="highlighter-rouge">@{/order}</code>是Context相关的相对路径，在渲染时会自动添加上当前Web应用的Context名字，假设context名字为app，那么结果应该是/app/order</li>
+</ul>
+
+<h3 id="5内嵌变量">5、内嵌变量</h3>
+
+<p>为了模板更加易用，Thymeleaf还提供了一系列Utility对象（内置于Context中），可以通过#直接访问：</p>
+
+<ul>
+  <li>dates ：  <em>java.util.Date的功能方法类。</em></li>
+  <li>calendars :  <em>类似#dates，面向java.util.Calendar</em></li>
+  <li>numbers :  <em>格式化数字的功能方法类</em></li>
+  <li>strings :  <em>字符串对象的功能类，contains,startWiths,prepending/appending等等。</em></li>
+  <li>objects:  <em>对objects的功能类操作。</em></li>
+  <li>bools:  <em>对布尔值求值的功能方法。</em></li>
+  <li>arrays：<em>对数组的功能类方法。</em></li>
+  <li>lists:   <em>对lists功能类方法</em></li>
+  <li>sets</li>
+  <li>maps<br />
+ …</li>
+</ul>
+
+<p>下面用一段代码来举例一些常用的方法：</p>
+
+<h4 id="dates">dates</h4>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/*
+ * Format date with the specified pattern
+ * Also works with arrays, lists or sets
+ */
+${#dates.format(date, 'dd/MMM/yyyy HH:mm')}
+${#dates.arrayFormat(datesArray, 'dd/MMM/yyyy HH:mm')}
+${#dates.listFormat(datesList, 'dd/MMM/yyyy HH:mm')}
+${#dates.setFormat(datesSet, 'dd/MMM/yyyy HH:mm')}
+
+/*
+ * Create a date (java.util.Date) object for the current date and time
+ */
+${#dates.createNow()}
+
+/*
+ * Create a date (java.util.Date) object for the current date (time set to 00:00)
+ */
+${#dates.createToday()}
+</code></pre></div></div>
+
+<h4 id="strings">strings</h4>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/*
+ * Check whether a String is empty (or null). Performs a trim() operation before check
+ * Also works with arrays, lists or sets
+ */
+${#strings.isEmpty(name)}
+${#strings.arrayIsEmpty(nameArr)}
+${#strings.listIsEmpty(nameList)}
+${#strings.setIsEmpty(nameSet)}
+
+/*
+ * Check whether a String starts or ends with a fragment
+ * Also works with arrays, lists or sets
+ */
+${#strings.startsWith(name,'Don')}                  // also array*, list* and set*
+${#strings.endsWith(name,endingFragment)}           // also array*, list* and set*
+
+/*
+ * Compute length
+ * Also works with arrays, lists or sets
+ */
+${#strings.length(str)}
+
+/*
+ * Null-safe comparison and concatenation
+ */
+${#strings.equals(str)}
+${#strings.equalsIgnoreCase(str)}
+${#strings.concat(str)}
+${#strings.concatReplaceNulls(str)}
+
+/*
+ * Random
+ */
+${#strings.randomAlphanumeric(count)}
+
+</code></pre></div></div>
+</body>
+</html>

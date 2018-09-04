@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title></title>
+</head>
+<body>
+	<p>它们分为四类：</p>
+
+<ul>
+  <li>1.变量表达式</li>
+  <li>2.选择或星号表达式</li>
+  <li>3.文字国际化表达式</li>
+  <li>4.URL表达式</li>
+</ul>
+
+<h3 id="变量表达式">变量表达式</h3>
+
+<p>变量表达式即OGNL表达式或Spring EL表达式(在Spring术语中也叫model attributes)。如下所示：<br />
+ <code class="highlighter-rouge">${session.user.name}</code></p>
+
+<p>它们将以HTML标签的一个属性来表示：</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"${book.author.name}"</span><span class="nt">&gt;</span>  
+<span class="nt">&lt;li</span> <span class="na">th:each=</span><span class="s">"book : ${books}"</span><span class="nt">&gt;</span>  
+</code></pre></div></div>
+
+<h3 id="选择星号表达式">选择(星号)表达式</h3>
+
+<p>选择表达式很像变量表达式，不过它们用一个预先选择的对象来代替上下文变量容器(map)来执行，如下：<br />
+<code class="highlighter-rouge">   *{customer.name} </code></p>
+
+<p>被指定的object由th:object属性定义：</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;div</span> <span class="na">th:object=</span><span class="s">"${book}"</span><span class="nt">&gt;</span>  
+      ...  
+      <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"*{title}"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/span&gt;</span>  
+      ...  
+    <span class="nt">&lt;/div&gt;</span>  
+</code></pre></div></div>
+
+<h3 id="文字国际化表达式">文字国际化表达式</h3>
+
+<p>文字国际化表达式允许我们从一个外部文件获取区域文字信息(.properties)，用Key索引Value，还可以提供一组参数(可选).</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    #{main.title}  
+    #{message.entrycreated(${entryId})}  
+</code></pre></div></div>
+
+<p>可以在模板文件中找到这样的表达式代码：</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;table&gt;</span>  
+      ...  
+      <span class="nt">&lt;th</span> <span class="na">th:text=</span><span class="s">"#{header.address.city}"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/th&gt;</span>  
+      <span class="nt">&lt;th</span> <span class="na">th:text=</span><span class="s">"#{header.address.country}"</span><span class="nt">&gt;</span>...<span class="nt">&lt;/th&gt;</span>  
+      ...  
+    <span class="nt">&lt;/table&gt;</span>  
+</code></pre></div></div>
+
+<h3 id="url表达式">URL表达式</h3>
+
+<p>URL表达式指的是把一个有用的上下文或回话信息添加到URL，这个过程经常被叫做URL重写。<br />
+<code class="highlighter-rouge">    @{/order/list} </code><br />
+URL还可以设置参数：<br />
+<code class="highlighter-rouge">   @{/order/details(id=${orderId})} </code> <br />
+相对路径：<br />
+<code class="highlighter-rouge">     @{../documents/report}  </code></p>
+
+<p>让我们看这些表达式：</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;form</span> <span class="na">th:action=</span><span class="s">"@{/createOrder}"</span><span class="nt">&gt;</span>  
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"main.html"</span> <span class="na">th:href=</span><span class="s">"@{/main}"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h3 id="变量表达式和星号表达有什么区别吗">变量表达式和星号表达有什么区别吗？</h3>
+
+<p>如果不考虑上下文的情况下，两者没有区别；星号语法评估在选定对象上表达，而不是整个上下文 <br />
+什么是选定对象？就是父标签的值，如下：</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;div</span> <span class="na">th:object=</span><span class="s">"${session.user}"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Name: <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"*{firstName}"</span><span class="nt">&gt;</span>Sebastian<span class="nt">&lt;/span&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Surname: <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"*{lastName}"</span><span class="nt">&gt;</span>Pepper<span class="nt">&lt;/span&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Nationality: <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"*{nationality}"</span><span class="nt">&gt;</span>Saturn<span class="nt">&lt;/span&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>这是完全等价于：</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;div</span> <span class="na">th:object=</span><span class="s">"${session.user}"</span><span class="nt">&gt;</span>
+	  <span class="nt">&lt;p&gt;</span>Name: <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"${session.user.firstName}"</span><span class="nt">&gt;</span>Sebastian<span class="nt">&lt;/span&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+	  <span class="nt">&lt;p&gt;</span>Surname: <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"${session.user.lastName}"</span><span class="nt">&gt;</span>Pepper<span class="nt">&lt;/span&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+	  <span class="nt">&lt;p&gt;</span>Nationality: <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"${session.user.nationality}"</span><span class="nt">&gt;</span>Saturn<span class="nt">&lt;/span&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>当然，美元符号和星号语法可以混合使用：</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nt">&lt;div</span> <span class="na">th:object=</span><span class="s">"${session.user}"</span><span class="nt">&gt;</span>
+	  <span class="nt">&lt;p&gt;</span>Name: <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"*{firstName}"</span><span class="nt">&gt;</span>Sebastian<span class="nt">&lt;/span&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+  	  <span class="nt">&lt;p&gt;</span>Surname: <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"${session.user.lastName}"</span><span class="nt">&gt;</span>Pepper<span class="nt">&lt;/span&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;p&gt;</span>Nationality: <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"*{nationality}"</span><span class="nt">&gt;</span>Saturn<span class="nt">&lt;/span&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h3 id="表达式支持的语法">表达式支持的语法</h3>
+
+<h4 id="字面literals">字面（Literals）</h4>
+
+<ul>
+  <li>文本文字（Text literals）: <code class="highlighter-rouge">'one text', 'Another one!',…</code></li>
+  <li>数字文本（Number literals）: <code class="highlighter-rouge">0, 34, 3.0, 12.3,…</code></li>
+  <li>布尔文本（Boolean literals）: <code class="highlighter-rouge">true, false</code></li>
+  <li>空（Null literal）: <code class="highlighter-rouge">null</code></li>
+  <li>文字标记（Literal tokens）: <code class="highlighter-rouge">one, sometext, main,…</code></li>
+</ul>
+
+<h4 id="文本操作text-operations">文本操作（Text operations）</h4>
+<ul>
+  <li>字符串连接(String concatenation): <code class="highlighter-rouge">+</code></li>
+  <li>文本替换（Literal substitutions）: <code class="highlighter-rouge">|The name is ${name}|</code></li>
+</ul>
+
+<h4 id="算术运算arithmetic-operations">算术运算（Arithmetic operations）</h4>
+<ul>
+  <li>二元运算符（Binary operators）: <code class="highlighter-rouge">+, -, *, /, %</code></li>
+  <li>减号（单目运算符）Minus sign (unary operator): <code class="highlighter-rouge">-</code></li>
+</ul>
+
+<h4 id="布尔操作boolean-operations">布尔操作（Boolean operations）</h4>
+<ul>
+  <li>二元运算符（Binary operators）:<code class="highlighter-rouge">and, or</code></li>
+  <li>布尔否定（一元运算符）Boolean negation (unary operator):<code class="highlighter-rouge">!, not</code></li>
+</ul>
+
+<h4 id="比较和等价comparisons-and-equality">比较和等价(Comparisons and equality)</h4>
+<ul>
+  <li>比较（Comparators）: <code class="highlighter-rouge">&gt;, &lt;, &gt;=, &lt;= (gt, lt, ge, le)</code></li>
+  <li>等值运算符（Equality operators）:<code class="highlighter-rouge">==, != (eq, ne)</code></li>
+</ul>
+
+<h4 id="条件运算符conditional-operators">条件运算符（Conditional operators）</h4>
+<ul>
+  <li>If-then: <code class="highlighter-rouge">(if) ? (then)</code></li>
+  <li>If-then-else: <code class="highlighter-rouge">(if) ? (then) : (else)</code></li>
+  <li>Default: (value) ?: <code class="highlighter-rouge">(defaultvalue)</code></li>
+</ul>
+
+<p>所有这些特征可以被组合并嵌套：</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'User is of type ' + (${user.isAdmin()} ? 'Administrator' : (${user.type} ?: 'Unknown'))
+</code></pre></div></div>
+</body>
+</html>
