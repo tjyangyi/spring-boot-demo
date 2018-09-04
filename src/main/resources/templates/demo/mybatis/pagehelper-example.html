@@ -7,10 +7,10 @@
 <link th:href="@{/bootstrap/css/bootstrap-dialog.css}" rel="stylesheet" />
 <script th:src="@{/bootstrap/js/bootstrap-table.js}"></script>
 <script th:src="@{/bootstrap/js/bootstrap-dialog.js}"></script>
-<script th:src="@{/js/demo/mybatis/list-example.js}"></script>
+<script th:src="@{/js/demo/mybatis/pagehelper-example.js}"></script>
 </head>
 <body>
-	<h3>一般情况推荐使用JPA进行SAVE和UPDATE操作，这里仅展示SELECT操作</h3>
+	<h3>分页插件</h3>
 	<div class="panel-body" style="padding-bottom:0px;">
 		<div class="panel panel-default" style="margin-top: 10px;">
 			<div class="panel-heading">查询条件</div>
@@ -34,8 +34,8 @@
 				</form>
 			</div>
 		</div>
+		<table id="demo-table">
+		</table>
 	</div>
-	<table id="list-example-table">
-	</table>
 </body>
 </html>

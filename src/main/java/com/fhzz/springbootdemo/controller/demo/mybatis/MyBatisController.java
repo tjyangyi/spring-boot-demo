@@ -33,20 +33,33 @@ public class MyBatisController {
 	}
 
 	@RequestMapping("/openListExample")
-	public String list(Model model) {
+	public String openListExample(Model model) {
 		return "demo/mybatis/list-example";
+	}
+	
+	@RequestMapping("/openPagehelperExample")
+	public String openPagehelperExample(Model model) {
+		return "demo/mybatis/pagehelper-example";
 	}
 
 	@RequestMapping("/queryList")
 	@ResponseBody
-	public Map<String, Object> list(OracleDemoTable oracleDemoTable, int pageNum, int pageSize) {
+	public Map<String, Object> queryList(OracleDemoTable oracleDemoTable) {
 		Map<String, Object> result = new HashMap<String, Object>();
-		PageHelper.startPage(pageNum, pageSize);
 		List<OracleDemoTable> list = myBatisService.findByContentOrNum(oracleDemoTable.getContent(),
 				oracleDemoTable.getNum());
-		PageInfo<OracleDemoTable> pageList = new PageInfo<OracleDemoTable>(list);
-		result.put("totalCount", pageList.getTotal());
-		result.put("result", pageList.getList());
+		result.put("total", list.size());
+		result.put("list", list);
 		return result;
+	}
+	
+	@RequestMapping("/queryPagedList")
+	@ResponseBody
+	public PageInfo<OracleDemoTable> queryPagedList(OracleDemoTable oracleDemoTable, int pageNum, int pageSize) {
+		PageHelper.startPage(pageNum + 1, pageSize);
+		List<OracleDemoTable> list = myBatisService.findByContentOrNum(oracleDemoTable.getContent(),
+				oracleDemoTable.getNum());
+		PageInfo<OracleDemoTable> pageInfo = new PageInfo<OracleDemoTable>(list);
+		return pageInfo;
 	}
 }

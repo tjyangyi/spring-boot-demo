@@ -6,15 +6,15 @@ $(function() {
 });
 
 function doQuery() {
-	$('#list-example-table').bootstrapTable('refresh');
+	$('#demo-table').bootstrapTable('refresh');
 }
 
 var TableInit = function() {
 	var oTableInit = new Object();
 	//初始化Table
 	oTableInit.Init = function() {
-		$('#list-example-table').bootstrapTable({
-			url : '/demo/mybatis/queryList', //请求后台的URL（*）
+		$('#demo-table').bootstrapTable({
+			url : '/demo/mybatis/queryPagedList', //请求后台的URL（*）
 			method : 'get', //请求方式（*）
 			striped : true, //是否显示行间隔色
 			cache : false, //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
@@ -93,7 +93,9 @@ var TableInit = function() {
 
 	//得到查询的参数
 	oTableInit.queryParams = function(params) {
-		var temp = {
+		var temp = { //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
+			pageSize : params.limit, //页面大小
+			pageNum : params.offset, //页码
 			content : $("#content").val(),
 			num : $("#num").val()
 		};
