@@ -3,7 +3,6 @@ package com.fhzz.springbootdemo.entity.master.security;
 // default package
 
 import java.sql.Timestamp;
-import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -11,18 +10,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 /**
  * TUser entity. @author MyEclipse Persistence Tools
  */
 @Entity
 @Table(name = "T_USER")
-public class TUser implements UserDetails {
+public class TUser {
 	private static final long serialVersionUID = 2344703304891758833L;
 	// Fields
 
@@ -141,37 +137,6 @@ public class TUser implements UserDetails {
 
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
-	}
-
-	@Override
-	@Transient
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	@Transient
-	public boolean isAccountNonExpired() {
-		return true;
-	}
-
-	@Override
-	@Transient
-	public boolean isAccountNonLocked() {
-		return true;
-	}
-
-	@Override
-	@Transient
-	public boolean isCredentialsNonExpired() {
-		return true;
-	}
-
-	@Override
-	@Transient
-	public boolean isEnabled() {
-		return true;
 	}
 
 }
