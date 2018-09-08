@@ -1,4 +1,4 @@
-package com.fhzz.springbootdemo.controller.shiro;
+package com.fhzz.springbootdemo.controller.demo.shiro;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;

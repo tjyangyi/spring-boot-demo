@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org"
+	xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+<meta charset="utf-8" />
+<title></title>
+</head>
+<body>
+<h4>添加依赖</h4>
+<div class="cnblogs_code">
+<pre>&lt;dependency&gt;</pre>
+<pre><code>    &lt;groupId&gt;com.github.theborakompanioni&lt;/groupId&gt;
+    &lt;artifactId&gt;thymeleaf-extras-shiro&lt;/artifactId&gt;
+    &lt;version&gt;</code>2.0.0<code>&lt;/version&gt; <br>&lt;/dependency&gt;</code></pre>
+</div>
+<p>**注意这里使用的版本是2.0.0，由于thymeleaf使用的版本较高，这里使用1.2.1会报错</p>
+<p>&nbsp;</p>
+<h4>在shiro的configuration中配置</h4>
+<div class="cnblogs_code">
+<pre><span style="color: #000000">@Bean
+    </span><span style="color: #0000ff">public</span><span style="color: #000000"> ShiroDialect shiroDialect() {
+        </span><span style="color: #0000ff">return</span> <span style="color: #0000ff">new</span><span style="color: #000000"> ShiroDialect();
+    }</span></pre>
+</div>
+<p>&nbsp;</p>
+<h4>在html中加入xmlns</h4>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff">&lt;</span><span style="color: #800000">html </span><span style="color: #ff0000">lang</span><span style="color: #0000ff">="zh_CN"</span><span style="color: #ff0000"> xmlns:th</span><span style="color: #0000ff">="http://www.thymeleaf.org"</span><span style="color: #ff0000">
+      xmlns:shiro</span><span style="color: #0000ff">="http://www.pollix.at/thymeleaf/shiro"</span><span style="color: #0000ff">&gt;</span></pre>
+</div>
+<p>&nbsp;</p>
+<h4>获取用户名</h4>
+<code>&lt;shiro:principal property="username" /&gt;</code>
+<p>&nbsp;</p>
+举例，你好,<span shiro:principal property="username" ></span>
+
+<p>&nbsp;</p>
+<h4>获取当前用户权限</h4>
+<code>&lt;shiro:hasPermission="指定的权限" /&gt;</code>
+<p>&nbsp;</p>
+举例，你拥有权限才能看到的项目：
+	<ul>
+		<li shiro:hasPermission="userInfo:view"><a data-href=""
+			data-title="用户查看" href="javascript:void(0)">用户查看</a></li>
+		<li shiro:hasPermission="userInfo:add"><a data-href=""
+			data-title="用户添加" href="javascript:void(0)">用户添加</a></li>
+		<li shiro:hasPermission="userInfo:del"><a data-href=""
+			data-title="用户删除" href="javascript:void(0)">用户删除</a></li>
+	</ul>
+	
+<p>&nbsp;</p>
+<h4>更多的标签</h4>
+<h5><font size="2">Tags</font></h5>
+<p>The following examples show how to integrate the tags in your Thymeleaf templates. These are all implementations of the examples given in the <a href="http://shiro.apache.org/web.html#Web-JSP%252FGSPTagLibrary">JSP / GSP Tag Library Section</a> of the Apache Shiro documentation.
+</p><p>Tags can be written in attribute or element notation:
+</p><h6><font size="2">Attribute</font></h6>
+<div class="cnblogs_code" style="border-top: #cccccc 1px solid; border-right: #cccccc 1px solid; border-bottom: #cccccc 1px solid; padding-bottom: 5px; padding-top: 5px; padding-left: 5px; border-left: #cccccc 1px solid; padding-right: 5px; background-color: #f5f5f5"><pre><span style="color: #0000ff">&lt;</span><span style="color: #800000">p </span><span style="color: #ff0000">shiro:anyTag</span><span style="color: #0000ff">&gt;</span><span style="color: #000000">
+  Goodbye cruel World!
+</span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">p</span><span style="color: #0000ff">&gt;</span></pre></div>
+<h6><font size="2">Element</font></h6>
+<div class="cnblogs_code" style="border-top: #cccccc 1px solid; border-right: #cccccc 1px solid; border-bottom: #cccccc 1px solid; padding-bottom: 5px; padding-top: 5px; padding-left: 5px; border-left: #cccccc 1px solid; padding-right: 5px; background-color: #f5f5f5"><pre><span style="color: #0000ff">&lt;</span><span style="color: #800000">shiro:anyTag</span><span style="color: #0000ff">&gt;</span>
+  <span style="color: #0000ff">&lt;</span><span style="color: #800000">p</span><span style="color: #0000ff">&gt;</span>Hello World!<span style="color: #0000ff">&lt;/</span><span style="color: #800000">p</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #0000ff">&lt;/</span><span style="color: #800000">shiro:anyTag</span><span style="color: #0000ff">&gt;</span></pre></div>
+<hr>
+
+<h6><font size="2">The <code><font color="#0000ff">guest</font></code> tag</font></h6>
+<div class="cnblogs_code" style="border-top: #cccccc 1px solid; border-right: #cccccc 1px solid; border-bottom: #cccccc 1px solid; padding-bottom: 5px; padding-top: 5px; padding-left: 5px; border-left: #cccccc 1px solid; padding-right: 5px; background-color: #f5f5f5"><pre><span style="color: #0000ff">&lt;</span><span style="color: #800000">p </span><span style="color: #ff0000">shiro:guest</span><span style="color: #0000ff">=""</span><span style="color: #0000ff">&gt;</span><span style="color: #000000">
+  Please </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">a </span><span style="color: #ff0000">href</span><span style="color: #0000ff">="login.html"</span><span style="color: #0000ff">&gt;</span>Login<span style="color: #0000ff">&lt;/</span><span style="color: #800000">a</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #0000ff">&lt;/</span><span style="color: #800000">p</span><span style="color: #0000ff">&gt;</span></pre></div>
+<h6><font size="2">The <code><font color="#0000ff">user</font></code> tag</font></h6>
+<div class="cnblogs_code" style="border-top: #cccccc 1px solid; border-right: #cccccc 1px solid; border-bottom: #cccccc 1px solid; padding-bottom: 5px; padding-top: 5px; padding-left: 5px; border-left: #cccccc 1px solid; padding-right: 5px; background-color: #f5f5f5"><pre><span style="color: #0000ff">&lt;</span><span style="color: #800000">p </span><span style="color: #ff0000">shiro:user</span><span style="color: #0000ff">=""</span><span style="color: #0000ff">&gt;</span><span style="color: #000000">
+  Welcome back John! Not John? Click </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">a </span><span style="color: #ff0000">href</span><span style="color: #0000ff">="login.html"</span><span style="color: #0000ff">&gt;</span>here<span style="color: #0000ff">&lt;</span><span style="color: #800000">a</span><span style="color: #0000ff">&gt;</span><span style="color: #000000"> to login.
+</span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">p</span><span style="color: #0000ff">&gt;</span></pre></div>
+<h6><font size="2">The <code><font color="#0000ff">authenticated</font></code> tag</font></h6>
+<div class="cnblogs_code" style="border-top: #cccccc 1px solid; border-right: #cccccc 1px solid; border-bottom: #cccccc 1px solid; padding-bottom: 5px; padding-top: 5px; padding-left: 5px; border-left: #cccccc 1px solid; padding-right: 5px; background-color: #f5f5f5"><pre><span style="color: #0000ff">&lt;</span><span style="color: #800000">a </span><span style="color: #ff0000">shiro:authenticated</span><span style="color: #0000ff">=""</span><span style="color: #ff0000"> href</span><span style="color: #0000ff">="updateAccount.html"</span><span style="color: #0000ff">&gt;</span>Update your contact information<span style="color: #0000ff">&lt;/</span><span style="color: #800000">a</span><span style="color: #0000ff">&gt;</span></pre></div>
+<h6><font size="2">The <code><font color="#0000ff">notAuthenticated</font></code> tag</font></h6>
+<div class="cnblogs_code" style="border-top: #cccccc 1px solid; border-right: #cccccc 1px solid; border-bottom: #cccccc 1px solid; padding-bottom: 5px; padding-top: 5px; padding-left: 5px; border-left: #cccccc 1px solid; padding-right: 5px; background-color: #f5f5f5"><pre><span style="color: #0000ff">&lt;</span><span style="color: #800000">p </span><span style="color: #ff0000">shiro:notAuthenticated</span><span style="color: #0000ff">=""</span><span style="color: #0000ff">&gt;</span><span style="color: #000000">
+  Please </span><span style="color: #0000ff">&lt;</span><span style="color: #800000">a </span><span style="color: #ff0000">href</span><span style="color: #0000ff">="login.html"</span><span style="color: #0000ff">&gt;</span>login<span style="color: #0000ff">&lt;/</span><span style="color: #800000">a</span><span style="color: #0000ff">&gt;</span><span style="color: #000000"> in order to update your credit card information.
+</span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">p</span><span style="color: #0000ff">&gt;</span></pre></div>
+<h6><font size="2">The <code><font color="#0000ff">principal</font></code> tag</font></h6>
+<div class="cnblogs_code" style="border-top: #cccccc 1px solid; border-right: #cccccc 1px solid; border-bottom: #cccccc 1px solid; padding-bottom: 5px; padding-top: 5px; padding-left: 5px; border-left: #cccccc 1px solid; padding-right: 5px; background-color: #f5f5f5"><pre><span style="color: #0000ff">&lt;</span><span style="color: #800000">p</span><span style="color: #0000ff">&gt;</span>Hello, <span style="color: #0000ff">&lt;</span><span style="color: #800000">span </span><span style="color: #ff0000">shiro:principal</span><span style="color: #0000ff">=""</span><span style="color: #0000ff">&gt;&lt;/</span><span style="color: #800000">span</span><span style="color: #0000ff">&gt;</span>, how are you today?<span style="color: #0000ff">&lt;/</span><span style="color: #800000">p</span><span style="color: #0000ff">&gt;</span></pre></div>
+<p>or</p>
+<div class="cnblogs_code" style="border-top: #cccccc 1px solid; border-right: #cccccc 1px solid; border-bottom: #cccccc 1px solid; padding-bottom: 5px; padding-top: 5px; padding-left: 5px; border-left: #cccccc 1px solid; padding-right: 5px; background-color: #f5f5f5"><pre><span style="color: #0000ff">&lt;</span><span style="color: #800000">p</span><span style="color: #0000ff">&gt;</span>Hello, <span style="color: #0000ff">&lt;</span><span style="color: #800000">shiro:principal</span><span style="color: #0000ff">/&gt;</span>, how are you today?<span style="color: #0000ff">&lt;/</span><span style="color: #800000">p</span><span style="color: #0000ff">&gt;</span></pre></div>
+<p>Typed principal and principal property are also supported.
+</p><h6><font size="2">The <code><font color="#0000ff">hasRole</font></code> tag</font></h6>
+<div class="cnblogs_code" style="border-top: #cccccc 1px solid; border-right: #cccccc 1px solid; border-bottom: #cccccc 1px solid; padding-bottom: 5px; padding-top: 5px; padding-left: 5px; border-left: #cccccc 1px solid; padding-right: 5px; background-color: #f5f5f5"><pre><span style="color: #0000ff">&lt;</span><span style="color: #800000">a </span><span style="color: #ff0000">shiro:hasRole</span><span style="color: #0000ff">="administrator"</span><span style="color: #ff0000"> href</span><span style="color: #0000ff">="admin.html"</span><span style="color: #0000ff">&gt;</span>Administer the system<span style="color: #0000ff">&lt;/</span><span style="color: #800000">a</span><span style="color: #0000ff">&gt;</span></pre></div>
+<h6><font size="2">The <code><font color="#0000ff">lacksRole</font></code> tag</font></h6>
+<div class="cnblogs_code" style="border-top: #cccccc 1px solid; border-right: #cccccc 1px solid; border-bottom: #cccccc 1px solid; padding-bottom: 5px; padding-top: 5px; padding-left: 5px; border-left: #cccccc 1px solid; padding-right: 5px; background-color: #f5f5f5"><pre><span style="color: #0000ff">&lt;</span><span style="color: #800000">p </span><span style="color: #ff0000">shiro:lacksRole</span><span style="color: #0000ff">="administrator"</span><span style="color: #0000ff">&gt;</span><span style="color: #000000">
+  Sorry, you are not allowed to administer the system.
+</span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">p</span><span style="color: #0000ff">&gt;</span></pre></div>
+<h6><font size="2">The <code><font color="#0000ff">hasAllRoles</font></code> tag</font></h6>
+<div class="cnblogs_code" style="border-top: #cccccc 1px solid; border-right: #cccccc 1px solid; border-bottom: #cccccc 1px solid; padding-bottom: 5px; padding-top: 5px; padding-left: 5px; border-left: #cccccc 1px solid; padding-right: 5px; background-color: #f5f5f5"><pre><span style="color: #0000ff">&lt;</span><span style="color: #800000">p </span><span style="color: #ff0000">shiro:hasAllRoles</span><span style="color: #0000ff">="developer, project manager"</span><span style="color: #0000ff">&gt;</span><span style="color: #000000">
+  You are a developer and a project manager.
+</span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">p</span><span style="color: #0000ff">&gt;</span></pre></div>
+<h6><font size="2">The <code><font color="#0000ff">hasAnyRoles</font></code> tag</font></h6>
+<div class="cnblogs_code" style="border-top: #cccccc 1px solid; border-right: #cccccc 1px solid; border-bottom: #cccccc 1px solid; padding-bottom: 5px; padding-top: 5px; padding-left: 5px; border-left: #cccccc 1px solid; padding-right: 5px; background-color: #f5f5f5"><pre><span style="color: #0000ff">&lt;</span><span style="color: #800000">p </span><span style="color: #ff0000">shiro:hasAnyRoles</span><span style="color: #0000ff">="developer, project manager, administrator"</span><span style="color: #0000ff">&gt;</span><span style="color: #000000">
+  You are a developer, project manager, or administrator.
+</span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">p</span><span style="color: #0000ff">&gt;</span></pre></div>
+<h6><font size="2">The <code><font color="#0000ff">hasPermission</font></code> tag</font></h6>
+<div class="cnblogs_code" style="border-top: #cccccc 1px solid; border-right: #cccccc 1px solid; border-bottom: #cccccc 1px solid; padding-bottom: 5px; padding-top: 5px; padding-left: 5px; border-left: #cccccc 1px solid; padding-right: 5px; background-color: #f5f5f5"><pre><span style="color: #0000ff">&lt;</span><span style="color: #800000">a </span><span style="color: #ff0000">shiro:hasPermission</span><span style="color: #0000ff">="user:create"</span><span style="color: #ff0000"> href</span><span style="color: #0000ff">="createUser.html"</span><span style="color: #0000ff">&gt;</span>Create a new User<span style="color: #0000ff">&lt;/</span><span style="color: #800000">a</span><span style="color: #0000ff">&gt;</span></pre></div>
+<h6><font size="2">The <code><font color="#0000ff">lacksPermission</font></code> tag</font></h6>
+<div class="cnblogs_code" style="border-top: #cccccc 1px solid; border-right: #cccccc 1px solid; border-bottom: #cccccc 1px solid; padding-bottom: 5px; padding-top: 5px; padding-left: 5px; border-left: #cccccc 1px solid; padding-right: 5px; background-color: #f5f5f5"><pre><span style="color: #0000ff">&lt;</span><span style="color: #800000">p </span><span style="color: #ff0000">shiro:lacksPermission</span><span style="color: #0000ff">="user:delete"</span><span style="color: #0000ff">&gt;</span><span style="color: #000000">
+  Sorry, you are not allowed to delete user accounts.
+</span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">p</span><span style="color: #0000ff">&gt;</span></pre></div>
+<h6><font size="2">The <code><font color="#0000ff">hasAllPermissions</font></code> tag</font></h6>
+<div class="cnblogs_code" style="border-top: #cccccc 1px solid; border-right: #cccccc 1px solid; border-bottom: #cccccc 1px solid; padding-bottom: 5px; padding-top: 5px; padding-left: 5px; border-left: #cccccc 1px solid; padding-right: 5px; background-color: #f5f5f5"><pre><span style="color: #0000ff">&lt;</span><span style="color: #800000">p </span><span style="color: #ff0000">shiro:hasAllPermissions</span><span style="color: #0000ff">="user:create, user:delete"</span><span style="color: #0000ff">&gt;</span><span style="color: #000000">
+  You can create and delete users.
+</span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">p</span><span style="color: #0000ff">&gt;</span></pre></div>
+<h6><font size="2">The <code><font color="#0000ff">hasAnyPermissions</font></code> tag</font></h6>
+<div class="cnblogs_code" style="border-top: #cccccc 1px solid; border-right: #cccccc 1px solid; border-bottom: #cccccc 1px solid; padding-bottom: 5px; padding-top: 5px; padding-left: 5px; border-left: #cccccc 1px solid; padding-right: 5px; background-color: #f5f5f5"><pre><span style="color: #0000ff">&lt;</span><span style="color: #800000">p </span><span style="color: #ff0000">shiro:hasAnyPermissions</span><span style="color: #0000ff">="user:create, user:delete"</span><span style="color: #0000ff">&gt;</span><span style="color: #000000">
+  You can create or delete users.
+</span><span style="color: #0000ff">&lt;/</span><span style="color: #800000">p</span><span style="color: #0000ff">&gt;</span></pre></div>
+</body>
+</html>

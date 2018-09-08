@@ -1,18 +1,19 @@
 package com.fhzz.springbootdemo.controller.shiro;
 
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.Map;
-
 @Controller
-public class HomeController {
+public class LoginController {
 	@RequestMapping({ "/", "/index" })
 	public String index() {
-		return "shiro/index";
+		return "/demo/index/index";
 	}
 
 	@RequestMapping("/login")
@@ -48,5 +49,4 @@ public class HomeController {
 		System.out.println("------没有权限-------");
 		return "shiro/403";
 	}
-
 }

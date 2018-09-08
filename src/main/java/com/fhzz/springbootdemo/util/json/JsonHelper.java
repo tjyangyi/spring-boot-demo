@@ -21,13 +21,13 @@ public class JsonHelper {
 	private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
 	// 将JSON转换成Map,其中valueClz为Map中value的Class,keyArray为Map的key
-	public static Map json2Map(Object[] keyArray, String json, Class valueClz) {
+	public static Map<?, ?> json2Map(Object[] keyArray, String json, Class<?> valueClz) {
 		JSONObject jsonObject = JSONObject.fromObject(json);
-		Map classMap = new HashMap();
+		Map<Object, Class<?>> classMap = new HashMap<Object, Class<?>>();
 		for (int i = 0; i < keyArray.length; i++) {
 			classMap.put(keyArray[i], valueClz);
 		}
-		return (Map) JSONObject.toBean(jsonObject, Map.class, classMap);
+		return (Map<?, ?>) JSONObject.toBean(jsonObject, Map.class, classMap);
 	}
 
 	/***
@@ -37,6 +37,7 @@ public class JsonHelper {
 	 * @param objectClass
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	public static <T> Collection<T> toList(Object object, Class<T> objectClass) {
 		JSONArray jsonArray = JSONArray.fromObject(object);
 		return JSONArray.toCollection(jsonArray, objectClass);

@@ -1,5 +1,9 @@
 package com.fhzz.springbootdemo.configuration.shiro;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Properties;
+
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
@@ -9,14 +13,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Properties;
+import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
 
 @Configuration
 public class ShiroConfig {
+
+	// Filter工厂，设置对应的过滤条件和跳转条件
 	@Bean
-	public ShiroFilterFactoryBean shirFilter(SecurityManager securityManager) {
+	public ShiroFilterFactoryBean shiroFilter(SecurityManager securityManager) {
 		System.out.println("ShiroConfiguration.shirFilter()");
 		ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
 		shiroFilterFactoryBean.setSecurityManager(securityManager);
@@ -35,15 +39,13 @@ public class ShiroConfig {
 		shiroFilterFactoryBean.setSuccessUrl("/demo/index/index");
 
 		// 未授权界面;
-		shiroFilterFactoryBean.setUnauthorizedUrl("/403");
+		shiroFilterFactoryBean.setUnauthorizedUrl("/shiro/403");
 		shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
 		return shiroFilterFactoryBean;
 	}
 
 	/**
 	 * 凭证匹配器 （由于我们的密码校验交给Shiro的SimpleAuthenticationInfo进行处理了 ）
-	 * 
-	 * @return
 	 */
 	@Bean
 	public HashedCredentialsMatcher hashedCredentialsMatcher() {
@@ -54,6 +56,7 @@ public class ShiroConfig {
 		return hashedCredentialsMatcher;
 	}
 
+	// 将自己的验证方式加入容器
 	@Bean
 	public MyShiroRealm myShiroRealm() {
 		MyShiroRealm myShiroRealm = new MyShiroRealm();
@@ -61,6 +64,7 @@ public class ShiroConfig {
 		return myShiroRealm;
 	}
 
+	// 权限管理，配置主要是Realm的管理认证
 	@Bean
 	public SecurityManager securityManager() {
 		DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
@@ -70,9 +74,6 @@ public class ShiroConfig {
 
 	/**
 	 * 开启shiro aop注解支持. 使用代理方式;所以需要开启代码支持;
-	 * 
-	 * @param securityManager
-	 * @return
 	 */
 	@Bean
 	public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor(SecurityManager securityManager) {
@@ -81,12 +82,20 @@ public class ShiroConfig {
 		return authorizationAttributeSourceAdvisor;
 	}
 
+	/**	
+	 * thymeleaf和shiro标签整合
+	 */
+	@Bean
+	public ShiroDialect shiroDialect() {
+		return new ShiroDialect();
+	}
+
 	@Bean(name = "simpleMappingExceptionResolver")
 	public SimpleMappingExceptionResolver createSimpleMappingExceptionResolver() {
 		SimpleMappingExceptionResolver r = new SimpleMappingExceptionResolver();
 		Properties mappings = new Properties();
 		mappings.setProperty("DatabaseException", "databaseError");// 数据库异常处理
-		mappings.setProperty("UnauthorizedException", "403");
+		mappings.setProperty("UnauthorizedException", "/shiro/403");// 设置没有权限的跳转界面
 		r.setExceptionMappings(mappings); // None by default
 		r.setDefaultErrorView("error"); // No default
 		r.setExceptionAttribute("ex"); // Default is "exception"

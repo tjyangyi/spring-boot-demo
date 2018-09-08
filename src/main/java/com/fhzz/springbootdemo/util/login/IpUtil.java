@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.fhzz.springbootdemo.util.login;
 
 import java.net.InetAddress;
@@ -46,8 +43,6 @@ public class IpUtil {
         } catch (Exception e) {
             ipAddress="";
         }
-        // ipAddress = this.getRequest().getRemoteAddr();
-        
         return ipAddress;
     }
 }
