@@ -20,7 +20,7 @@ public class LogbackController {
 
 	@RequestMapping("/openMainContent")
 	public String openMainContent() {
-		return "demo/logback/mainContent";
+		return "demo/logback/main-content";
 	}
 
 	@RequestMapping("/openIntro")

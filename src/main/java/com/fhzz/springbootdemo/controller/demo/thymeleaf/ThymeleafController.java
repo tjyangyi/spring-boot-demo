@@ -16,7 +16,7 @@ public class ThymeleafController {
 
 	@RequestMapping("/openMainContent")
 	public String openMainContent() {
-		return "demo/thymeleaf/mainContent";
+		return "demo/thymeleaf/main-content";
 	}
 
 	@RequestMapping("/openIntro")

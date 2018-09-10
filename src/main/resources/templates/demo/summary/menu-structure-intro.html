@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title></title>
+</head>
+<body>
+	<div class="container">
+		<h2>java目录</h2>
+		<div class="row">
+			<div class="col-md-5">
+				<img src="/images/demo/summary/1.png" />
+			</div>
+			<div class="col-md-5">
+				<p>
+					<strong>configuration：</strong>各种配置文件，例如数据源、连接池、数据上传、权限等
+				</p>
+				<p>
+					<strong>controller：</strong>Action层，控制界面跳转、AJAX请求数据返回等，根据功能模块划分二级包
+				</p>
+				<p>
+					<strong>dao：</strong>DAO层，详细如下图所示
+				</p>
+				<img src="/images/demo/summary/3.png" />
+				<p>dao下1级包：区分不同的数据源（数据库)，例如master和slave1</p>
+				<p>dao下2级包：功能模块名称，例如demo，shiro</p>
+				<p>dao下3级包：使用不同的dao层技术，jpa包即使用jpa的方式，mapper包即使用mybatis的方式。通常情况，增、删、改和简单的查询推荐使用JPA，复杂的查询推荐使用Mybatis</p>
+				<p>
+					<strong>entity：</strong>
+				</p>
+				<p>entity下1级包：区分不同的数据源（数据库)，例如master和slave1，与dao层中对应</p>
+				<p>entity下2级包：功能模块名称，与dao层中对应</p>
+				<p>
+					<strong>service：</strong>Service层，服务层，一般都是接口，在impl包下写实现类。
+				</p>
+				<p>
+					<strong>util：</strong>工具包
+				</p>
+			</div>
+		</div>
+		<h2>resources目录</h2>
+		<div class="row">
+			<div class="col-md-5">
+				<img src="/images/demo/summary/2.png" />
+			</div>
+			<div class="col-md-5">
+				<p>
+					<strong>mybatis：</strong>mybatis的xml文件，包括配置和sql语句，详细如下图所示
+				</p>
+				<img src="/images/demo/summary/4.png" />
+				<p>mybatis-config.xml：配置文件</p>
+				<p>一级目录：mapper固定写法</p>
+				<p>二级目录：区分不同的数据源（数据库)，例如master和slave1</p>
+				<p>三级目录：功能模块名称，例如demo，shiro</p>
+				<p>
+					<strong>sql：</strong>sql脚本
+				</p>
+				<p>
+					<strong>static：</strong>静态资源，这里需要注意让shiro拦截器放过这些目录
+				</p>
+				<p>
+					<strong>templates：</strong>界面模板文件，根据功能模块划分
+				</p>
+				<p>
+					<strong>application.yml：</strong>application.yml,application-fhzz.yml,application-home.yml配置文件根据spring.profiles.active配置可以实现配置文件的快速切换，例如开发环境、实网环境
+				</p>
+				<p>
+					<strong>application.properties：</strong>application.properties配置文件
+				</p>
+				<p>
+					<strong>application.properties：</strong>application.properties配置文件
+				</p>
+				<p>
+					<strong>log4j.properties：</strong>log4j配置文件
+				</p>
+				<p>
+					<strong>logback-spring.xml：</strong>logback配置文件
+				</p>
+			</div>
+		</div>
+</body>
+</html>

@@ -16,7 +16,7 @@ public class JpaController {
 
 	@RequestMapping("/openMainContent")
 	public String openMainContent() {
-		return "demo/jpa/mainContent";
+		return "demo/jpa/main-content";
 	}
 	
 	@RequestMapping("/openIntro")

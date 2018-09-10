@@ -24,7 +24,7 @@ public class MyBatisController {
 
 	@RequestMapping("/openMainContent")
 	public String openMainContent() {
-		return "demo/mybatis/mainContent";
+		return "demo/mybatis/main-content";
 	}
 
 	@RequestMapping("/openIntro")

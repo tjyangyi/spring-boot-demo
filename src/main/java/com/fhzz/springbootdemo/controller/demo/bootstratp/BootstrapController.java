@@ -17,7 +17,7 @@ public class BootstrapController {
 		
 	@RequestMapping("/bootstrapDemo")
 	public String index(Model model) {
-		return "demo/bootstrap/bootstrapDemo";
+		return "demo/bootstrap/bootstrap-demo";
 	}
 
 }

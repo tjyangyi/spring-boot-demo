@@ -9,7 +9,7 @@ public class ShiroController {
 
 	@RequestMapping("/openMainContent")
 	public String openMainContent() {
-		return "demo/shiro/mainContent";
+		return "demo/shiro/main-content";
 	}
 
 	@RequestMapping("/openIntro")
