@@ -4,6 +4,7 @@ $(function() {
 	window.addEventListener('popstate', function() {
 		history.pushState(null, null, document.URL);
 	});
+	$('#index-a1').click();
 });
 
 var loadimg = "./img/load2.gif"; // 加载时的loading图片 

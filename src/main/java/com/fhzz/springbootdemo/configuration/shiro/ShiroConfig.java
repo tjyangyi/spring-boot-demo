@@ -9,6 +9,8 @@ import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
@@ -17,11 +19,14 @@ import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
 
 @Configuration
 public class ShiroConfig {
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	// Filter工厂，设置对应的过滤条件和跳转条件
+	/**
+	 * Filter工厂，设置对应的过滤条件和跳转条件
+	 */
 	@Bean
 	public ShiroFilterFactoryBean shiroFilter(SecurityManager securityManager) {
-		System.out.println("ShiroConfiguration.shirFilter()");
+		logger.info("ShiroConfiguration.shirFilter()");
 		ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
 		shiroFilterFactoryBean.setSecurityManager(securityManager);
 		// 拦截器.
@@ -51,7 +56,6 @@ public class ShiroConfig {
 		shiroFilterFactoryBean.setLoginUrl("/login");
 		// 登录成功后要跳转的链接
 		shiroFilterFactoryBean.setSuccessUrl("demo/index/index");
-
 		// 未授权界面;
 		shiroFilterFactoryBean.setUnauthorizedUrl("/shiro/403");
 		shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
@@ -70,7 +74,9 @@ public class ShiroConfig {
 		return hashedCredentialsMatcher;
 	}
 
-	// 将自己的验证方式加入容器
+	/**
+	 * 将自己的验证方式加入容器
+	 */
 	@Bean
 	public MyShiroRealm myShiroRealm() {
 		MyShiroRealm myShiroRealm = new MyShiroRealm();
@@ -78,7 +84,9 @@ public class ShiroConfig {
 		return myShiroRealm;
 	}
 
-	// 权限管理，配置主要是Realm的管理认证
+	/**
+	 * 权限管理，配置主要是Realm的管理认证
+	 */
 	@Bean
 	public SecurityManager securityManager() {
 		DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
