@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class LoginController {
 	@RequestMapping({ "/", "/index" })
 	public String index() {
-		return "/demo/index/index";
+		return "demo/index/index";
 	}
 
 	@RequestMapping("/login")
