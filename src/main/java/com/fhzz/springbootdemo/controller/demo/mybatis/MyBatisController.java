@@ -36,10 +36,15 @@ public class MyBatisController {
 	public String openListExample(Model model) {
 		return "demo/mybatis/list-example";
 	}
-	
+
 	@RequestMapping("/openPagehelperExample")
 	public String openPagehelperExample(Model model) {
 		return "demo/mybatis/pagehelper-example";
+	}
+	
+	@RequestMapping("/openGeneratorIntro")
+	public String openGeneratorExample(Model model) {
+		return "demo/mybatis/generator-intro";
 	}
 
 	@RequestMapping("/queryList")
@@ -52,7 +57,7 @@ public class MyBatisController {
 		result.put("list", list);
 		return result;
 	}
-	
+
 	@RequestMapping("/queryPagedList")
 	@ResponseBody
 	public PageInfo<OracleDemoTable> queryPagedList(OracleDemoTable oracleDemoTable, int pageNum, int pageSize) {
@@ -62,4 +67,16 @@ public class MyBatisController {
 		PageInfo<OracleDemoTable> pageInfo = new PageInfo<OracleDemoTable>(list);
 		return pageInfo;
 	}
+
+	@RequestMapping("/queryByMybatisGenerator")
+	@ResponseBody
+	public Map<String, Object> queryByMybatisGenerator(OracleDemoTable oracleDemoTable) {
+		Map<String, Object> result = new HashMap<String, Object>();
+		List<com.fhzz.springbootdemo.entity.master.OracleDemoTable> list = myBatisService
+				.queryByMybatisGenerator(oracleDemoTable.getContent(), oracleDemoTable.getNum());
+		result.put("total", list.size());
+		result.put("list", list);
+		return result;
+	}
+
 }

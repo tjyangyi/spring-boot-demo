@@ -5,8 +5,8 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.fhzz.springbootdemo.dao.master.shiro.jpa.UserInfoDao;
-import com.fhzz.springbootdemo.entity.master.shiro.UserInfo;
+import com.fhzz.springbootdemo.dao.master.jpa.UserInfoDao;
+import com.fhzz.springbootdemo.entity.master.UserInfo;
 import com.fhzz.springbootdemo.service.shiro.UserInfoService;
 
 @Service

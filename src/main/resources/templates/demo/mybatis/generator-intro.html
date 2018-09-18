@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>MYBATIS代码自动生成</title>
+</head>
+<body>
+	<h3>介绍</h3>
+	<p>Mybatis属于半自动ORM，在使用这个框架中，工作量最大的就是书写Mapping的映射文件，由于手动书写很容易出错，我们可以利用Mybatis-Generator来帮我们自动生成文件。通过在Eclipse中集成mybatis-generater插件，自动生成Mybatis相关的model、dao、Mapping等文件，能够减少出错，减少开发工作量。</p>
+
+	<h3>说明</h3>
+	<p><strong>所有配置都是一次性的。当有新的表需要生成的时候，只用修改generatorConfig.xml最下面的table标签中的内容即可</strong></p>
+	<h3>注意</h3>
+	<p style="color:red;"><strong>这里需要注意，生成的代码会直接覆盖原有同名的文件，当有使用hibernate反向工程产生的实体类在entity包中，也会被覆盖，谨慎操作</strong></p>
+	
+	<h3>操作步骤</h3>
+	<h4>步骤一：在pom.xml中引入mybatis-generator</h3>
+	<pre class="has">
+<code class="language-html">
+&lt;dependency&gt;
+    &lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;
+    &lt;artifactId&gt;mybatis-generator-core&lt;/artifactId&gt;
+    &lt;version&gt;1.3.5&lt;/version&gt;
+&lt;/dependency&gt;
+</code>
+	</pre>
+	
+	<h4>步骤二:编写配置文件generatorConfig.xml,放入resources目录下的mybatis/generator中</h3>
+		<pre class="has">
+<code class="language-html">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd"&gt;
+&lt;generatorConfiguration&gt;
+	&lt;context id="oracleTables" targetRuntime="MyBatis3Simple"
+		defaultModelType="flat"&gt;
+		&lt;!-- 生成的pojo，将implements Serializable --&gt;
+		&lt;plugin type="org.mybatis.generator.plugins.SerializablePlugin"&gt;&lt;/plugin&gt;
+
+		&lt;commentGenerator&gt;
+			&lt;!-- 是否去除自动生成的注释 true：是 ： false:否 --&gt;
+			&lt;property name="suppressAllComments" value="true" /&gt;
+		&lt;/commentGenerator&gt;
+
+		&lt;!-- 配置数据源 --&gt;
+		&lt;jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
+			connectionURL="jdbc:oracle:thin:@10.1.111.135:1521:MEDB" userId="springboot"
+			password="123456"&gt;
+		&lt;/jdbcConnection&gt;
+
+		&lt;!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer true，把JDBC DECIMAL 和 
+			NUMERIC 类型解析为java.math.BigDecimal --&gt;
+		&lt;javaTypeResolver&gt;
+			&lt;property name="forceBigDecimals" value="false" /&gt;
+		&lt;/javaTypeResolver&gt;
+
+		&lt;!-- 生成model模型，对应的包路径，以及文件存放路径(targetProject)，targetProject可以指定具体的路径,如./src/main/java --&gt;
+		&lt;javaModelGenerator targetPackage="com.fhzz.springbootdemo.entity.master"
+			targetProject="./src/main/java"&gt;
+			&lt;property name="enableSubPackages" value="true" /&gt;
+			&lt;!-- 从数据库返回的值被清理前后的空格 --&gt;
+			&lt;property name="trimStrings" value="true" /&gt;
+		&lt;/javaModelGenerator&gt;
+
+		&lt;!--对应的mapper.xml文件 --&gt;
+		&lt;sqlMapGenerator targetPackage="mybatis.mapper.master"
+			targetProject="./src/main/resources"&gt;
+			&lt;property name="enableSubPackages" value="true" /&gt;
+		&lt;/sqlMapGenerator&gt;
+
+		&lt;!-- 对应的Mapper接口类文件 --&gt;
+		&lt;javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.fhzz.springbootdemo.dao.master" targetProject="./src/main/java"&gt;
+			&lt;property name="enableSubPackages" value="true" /&gt;
+		&lt;/javaClientGenerator&gt;
+
+		&lt;!-- 列出要生成代码的所有表 --&gt;
+		&lt;table tableName="ORACLE_DEMO_TABLE" domainObjectName="OracleDemoTable"&gt;
+			&lt;!-- &lt;property name="useActualColumnNames" value="false" /&gt; --&gt;
+		&lt;/table&gt;
+	&lt;/context&gt;
+&lt;/generatorConfiguration&gt;
+</code>
+	</pre>
+	<h4>步骤3：编写main方法，执行此方法就会自动生成相应代码</h3>
+	<pre class="has">
+<code class="language-html">
+public class GeneratorMain {
+	public static void main(String[] args) {
+		List<String> warnings = new ArrayList<String>();
+		boolean overwrite = true;
+		// 如果这里出现空指针，直接写绝对路径即可。
+		URL url = GeneratorMain.class.getResource("../../../../../mybatis/generator/generatorConfig.xml");
+		File configFile = new File(url.getFile());
+		ConfigurationParser cp = new ConfigurationParser(warnings);
+		Configuration config = null;
+		try {
+			config = cp.parseConfiguration(configFile);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (XMLParserException e) {
+			e.printStackTrace();
+		}
+		DefaultShellCallback callback = new DefaultShellCallback(overwrite);
+		MyBatisGenerator myBatisGenerator = null;
+		try {
+			myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
+		} catch (InvalidConfigurationException e) {
+			e.printStackTrace();
+		}
+		try {
+			myBatisGenerator.generate(null);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+}
+</code>
+	</pre>
+</body>
+</html>

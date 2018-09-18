@@ -34,10 +34,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  *
  */
 @Configuration
-@MapperScan(basePackages = "com.fhzz.springbootdemo.dao.slave1.*.mapper", sqlSessionTemplateRef = "slave1SqlSessionTemplate")
+@MapperScan(basePackages = "com.fhzz.springbootdemo.dao.slave1.mybatis", sqlSessionTemplateRef = "slave1SqlSessionTemplate")
 @EnableTransactionManagement
 @EnableJpaRepositories(entityManagerFactoryRef = "slave1EntityManagerFactory", transactionManagerRef = "savle1JPATransactionManager", basePackages = {
-		"com.fhzz.springbootdemo.dao.slave1.*.jpa" }) // 设置Repository所在位置
+		"com.fhzz.springbootdemo.dao.slave1.jpa" }) // 设置Repository所在位置
 public class DataSource2Config {
 	@Autowired
 	private DruidDataSourceBuilder druidDataSourceBuilder;
@@ -73,7 +73,7 @@ public class DataSource2Config {
 
 		bean.setDataSource(dataSource);
 		bean.setMapperLocations(
-				new PathMatchingResourcePatternResolver().getResources("classpath:mybatis/mapper/slave1/**/*.xml"));
+				new PathMatchingResourcePatternResolver().getResources("classpath:mybatis/mapper/slave1/*.xml"));
 		return bean.getObject();
 	}
 

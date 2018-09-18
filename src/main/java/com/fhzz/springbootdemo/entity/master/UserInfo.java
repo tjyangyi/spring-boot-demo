@@ -1,4 +1,4 @@
-package com.fhzz.springbootdemo.entity.master.shiro;
+package com.fhzz.springbootdemo.entity.master;
 
 import javax.persistence.*;
 import java.io.Serializable;

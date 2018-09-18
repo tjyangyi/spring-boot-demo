@@ -1,7 +1,7 @@
 package com.fhzz.springbootdemo.service.shiro;
 
 
-import com.fhzz.springbootdemo.entity.master.shiro.UserInfo;
+import com.fhzz.springbootdemo.entity.master.UserInfo;
 
 public interface UserInfoService {
 	/** 通过username查找用户信息; */

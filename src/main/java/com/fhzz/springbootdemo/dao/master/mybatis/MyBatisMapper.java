@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.fhzz.springbootdemo.dao.master.demo.mapper;
+package com.fhzz.springbootdemo.dao.master.mybatis;
 
 import java.util.List;
 

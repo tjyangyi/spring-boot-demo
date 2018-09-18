@@ -1,4 +1,4 @@
-package com.fhzz.springbootdemo.dao.master.demo.jpa;
+package com.fhzz.springbootdemo.dao.master.jpa;
 
 import java.util.List;
 
