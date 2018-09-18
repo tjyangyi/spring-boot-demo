@@ -15,6 +15,9 @@ spring:
       logSlowSql: true
   jpa:
     show-sql: true
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
       
 logging:
   level:

@@ -35,6 +35,7 @@
 				<p>
 					<strong>util：</strong>工具包
 				</p>
+				<p style="color:red;"><strong>controller和service根据业务进行二级包划分。dao和entity不根据二级包划分，dao和entity应当是与数据库紧密相关联的，并且高度复用，不应当指定其属于某一特定业务</strong>
 			</div>
 		</div>
 		<h2>resources目录</h2>
@@ -49,7 +50,7 @@
 				<img src="/images/demo/summary/4.png" />
 				<p>mybatis-config.xml：mybatis配置文件</p>
 				<p>mybatis-generator-config.xml：mybatis配置文件</p>
-				<p>一级目录：mapper存放sql映射xml文件，generator存放mybatis-generator自动生成代码的配置文件</p>
+				<p>一级目录：固定写法mapper</p>
 				<p>二级目录：区分不同的数据源（数据库)，例如master和slave1</p>
 				<p>
 					<strong>sql：</strong>sql脚本
