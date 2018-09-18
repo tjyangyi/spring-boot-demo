@@ -26,7 +26,7 @@ public class GeneratorMain {
 		List<String> warnings = new ArrayList<String>();
 		boolean overwrite = true;
 		// 如果这里出现空指针，直接写绝对路径即可。
-		URL url = GeneratorMain.class.getResource("../../../../../mybatis/generator/generatorConfig.xml");
+		URL url = GeneratorMain.class.getResource("../../../../../mybatis/mybatis-generator-config.xml");
 		File configFile = new File(url.getFile());
 		ConfigurationParser cp = new ConfigurationParser(warnings);
 		Configuration config = null;

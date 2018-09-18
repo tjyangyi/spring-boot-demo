@@ -6,6 +6,7 @@
 </head>
 <body>
 	<div class="container">
+		<h2>2018.9.18更新</h2>
 		<h2>java目录</h2>
 		<div class="row">
 			<div class="col-md-5">
@@ -23,13 +24,11 @@
 				</p>
 				<img src="/images/demo/summary/3.png" />
 				<p>dao下1级包：区分不同的数据源（数据库)，例如master和slave1</p>
-				<p>dao下2级包：功能模块名称，例如demo，shiro</p>
-				<p>dao下3级包：使用不同的dao层技术，jpa包即使用jpa的方式，mapper包即使用mybatis的方式。通常情况，增、删、改和简单的查询推荐使用JPA，复杂的查询推荐使用Mybatis</p>
+				<p>dao下2级包：使用不同的dao层技术，分为jpa包和mybaits包。针对同一个表，可使用二者之一或同时使用。<p>
 				<p>
 					<strong>entity：</strong>
 				</p>
 				<p>entity下1级包：区分不同的数据源（数据库)，例如master和slave1，与dao层中对应</p>
-				<p>entity下2级包：功能模块名称，与dao层中对应</p>
 				<p>
 					<strong>service：</strong>Service层，服务层，一般都是接口，在impl包下写实现类。
 				</p>
@@ -48,10 +47,10 @@
 					<strong>mybatis：</strong>mybatis的xml文件，包括配置和sql语句，详细如下图所示
 				</p>
 				<img src="/images/demo/summary/4.png" />
-				<p>mybatis-config.xml：配置文件</p>
-				<p>一级目录：mapper固定写法</p>
+				<p>mybatis-config.xml：mybatis配置文件</p>
+				<p>mybatis-generator-config.xml：mybatis配置文件</p>
+				<p>一级目录：mapper存放sql映射xml文件，generator存放mybatis-generator自动生成代码的配置文件</p>
 				<p>二级目录：区分不同的数据源（数据库)，例如master和slave1</p>
-				<p>三级目录：功能模块名称，例如demo，shiro</p>
 				<p>
 					<strong>sql：</strong>sql脚本
 				</p>
