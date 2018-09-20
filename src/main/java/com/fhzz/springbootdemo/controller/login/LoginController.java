@@ -20,6 +20,12 @@ import com.fhzz.springbootdemo.util.SystemStaticConst;
 public class LoginController {
 	@Autowired
 	private TUserService userSerivce;
+	
+	
+	@RequestMapping("/")
+	public String root(Model model) {
+		return "redirect:/attendance/index";
+	}
 
 	@RequestMapping("/login")
 	public String login(Model model) {

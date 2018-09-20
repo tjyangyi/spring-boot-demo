@@ -43,8 +43,8 @@ public class AttendanceServiceImpl implements AttendanceService {
 	public void init() throws FileNotFoundException {
 		ApplicationHome home = new ApplicationHome(getClass());
 		File jarFile = home.getSource();
-		uploadPath=	jarFile.getParentFile().toString();
-		
+		uploadPath = jarFile.getParentFile().toString();
+
 		uploadPath = uploadPath + "/uploadFile/";
 		System.out.println(uploadPath);
 		File dest = new File(uploadPath);
@@ -77,7 +77,12 @@ public class AttendanceServiceImpl implements AttendanceService {
 
 	@Override
 	public String getTitleTip(String year, String month) {
-		return attendanceJpa.findByYearAndMonth(year, month).getTitle();
+		TAttendance tAttendance = attendanceJpa.findByYearAndMonth(year, month);
+		if (tAttendance != null) {
+			return tAttendance.getTitle();
+		} else {
+			return "";
+		}
 	}
 
 	@Override
@@ -139,7 +144,7 @@ public class AttendanceServiceImpl implements AttendanceService {
 		FileInputStream excelFileInputStream = null;
 		FileOutputStream excelFileOutputStream = null;
 		try {
-			excelFileInputStream = new FileInputStream(uploadPath  + fileName);// 读取原excel
+			excelFileInputStream = new FileInputStream(uploadPath + fileName);// 读取原excel
 			excelFileOutputStream = new FileOutputStream(uploadPath + "新_" + fileName);// 写入新excel
 			workbook = new HSSFWorkbook(new POIFSFileSystem(excelFileInputStream));
 			HSSFSheet sheet = workbook.getSheetAt(workbook.getNumberOfSheets() - 1);// 获取最后一个sheet页

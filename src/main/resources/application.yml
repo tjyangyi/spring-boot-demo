@@ -1,4 +1,4 @@
 spring:
   profiles:
-    active: home
-    #active: fhzz
+    #active: home
+    active: fhzz

@@ -26,7 +26,6 @@ function initTitleTip() {
 			$('#titleTip').text(response);
 		}
 	});
-
 }
 
 function initTable() {
@@ -146,6 +145,7 @@ function doQuery() {
 	$("#table").bootstrapTable('refresh', {
 		url : "/attendance/queryAttendanceDetailsByYearMonth?year=" + year + '&month=' + month,
 	});
+	initTitleTip();
 }
 
 function modify(attendanceDetailId) {

@@ -378,3 +378,866 @@ org.springframework.security.web.firewall.RequestRejectedException: The request 
 2018-08-28 10:04:41.082  INFO 2244 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
 2018-08-28 10:04:41.082  INFO 2244 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
 2018-08-28 10:04:41.100  INFO 2244 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 18 ms
+2018-09-20 17:19:17.202  INFO 2176 --- [main] c.f.s.SpringBootDemoApplication          : Starting SpringBootDemoApplication on DELL-G3 with PID 2176 (D:\MyEclipseWorkspaces2017\spring-boot-demo\target\classes started by Administrator in D:\MyEclipseWorkspaces2017\spring-boot-demo)
+2018-09-20 17:19:17.205 DEBUG 2176 --- [main] c.f.s.SpringBootDemoApplication          : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-20 17:19:17.206  INFO 2176 --- [main] c.f.s.SpringBootDemoApplication          : The following profiles are active: fhzz
+2018-09-20 17:19:17.254  INFO 2176 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3c41ed1d: startup date [Thu Sep 20 17:19:17 CST 2018]; root of context hierarchy
+2018-09-20 17:19:17.916  INFO 2176 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'statFilter' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=druidConfiguration; factoryMethodName=statFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/fhzz/springbootdemo/configuration/druid/DruidConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration; factoryMethodName=statFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/stat/DruidFilterConfiguration.class]]
+2018-09-20 17:19:18.501  INFO 2176 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2f7d1d4e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-20 17:19:19.050  INFO 2176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-09-20 17:19:19.072  INFO 2176 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-09-20 17:19:19.072  INFO 2176 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-09-20 17:19:19.079  INFO 2176 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\TortoiseGit\bin;D:\Java\jdk1.8\bin;D:\Java\jdk1.8\jre\bin;D:\apache-maven-3.5.2\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;;.]
+2018-09-20 17:19:19.172  INFO 2176 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-09-20 17:19:19.172  INFO 2176 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1918 ms
+2018-09-20 17:19:19.506  WARN 2176 --- [localhost-startStop-1] c.a.druid.pool.DruidAbstractDataSource   : oracle.jdbc.driver.OracleDriver is deprecated.Having use oracle.jdbc.OracleDriver.
+2018-09-20 17:19:19.872  INFO 2176 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-20 17:19:19.872  INFO 2176 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2018-09-20 17:19:19.872  INFO 2176 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-20 17:19:19.872  INFO 2176 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-20 17:19:19.872  INFO 2176 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-20 17:19:19.873  INFO 2176 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-09-20 17:19:19.873  INFO 2176 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2018-09-20 17:19:19.873  INFO 2176 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2018-09-20 17:19:19.873  INFO 2176 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet statViewServlet mapped to [/druid/*]
+2018-09-20 17:19:19.874  INFO 2176 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-09-20 17:19:19.874  INFO 2176 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet statViewServlet mapped to [/druid/*]
+2018-09-20 17:19:19.874  INFO 2176 --- [localhost-startStop-1] o.s.boot.web.servlet.RegistrationBean    : Servlet statViewServlet was not registered (possibly already registered?)
+2018-09-20 17:19:20.464  INFO 2176 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2018-09-20 17:19:20.490  INFO 2176 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'masterPersistenceUnit'
+2018-09-20 17:19:20.504  INFO 2176 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: masterPersistenceUnit
+	...]
+2018-09-20 17:19:20.562  INFO 2176 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.17.Final}
+2018-09-20 17:19:20.563  INFO 2176 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-09-20 17:19:20.595  INFO 2176 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-09-20 17:19:20.713  INFO 2176 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2018-09-20 17:19:20.770  INFO 2176 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [byte[]] overrides previous : org.hibernate.type.BinaryType@f438904
+2018-09-20 17:19:20.770  INFO 2176 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [[B] overrides previous : org.hibernate.type.BinaryType@f438904
+2018-09-20 17:19:20.770  INFO 2176 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [Byte[]] overrides previous : org.hibernate.type.WrapperBinaryType@3135bf25
+2018-09-20 17:19:20.770  INFO 2176 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [[Ljava.lang.Byte;] overrides previous : org.hibernate.type.WrapperBinaryType@3135bf25
+2018-09-20 17:19:20.916  WARN 2176 --- [main] org.hibernate.id.UUIDHexGenerator        : HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+2018-09-20 17:19:21.400  INFO 2176 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'masterPersistenceUnit'
+2018-09-20 17:19:21.414  INFO 2176 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'slave1PersistenceUnit'
+2018-09-20 17:19:21.414  INFO 2176 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: slave1PersistenceUnit
+	...]
+2018-09-20 17:19:21.832  INFO 2176 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} inited
+2018-09-20 17:19:21.832  INFO 2176 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2018-09-20 17:19:21.857  INFO 2176 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [byte[]] overrides previous : org.hibernate.type.BinaryType@f438904
+2018-09-20 17:19:21.857  INFO 2176 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [[B] overrides previous : org.hibernate.type.BinaryType@f438904
+2018-09-20 17:19:21.857  INFO 2176 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [Byte[]] overrides previous : org.hibernate.type.WrapperBinaryType@3135bf25
+2018-09-20 17:19:21.857  INFO 2176 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [[Ljava.lang.Byte;] overrides previous : org.hibernate.type.WrapperBinaryType@3135bf25
+2018-09-20 17:19:21.871  INFO 2176 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'slave1PersistenceUnit'
+2018-09-20 17:19:22.691  INFO 2176 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-20 17:19:22.827  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3c41ed1d: startup date [Thu Sep 20 17:19:17 CST 2018]; root of context hierarchy
+2018-09-20 17:19:22.862  WARN 2176 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-09-20 17:19:22.889  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/index]}" onto public java.lang.String com.fhzz.springbootdemo.controller.attendance.AttendanceController.index(org.springframework.ui.Model)
+2018-09-20 17:19:22.890  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/queryAttendanceDetails]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.attendance.AttendanceController.queryAttendanceDetails(java.lang.String)
+2018-09-20 17:19:22.890  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/openAttendanceDetails]}" onto public java.lang.String com.fhzz.springbootdemo.controller.attendance.AttendanceController.openAttendanceDetails(org.springframework.ui.Model,java.lang.String)
+2018-09-20 17:19:22.890  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/queryAttendanceList]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.attendance.AttendanceController.queryAttendanceList()
+2018-09-20 17:19:22.891  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/modifyAttendanceDetails]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.attendance.AttendanceController.modifyAttendanceDetails(com.fhzz.springbootdemo.entity.master.attendance.TAttendanceDetail,javax.servlet.http.HttpServletRequest)
+2018-09-20 17:19:22.891  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/openModifyAttendanceDetails]}" onto public java.lang.String com.fhzz.springbootdemo.controller.attendance.AttendanceController.openModifyAttendanceDetails(org.springframework.ui.Model,java.lang.String)
+2018-09-20 17:19:22.891  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/queryAttendanceDetailsByYearMonth]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.attendance.AttendanceController.queryAttendanceDetailsByYearMonth(java.lang.String,java.lang.String,java.lang.String)
+2018-09-20 17:19:22.891  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/download]}" onto public void com.fhzz.springbootdemo.controller.attendance.AttendanceController.Download(java.lang.String,javax.servlet.http.HttpServletResponse) throws java.io.UnsupportedEncodingException
+2018-09-20 17:19:22.891  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/getTitleTip]}" onto public java.lang.String com.fhzz.springbootdemo.controller.attendance.AttendanceController.getTitleTip(java.lang.String,java.lang.String)
+2018-09-20 17:19:22.891  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/fileUpload]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.attendance.AttendanceController.fileUpload(org.springframework.web.multipart.MultipartFile,java.lang.String,java.lang.String)
+2018-09-20 17:19:22.892  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/bootstrap/bootstrapDemo]}" onto public java.lang.String com.fhzz.springbootdemo.controller.demo.bootstratp.BootstrapController.index(org.springframework.ui.Model)
+2018-09-20 17:19:22.893  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/druid/getAllByMasterJpa]}" onto public java.util.List<com.fhzz.springbootdemo.entity.master.OracleDemoTable> com.fhzz.springbootdemo.controller.demo.druid.DruidRestController.getAllByMasterJpa()
+2018-09-20 17:19:22.893  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/druid/getAllByMasterMybatis]}" onto public java.util.List<com.fhzz.springbootdemo.entity.master.OracleDemoTable> com.fhzz.springbootdemo.controller.demo.druid.DruidRestController.getAllByMasterMybatis()
+2018-09-20 17:19:22.893  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/druid/getAllBySlave1Jpa]}" onto public java.util.List<com.fhzz.springbootdemo.entity.slave1.MysqlDemoTable> com.fhzz.springbootdemo.controller.demo.druid.DruidRestController.getAllBySlave1Jpa()
+2018-09-20 17:19:22.893  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/druid/getAllBySlave1Mybatis]}" onto public java.util.List<com.fhzz.springbootdemo.entity.slave1.MysqlDemoTable> com.fhzz.springbootdemo.controller.demo.druid.DruidRestController.getAllBySlave1Mybatis()
+2018-09-20 17:19:22.895  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/index/index]}" onto public java.lang.String com.fhzz.springbootdemo.controller.demo.index.IndexController.index(org.springframework.ui.Model)
+2018-09-20 17:19:22.896  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/openList]}" onto public java.lang.String com.fhzz.springbootdemo.controller.demo.jpa.JpaController.list(org.springframework.ui.Model)
+2018-09-20 17:19:22.896  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/toAdd]}" onto public java.lang.String com.fhzz.springbootdemo.controller.demo.jpa.JpaController.toAdd()
+2018-09-20 17:19:22.896  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/toEdit]}" onto public java.lang.String com.fhzz.springbootdemo.controller.demo.jpa.JpaController.toEdit(org.springframework.ui.Model,java.lang.String)
+2018-09-20 17:19:22.897  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/delete]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.demo.jpa.JpaRestController.delete(java.lang.String)
+2018-09-20 17:19:22.897  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/queryList]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.demo.jpa.JpaRestController.list(com.fhzz.springbootdemo.entity.master.OracleDemoTable)
+2018-09-20 17:19:22.897  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/add]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.demo.jpa.JpaRestController.save(com.fhzz.springbootdemo.entity.master.OracleDemoTable) throws java.lang.Exception
+2018-09-20 17:19:22.897  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/edit]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.demo.jpa.JpaRestController.edit(com.fhzz.springbootdemo.entity.master.OracleDemoTable)
+2018-09-20 17:19:22.897  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/openModifyPassword]}" onto public java.lang.String com.fhzz.springbootdemo.controller.login.LoginController.openModifyPassword(org.springframework.ui.Model)
+2018-09-20 17:19:22.897  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login]}" onto public java.lang.String com.fhzz.springbootdemo.controller.login.LoginController.login(org.springframework.ui.Model)
+2018-09-20 17:19:22.898  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/modifyPassword]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.login.LoginController.modifyPassword(java.lang.String,java.lang.String)
+2018-09-20 17:19:22.899  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-09-20 17:19:22.899  INFO 2176 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-20 17:19:22.920  INFO 2176 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-20 17:19:22.920  INFO 2176 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-20 17:19:22.980  WARN 2176 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2018-09-20 17:19:23.451  INFO 2176 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/jquery/**'], []
+2018-09-20 17:19:23.451  INFO 2176 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/bootstrap/**'], []
+2018-09-20 17:19:23.451  INFO 2176 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/js/**'], []
+2018-09-20 17:19:23.451  INFO 2176 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/css/**'], []
+2018-09-20 17:19:23.451  INFO 2176 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/download/**'], []
+2018-09-20 17:19:23.507  INFO 2176 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4ca5cb99, org.springframework.security.web.context.SecurityContextPersistenceFilter@62054faf, org.springframework.security.web.header.HeaderWriterFilter@4272d8cf, org.springframework.security.web.authentication.logout.LogoutFilter@6cde0c69, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@474ce6b8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@20f63ddc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1efcba00, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7853363c, org.springframework.security.web.session.SessionManagementFilter@70ecf57b, org.springframework.security.web.access.ExceptionTranslationFilter@39afe59f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@54d60fa1]
+2018-09-20 17:19:23.541  INFO 2176 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2018-09-20 17:19:23.549  INFO 2176 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-09-20 17:19:23.549  INFO 2176 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-09-20 17:19:23.549  INFO 2176 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-20 17:19:23.594  INFO 2176 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-09-20 17:19:23.595  INFO 2176 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'masterDataSource' has been autodetected for JMX exposure
+2018-09-20 17:19:23.595  INFO 2176 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'slave1DataSource' has been autodetected for JMX exposure
+2018-09-20 17:19:23.595  INFO 2176 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
+2018-09-20 17:19:23.600  INFO 2176 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'masterDataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=masterDataSource,type=DruidDataSource]
+2018-09-20 17:19:23.601  INFO 2176 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'slave1DataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=slave1DataSource,type=DruidDataSource]
+2018-09-20 17:19:23.602  INFO 2176 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2018-09-20 17:19:23.630  INFO 2176 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-09-20 17:19:23.632  INFO 2176 --- [main] c.f.s.SpringBootDemoApplication          : Started SpringBootDemoApplication in 6.958 seconds (JVM running for 7.268)
+2018-09-20 17:19:30.279  INFO 2176 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-09-20 17:19:30.279  INFO 2176 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-09-20 17:19:30.297  INFO 2176 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 18 ms
+2018-09-20 17:19:35.264 DEBUG 2176 --- [http-nio-8080-exec-9] c.f.s.d.m.s.m.T.findByUsername           : ==>  Preparing: SELECT ID, USERNAME, PASSWORD, REALNAME FROM T_USER WHERE USERNAME = ? 
+2018-09-20 17:19:35.349 DEBUG 2176 --- [http-nio-8080-exec-9] c.f.s.d.m.s.m.T.findByUsername           : ==> Parameters: 1510001135(String)
+2018-09-20 17:19:35.386 DEBUG 2176 --- [http-nio-8080-exec-9] c.f.s.d.m.s.m.T.findByUsername           : <==      Total: 1
+2018-09-20 17:20:27.705  INFO 14888 --- [main] c.f.s.SpringBootDemoApplication          : Starting SpringBootDemoApplication on DELL-G3 with PID 14888 (D:\MyEclipseWorkspaces2017\spring-boot-demo\target\classes started by Administrator in D:\MyEclipseWorkspaces2017\spring-boot-demo)
+2018-09-20 17:20:27.709 DEBUG 14888 --- [main] c.f.s.SpringBootDemoApplication          : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-20 17:20:27.710  INFO 14888 --- [main] c.f.s.SpringBootDemoApplication          : The following profiles are active: fhzz
+2018-09-20 17:20:27.739  INFO 14888 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3b69e7d1: startup date [Thu Sep 20 17:20:27 CST 2018]; root of context hierarchy
+2018-09-20 17:20:28.331  INFO 14888 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'statFilter' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=druidConfiguration; factoryMethodName=statFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/fhzz/springbootdemo/configuration/druid/DruidConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration; factoryMethodName=statFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/stat/DruidFilterConfiguration.class]]
+2018-09-20 17:20:28.821  INFO 14888 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$df5d02a8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-20 17:20:29.331  INFO 14888 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-09-20 17:20:29.350  INFO 14888 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-09-20 17:20:29.350  INFO 14888 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-09-20 17:20:29.357  INFO 14888 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\TortoiseGit\bin;D:\Java\jdk1.8\bin;D:\Java\jdk1.8\jre\bin;D:\apache-maven-3.5.2\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;;.]
+2018-09-20 17:20:29.445  INFO 14888 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-09-20 17:20:29.445  INFO 14888 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1706 ms
+2018-09-20 17:20:29.769  WARN 14888 --- [localhost-startStop-1] c.a.druid.pool.DruidAbstractDataSource   : oracle.jdbc.driver.OracleDriver is deprecated.Having use oracle.jdbc.OracleDriver.
+2018-09-20 17:20:30.140  INFO 14888 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-20 17:20:30.140  INFO 14888 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2018-09-20 17:20:30.141  INFO 14888 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-20 17:20:30.142  INFO 14888 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-20 17:20:30.142  INFO 14888 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-20 17:20:30.142  INFO 14888 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-09-20 17:20:30.142  INFO 14888 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2018-09-20 17:20:30.142  INFO 14888 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2018-09-20 17:20:30.142  INFO 14888 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet statViewServlet mapped to [/druid/*]
+2018-09-20 17:20:30.143  INFO 14888 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-09-20 17:20:30.143  INFO 14888 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet statViewServlet mapped to [/druid/*]
+2018-09-20 17:20:30.143  INFO 14888 --- [localhost-startStop-1] o.s.boot.web.servlet.RegistrationBean    : Servlet statViewServlet was not registered (possibly already registered?)
+2018-09-20 17:20:30.913  INFO 14888 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2018-09-20 17:20:30.939  INFO 14888 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'masterPersistenceUnit'
+2018-09-20 17:20:30.953  INFO 14888 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: masterPersistenceUnit
+	...]
+2018-09-20 17:20:31.007  INFO 14888 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.17.Final}
+2018-09-20 17:20:31.008  INFO 14888 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-09-20 17:20:31.046  INFO 14888 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-09-20 17:20:31.172  INFO 14888 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2018-09-20 17:20:31.220  INFO 14888 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [byte[]] overrides previous : org.hibernate.type.BinaryType@22ad1bae
+2018-09-20 17:20:31.220  INFO 14888 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [[B] overrides previous : org.hibernate.type.BinaryType@22ad1bae
+2018-09-20 17:20:31.220  INFO 14888 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [Byte[]] overrides previous : org.hibernate.type.WrapperBinaryType@45900b64
+2018-09-20 17:20:31.221  INFO 14888 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [[Ljava.lang.Byte;] overrides previous : org.hibernate.type.WrapperBinaryType@45900b64
+2018-09-20 17:20:31.322  WARN 14888 --- [main] org.hibernate.id.UUIDHexGenerator        : HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+2018-09-20 17:20:31.584  INFO 14888 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'masterPersistenceUnit'
+2018-09-20 17:20:31.590  INFO 14888 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'slave1PersistenceUnit'
+2018-09-20 17:20:31.591  INFO 14888 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: slave1PersistenceUnit
+	...]
+2018-09-20 17:20:31.853  INFO 14888 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} inited
+2018-09-20 17:20:31.853  INFO 14888 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2018-09-20 17:20:31.986  INFO 14888 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [byte[]] overrides previous : org.hibernate.type.BinaryType@22ad1bae
+2018-09-20 17:20:31.988  INFO 14888 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [[B] overrides previous : org.hibernate.type.BinaryType@22ad1bae
+2018-09-20 17:20:31.988  INFO 14888 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [Byte[]] overrides previous : org.hibernate.type.WrapperBinaryType@45900b64
+2018-09-20 17:20:31.988  INFO 14888 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [[Ljava.lang.Byte;] overrides previous : org.hibernate.type.WrapperBinaryType@45900b64
+2018-09-20 17:20:32.002  INFO 14888 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'slave1PersistenceUnit'
+2018-09-20 17:20:32.799  INFO 14888 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-20 17:20:32.975  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3b69e7d1: startup date [Thu Sep 20 17:20:27 CST 2018]; root of context hierarchy
+2018-09-20 17:20:33.016  WARN 14888 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-09-20 17:20:33.047  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/index]}" onto public java.lang.String com.fhzz.springbootdemo.controller.attendance.AttendanceController.index(org.springframework.ui.Model)
+2018-09-20 17:20:33.049  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/queryAttendanceList]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.attendance.AttendanceController.queryAttendanceList()
+2018-09-20 17:20:33.049  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/queryAttendanceDetails]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.attendance.AttendanceController.queryAttendanceDetails(java.lang.String)
+2018-09-20 17:20:33.049  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/openModifyAttendanceDetails]}" onto public java.lang.String com.fhzz.springbootdemo.controller.attendance.AttendanceController.openModifyAttendanceDetails(org.springframework.ui.Model,java.lang.String)
+2018-09-20 17:20:33.049  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/openAttendanceDetails]}" onto public java.lang.String com.fhzz.springbootdemo.controller.attendance.AttendanceController.openAttendanceDetails(org.springframework.ui.Model,java.lang.String)
+2018-09-20 17:20:33.050  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/modifyAttendanceDetails]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.attendance.AttendanceController.modifyAttendanceDetails(com.fhzz.springbootdemo.entity.master.attendance.TAttendanceDetail,javax.servlet.http.HttpServletRequest)
+2018-09-20 17:20:33.050  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/queryAttendanceDetailsByYearMonth]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.attendance.AttendanceController.queryAttendanceDetailsByYearMonth(java.lang.String,java.lang.String,java.lang.String)
+2018-09-20 17:20:33.051  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/download]}" onto public void com.fhzz.springbootdemo.controller.attendance.AttendanceController.Download(java.lang.String,javax.servlet.http.HttpServletResponse) throws java.io.UnsupportedEncodingException
+2018-09-20 17:20:33.051  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/getTitleTip]}" onto public java.lang.String com.fhzz.springbootdemo.controller.attendance.AttendanceController.getTitleTip(java.lang.String,java.lang.String)
+2018-09-20 17:20:33.051  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/fileUpload]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.attendance.AttendanceController.fileUpload(org.springframework.web.multipart.MultipartFile,java.lang.String,java.lang.String)
+2018-09-20 17:20:33.052  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/bootstrap/bootstrapDemo]}" onto public java.lang.String com.fhzz.springbootdemo.controller.demo.bootstratp.BootstrapController.index(org.springframework.ui.Model)
+2018-09-20 17:20:33.052  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/druid/getAllByMasterJpa]}" onto public java.util.List<com.fhzz.springbootdemo.entity.master.OracleDemoTable> com.fhzz.springbootdemo.controller.demo.druid.DruidRestController.getAllByMasterJpa()
+2018-09-20 17:20:33.053  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/druid/getAllByMasterMybatis]}" onto public java.util.List<com.fhzz.springbootdemo.entity.master.OracleDemoTable> com.fhzz.springbootdemo.controller.demo.druid.DruidRestController.getAllByMasterMybatis()
+2018-09-20 17:20:33.053  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/druid/getAllBySlave1Jpa]}" onto public java.util.List<com.fhzz.springbootdemo.entity.slave1.MysqlDemoTable> com.fhzz.springbootdemo.controller.demo.druid.DruidRestController.getAllBySlave1Jpa()
+2018-09-20 17:20:33.054  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/druid/getAllBySlave1Mybatis]}" onto public java.util.List<com.fhzz.springbootdemo.entity.slave1.MysqlDemoTable> com.fhzz.springbootdemo.controller.demo.druid.DruidRestController.getAllBySlave1Mybatis()
+2018-09-20 17:20:33.056  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/index/index]}" onto public java.lang.String com.fhzz.springbootdemo.controller.demo.index.IndexController.index(org.springframework.ui.Model)
+2018-09-20 17:20:33.057  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/openList]}" onto public java.lang.String com.fhzz.springbootdemo.controller.demo.jpa.JpaController.list(org.springframework.ui.Model)
+2018-09-20 17:20:33.058  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/toAdd]}" onto public java.lang.String com.fhzz.springbootdemo.controller.demo.jpa.JpaController.toAdd()
+2018-09-20 17:20:33.058  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/toEdit]}" onto public java.lang.String com.fhzz.springbootdemo.controller.demo.jpa.JpaController.toEdit(org.springframework.ui.Model,java.lang.String)
+2018-09-20 17:20:33.059  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/delete]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.demo.jpa.JpaRestController.delete(java.lang.String)
+2018-09-20 17:20:33.059  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/queryList]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.demo.jpa.JpaRestController.list(com.fhzz.springbootdemo.entity.master.OracleDemoTable)
+2018-09-20 17:20:33.059  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/add]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.demo.jpa.JpaRestController.save(com.fhzz.springbootdemo.entity.master.OracleDemoTable) throws java.lang.Exception
+2018-09-20 17:20:33.060  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/edit]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.demo.jpa.JpaRestController.edit(com.fhzz.springbootdemo.entity.master.OracleDemoTable)
+2018-09-20 17:20:33.060  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto public java.lang.String com.fhzz.springbootdemo.controller.login.LoginController.root(org.springframework.ui.Model)
+2018-09-20 17:20:33.061  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/openModifyPassword]}" onto public java.lang.String com.fhzz.springbootdemo.controller.login.LoginController.openModifyPassword(org.springframework.ui.Model)
+2018-09-20 17:20:33.061  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login]}" onto public java.lang.String com.fhzz.springbootdemo.controller.login.LoginController.login(org.springframework.ui.Model)
+2018-09-20 17:20:33.061  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/modifyPassword]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.login.LoginController.modifyPassword(java.lang.String,java.lang.String)
+2018-09-20 17:20:33.065  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-09-20 17:20:33.066  INFO 14888 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-20 17:20:33.095  INFO 14888 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-20 17:20:33.096  INFO 14888 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-20 17:20:33.147  WARN 14888 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2018-09-20 17:20:33.555  INFO 14888 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/jquery/**'], []
+2018-09-20 17:20:33.555  INFO 14888 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/bootstrap/**'], []
+2018-09-20 17:20:33.555  INFO 14888 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/js/**'], []
+2018-09-20 17:20:33.555  INFO 14888 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/css/**'], []
+2018-09-20 17:20:33.555  INFO 14888 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/download/**'], []
+2018-09-20 17:20:33.612  INFO 14888 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@70169464, org.springframework.security.web.context.SecurityContextPersistenceFilter@69bc4024, org.springframework.security.web.header.HeaderWriterFilter@1a336906, org.springframework.security.web.authentication.logout.LogoutFilter@32a4ea4e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@31082efa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@24f177f5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@77ce8bc5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1115be8c, org.springframework.security.web.session.SessionManagementFilter@75d539b9, org.springframework.security.web.access.ExceptionTranslationFilter@4272d8cf, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@99c3cee]
+2018-09-20 17:20:33.650  INFO 14888 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2018-09-20 17:20:33.657  INFO 14888 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-09-20 17:20:33.657  INFO 14888 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-09-20 17:20:33.658  INFO 14888 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-20 17:20:33.716  INFO 14888 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-09-20 17:20:33.717  INFO 14888 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'masterDataSource' has been autodetected for JMX exposure
+2018-09-20 17:20:33.717  INFO 14888 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'slave1DataSource' has been autodetected for JMX exposure
+2018-09-20 17:20:33.717  INFO 14888 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
+2018-09-20 17:20:33.721  INFO 14888 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'masterDataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=masterDataSource,type=DruidDataSource]
+2018-09-20 17:20:33.722  INFO 14888 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'slave1DataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=slave1DataSource,type=DruidDataSource]
+2018-09-20 17:20:33.723  INFO 14888 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2018-09-20 17:20:33.750  INFO 14888 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-09-20 17:20:33.752  INFO 14888 --- [main] c.f.s.SpringBootDemoApplication          : Started SpringBootDemoApplication in 6.337 seconds (JVM running for 6.689)
+2018-09-20 17:21:32.951  INFO 14888 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-09-20 17:21:32.952  INFO 14888 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-09-20 17:21:32.979  INFO 14888 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 27 ms
+2018-09-20 17:21:37.456 DEBUG 14888 --- [http-nio-8080-exec-9] c.f.s.d.m.s.m.T.findByUsername           : ==>  Preparing: SELECT ID, USERNAME, PASSWORD, REALNAME FROM T_USER WHERE USERNAME = ? 
+2018-09-20 17:21:37.531 DEBUG 14888 --- [http-nio-8080-exec-9] c.f.s.d.m.s.m.T.findByUsername           : ==> Parameters: 1510001135(String)
+2018-09-20 17:21:37.550 DEBUG 14888 --- [http-nio-8080-exec-9] c.f.s.d.m.s.m.T.findByUsername           : <==      Total: 1
+2018-09-20 17:21:37.632 ERROR 14888 --- [http-nio-8080-exec-7] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-7] Exception processing template "attendance/index": Error resolving template "attendance/index", template might not exist or might not be accessible by any of the configured Template Resolvers
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template "attendance/index", template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:870) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) [thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) [thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:354) [thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:187) [thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1325) [spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1069) [spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1008) [spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) [spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) [spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866) [spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) [spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123) [druid-1.1.10.jar:1.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90) [spring-boot-actuator-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) [spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:155) [spring-boot-actuator-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:123) [spring-boot-actuator-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108) [spring-boot-actuator-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:800) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1471) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_31]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_31]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+
+2018-09-20 17:21:37.635 ERROR 14888 --- [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template "attendance/index", template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template "attendance/index", template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:870) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072) ~[thymeleaf-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:354) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:187) ~[thymeleaf-spring5-3.0.9.RELEASE.jar:3.0.9.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1325) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1069) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1008) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:866) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123) ~[druid-1.1.10.jar:1.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90) ~[spring-boot-actuator-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:155) ~[spring-boot-actuator-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:123) ~[spring-boot-actuator-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108) ~[spring-boot-actuator-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:800) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1471) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_31]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_31]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+
+2018-09-20 17:23:30.347  INFO 268 --- [main] c.f.s.SpringBootDemoApplication          : Starting SpringBootDemoApplication on DELL-G3 with PID 268 (D:\MyEclipseWorkspaces2017\spring-boot-demo\target\classes started by Administrator in D:\MyEclipseWorkspaces2017\spring-boot-demo)
+2018-09-20 17:23:30.349 DEBUG 268 --- [main] c.f.s.SpringBootDemoApplication          : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-20 17:23:30.350  INFO 268 --- [main] c.f.s.SpringBootDemoApplication          : The following profiles are active: fhzz
+2018-09-20 17:23:30.379  INFO 268 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@815b41f: startup date [Thu Sep 20 17:23:30 CST 2018]; root of context hierarchy
+2018-09-20 17:23:31.161  INFO 268 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'statFilter' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=druidConfiguration; factoryMethodName=statFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/fhzz/springbootdemo/configuration/druid/DruidConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration; factoryMethodName=statFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/stat/DruidFilterConfiguration.class]]
+2018-09-20 17:23:31.650  INFO 268 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1431c27c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-20 17:23:32.170  INFO 268 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-09-20 17:23:32.198  INFO 268 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-09-20 17:23:32.198  INFO 268 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-09-20 17:23:32.205  INFO 268 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\TortoiseGit\bin;D:\Java\jdk1.8\bin;D:\Java\jdk1.8\jre\bin;D:\apache-maven-3.5.2\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;;.]
+2018-09-20 17:23:32.316  INFO 268 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-09-20 17:23:32.317  INFO 268 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1938 ms
+2018-09-20 17:23:32.664  WARN 268 --- [localhost-startStop-1] c.a.druid.pool.DruidAbstractDataSource   : oracle.jdbc.driver.OracleDriver is deprecated.Having use oracle.jdbc.OracleDriver.
+2018-09-20 17:23:33.235  INFO 268 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-20 17:23:33.236  INFO 268 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2018-09-20 17:23:33.237  INFO 268 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-20 17:23:33.237  INFO 268 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-20 17:23:33.237  INFO 268 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-20 17:23:33.237  INFO 268 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-09-20 17:23:33.237  INFO 268 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2018-09-20 17:23:33.237  INFO 268 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2018-09-20 17:23:33.238  INFO 268 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet statViewServlet mapped to [/druid/*]
+2018-09-20 17:23:33.239  INFO 268 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-09-20 17:23:33.240  INFO 268 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet statViewServlet mapped to [/druid/*]
+2018-09-20 17:23:33.240  INFO 268 --- [localhost-startStop-1] o.s.boot.web.servlet.RegistrationBean    : Servlet statViewServlet was not registered (possibly already registered?)
+2018-09-20 17:23:33.819  INFO 268 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2018-09-20 17:23:33.845  INFO 268 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'masterPersistenceUnit'
+2018-09-20 17:23:33.858  INFO 268 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: masterPersistenceUnit
+	...]
+2018-09-20 17:23:33.959  INFO 268 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.17.Final}
+2018-09-20 17:23:33.960  INFO 268 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-09-20 17:23:33.990  INFO 268 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-09-20 17:23:34.098  INFO 268 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2018-09-20 17:23:34.159  INFO 268 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [byte[]] overrides previous : org.hibernate.type.BinaryType@4116f66a
+2018-09-20 17:23:34.159  INFO 268 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [[B] overrides previous : org.hibernate.type.BinaryType@4116f66a
+2018-09-20 17:23:34.160  INFO 268 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [Byte[]] overrides previous : org.hibernate.type.WrapperBinaryType@f2a1813
+2018-09-20 17:23:34.160  INFO 268 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [[Ljava.lang.Byte;] overrides previous : org.hibernate.type.WrapperBinaryType@f2a1813
+2018-09-20 17:23:34.263  WARN 268 --- [main] org.hibernate.id.UUIDHexGenerator        : HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+2018-09-20 17:23:34.623  INFO 268 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'masterPersistenceUnit'
+2018-09-20 17:23:34.630  INFO 268 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'slave1PersistenceUnit'
+2018-09-20 17:23:34.630  INFO 268 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: slave1PersistenceUnit
+	...]
+2018-09-20 17:23:34.881  INFO 268 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} inited
+2018-09-20 17:23:34.882  INFO 268 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2018-09-20 17:23:35.030  INFO 268 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [byte[]] overrides previous : org.hibernate.type.BinaryType@4116f66a
+2018-09-20 17:23:35.030  INFO 268 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [[B] overrides previous : org.hibernate.type.BinaryType@4116f66a
+2018-09-20 17:23:35.030  INFO 268 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [Byte[]] overrides previous : org.hibernate.type.WrapperBinaryType@f2a1813
+2018-09-20 17:23:35.031  INFO 268 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [[Ljava.lang.Byte;] overrides previous : org.hibernate.type.WrapperBinaryType@f2a1813
+2018-09-20 17:23:35.044  INFO 268 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'slave1PersistenceUnit'
+2018-09-20 17:23:35.811  INFO 268 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-20 17:23:35.947  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@815b41f: startup date [Thu Sep 20 17:23:30 CST 2018]; root of context hierarchy
+2018-09-20 17:23:35.992  WARN 268 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-09-20 17:23:36.016  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/index]}" onto public java.lang.String com.fhzz.springbootdemo.controller.attendance.AttendanceController.index(org.springframework.ui.Model)
+2018-09-20 17:23:36.017  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/queryAttendanceDetailsByYearMonth]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.attendance.AttendanceController.queryAttendanceDetailsByYearMonth(java.lang.String,java.lang.String,java.lang.String)
+2018-09-20 17:23:36.017  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/openAttendanceDetails]}" onto public java.lang.String com.fhzz.springbootdemo.controller.attendance.AttendanceController.openAttendanceDetails(org.springframework.ui.Model,java.lang.String)
+2018-09-20 17:23:36.017  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/openModifyAttendanceDetails]}" onto public java.lang.String com.fhzz.springbootdemo.controller.attendance.AttendanceController.openModifyAttendanceDetails(org.springframework.ui.Model,java.lang.String)
+2018-09-20 17:23:36.018  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/queryAttendanceList]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.attendance.AttendanceController.queryAttendanceList()
+2018-09-20 17:23:36.018  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/modifyAttendanceDetails]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.attendance.AttendanceController.modifyAttendanceDetails(com.fhzz.springbootdemo.entity.master.attendance.TAttendanceDetail,javax.servlet.http.HttpServletRequest)
+2018-09-20 17:23:36.018  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/queryAttendanceDetails]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.attendance.AttendanceController.queryAttendanceDetails(java.lang.String)
+2018-09-20 17:23:36.018  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/fileUpload]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.attendance.AttendanceController.fileUpload(org.springframework.web.multipart.MultipartFile,java.lang.String,java.lang.String)
+2018-09-20 17:23:36.018  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/download]}" onto public void com.fhzz.springbootdemo.controller.attendance.AttendanceController.Download(java.lang.String,javax.servlet.http.HttpServletResponse) throws java.io.UnsupportedEncodingException
+2018-09-20 17:23:36.018  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/getTitleTip]}" onto public java.lang.String com.fhzz.springbootdemo.controller.attendance.AttendanceController.getTitleTip(java.lang.String,java.lang.String)
+2018-09-20 17:23:36.019  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/bootstrap/bootstrapDemo]}" onto public java.lang.String com.fhzz.springbootdemo.controller.demo.bootstratp.BootstrapController.index(org.springframework.ui.Model)
+2018-09-20 17:23:36.020  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/druid/getAllByMasterMybatis]}" onto public java.util.List<com.fhzz.springbootdemo.entity.master.OracleDemoTable> com.fhzz.springbootdemo.controller.demo.druid.DruidRestController.getAllByMasterMybatis()
+2018-09-20 17:23:36.020  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/druid/getAllByMasterJpa]}" onto public java.util.List<com.fhzz.springbootdemo.entity.master.OracleDemoTable> com.fhzz.springbootdemo.controller.demo.druid.DruidRestController.getAllByMasterJpa()
+2018-09-20 17:23:36.020  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/druid/getAllBySlave1Jpa]}" onto public java.util.List<com.fhzz.springbootdemo.entity.slave1.MysqlDemoTable> com.fhzz.springbootdemo.controller.demo.druid.DruidRestController.getAllBySlave1Jpa()
+2018-09-20 17:23:36.020  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/druid/getAllBySlave1Mybatis]}" onto public java.util.List<com.fhzz.springbootdemo.entity.slave1.MysqlDemoTable> com.fhzz.springbootdemo.controller.demo.druid.DruidRestController.getAllBySlave1Mybatis()
+2018-09-20 17:23:36.022  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/index/index]}" onto public java.lang.String com.fhzz.springbootdemo.controller.demo.index.IndexController.index(org.springframework.ui.Model)
+2018-09-20 17:23:36.022  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/openList]}" onto public java.lang.String com.fhzz.springbootdemo.controller.demo.jpa.JpaController.list(org.springframework.ui.Model)
+2018-09-20 17:23:36.023  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/toAdd]}" onto public java.lang.String com.fhzz.springbootdemo.controller.demo.jpa.JpaController.toAdd()
+2018-09-20 17:23:36.023  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/toEdit]}" onto public java.lang.String com.fhzz.springbootdemo.controller.demo.jpa.JpaController.toEdit(org.springframework.ui.Model,java.lang.String)
+2018-09-20 17:23:36.023  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/delete]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.demo.jpa.JpaRestController.delete(java.lang.String)
+2018-09-20 17:23:36.024  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/queryList]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.demo.jpa.JpaRestController.list(com.fhzz.springbootdemo.entity.master.OracleDemoTable)
+2018-09-20 17:23:36.024  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/add]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.demo.jpa.JpaRestController.save(com.fhzz.springbootdemo.entity.master.OracleDemoTable) throws java.lang.Exception
+2018-09-20 17:23:36.024  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/edit]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.demo.jpa.JpaRestController.edit(com.fhzz.springbootdemo.entity.master.OracleDemoTable)
+2018-09-20 17:23:36.024  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto public java.lang.String com.fhzz.springbootdemo.controller.login.LoginController.root(org.springframework.ui.Model)
+2018-09-20 17:23:36.024  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/openModifyPassword]}" onto public java.lang.String com.fhzz.springbootdemo.controller.login.LoginController.openModifyPassword(org.springframework.ui.Model)
+2018-09-20 17:23:36.025  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/modifyPassword]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.login.LoginController.modifyPassword(java.lang.String,java.lang.String)
+2018-09-20 17:23:36.025  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login]}" onto public java.lang.String com.fhzz.springbootdemo.controller.login.LoginController.login(org.springframework.ui.Model)
+2018-09-20 17:23:36.026  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-09-20 17:23:36.027  INFO 268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-20 17:23:36.047  INFO 268 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-20 17:23:36.047  INFO 268 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-20 17:23:36.094  WARN 268 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2018-09-20 17:23:36.459  INFO 268 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/jquery/**'], []
+2018-09-20 17:23:36.459  INFO 268 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/bootstrap/**'], []
+2018-09-20 17:23:36.459  INFO 268 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/js/**'], []
+2018-09-20 17:23:36.459  INFO 268 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/css/**'], []
+2018-09-20 17:23:36.459  INFO 268 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/download/**'], []
+2018-09-20 17:23:36.514  INFO 268 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@69f69078, org.springframework.security.web.context.SecurityContextPersistenceFilter@311d28f5, org.springframework.security.web.header.HeaderWriterFilter@3578a45b, org.springframework.security.web.authentication.logout.LogoutFilter@92fd091, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1115be8c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@c190cfc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2e0516a3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@13b29b34, org.springframework.security.web.session.SessionManagementFilter@65e05005, org.springframework.security.web.access.ExceptionTranslationFilter@75d539b9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@55881f40]
+2018-09-20 17:23:36.548  INFO 268 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2018-09-20 17:23:36.555  INFO 268 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-09-20 17:23:36.556  INFO 268 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-09-20 17:23:36.556  INFO 268 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-20 17:23:36.605  INFO 268 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-09-20 17:23:36.606  INFO 268 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'masterDataSource' has been autodetected for JMX exposure
+2018-09-20 17:23:36.606  INFO 268 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'slave1DataSource' has been autodetected for JMX exposure
+2018-09-20 17:23:36.606  INFO 268 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
+2018-09-20 17:23:36.610  INFO 268 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'masterDataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=masterDataSource,type=DruidDataSource]
+2018-09-20 17:23:36.612  INFO 268 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'slave1DataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=slave1DataSource,type=DruidDataSource]
+2018-09-20 17:23:36.612  INFO 268 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2018-09-20 17:23:36.641  INFO 268 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-09-20 17:23:36.643  INFO 268 --- [main] c.f.s.SpringBootDemoApplication          : Started SpringBootDemoApplication in 6.588 seconds (JVM running for 6.948)
+2018-09-20 17:23:52.016  INFO 268 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-09-20 17:23:52.016  INFO 268 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-09-20 17:23:52.038  INFO 268 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 22 ms
+2018-09-20 17:23:56.051 DEBUG 268 --- [http-nio-8080-exec-7] c.f.s.d.m.s.m.T.findByUsername           : ==>  Preparing: SELECT ID, USERNAME, PASSWORD, REALNAME FROM T_USER WHERE USERNAME = ? 
+2018-09-20 17:23:56.149 DEBUG 268 --- [http-nio-8080-exec-7] c.f.s.d.m.s.m.T.findByUsername           : ==> Parameters: 1510001135(String)
+2018-09-20 17:23:56.169 DEBUG 268 --- [http-nio-8080-exec-7] c.f.s.d.m.s.m.T.findByUsername           : <==      Total: 1
+2018-09-20 17:23:56.450  INFO 268 --- [http-nio-8080-exec-2] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-09-20 17:23:56.568 ERROR 268 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at com.fhzz.springbootdemo.service.attendance.impl.AttendanceServiceImpl.getTitleTip(AttendanceServiceImpl.java:80) ~[classes/:na]
+	at com.fhzz.springbootdemo.controller.attendance.AttendanceController.getTitleTip(AttendanceController.java:59) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_31]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_31]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_31]
+	at java.lang.reflect.Method.invoke(Method.java:483) ~[na:1.8.0_31]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:877) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:783) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:877) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123) ~[druid-1.1.10.jar:1.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90) ~[spring-boot-actuator-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:155) ~[spring-boot-actuator-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:123) ~[spring-boot-actuator-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108) ~[spring-boot-actuator-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:800) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1471) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_31]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_31]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+
+2018-09-20 17:25:32.400 DEBUG 268 --- [http-nio-8080-exec-9] c.f.s.d.m.s.m.T.findByUsername           : ==>  Preparing: SELECT ID, USERNAME, PASSWORD, REALNAME FROM T_USER WHERE USERNAME = ? 
+2018-09-20 17:25:32.400 DEBUG 268 --- [http-nio-8080-exec-9] c.f.s.d.m.s.m.T.findByUsername           : ==> Parameters: 1510001135(String)
+2018-09-20 17:25:32.403 DEBUG 268 --- [http-nio-8080-exec-9] c.f.s.d.m.s.m.T.findByUsername           : <==      Total: 1
+2018-09-20 17:25:32.599 ERROR 268 --- [http-nio-8080-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at com.fhzz.springbootdemo.service.attendance.impl.AttendanceServiceImpl.getTitleTip(AttendanceServiceImpl.java:80) ~[classes/:na]
+	at com.fhzz.springbootdemo.controller.attendance.AttendanceController.getTitleTip(AttendanceController.java:59) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_31]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_31]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_31]
+	at java.lang.reflect.Method.invoke(Method.java:483) ~[na:1.8.0_31]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:209) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:877) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:783) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:991) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:925) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:974) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:877) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:851) ~[spring-webmvc-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123) ~[druid-1.1.10.jar:1.1.10]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90) ~[spring-boot-actuator-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:119) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.0.7.RELEASE.jar:5.0.7.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:155) ~[spring-boot-actuator-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:123) ~[spring-boot-actuator-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:108) ~[spring-boot-actuator-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) ~[tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:800) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1471) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_31]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_31]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.32.jar:8.5.32]
+	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_31]
+
+2018-09-20 17:26:46.048  INFO 13804 --- [main] c.f.s.SpringBootDemoApplication          : Starting SpringBootDemoApplication on DELL-G3 with PID 13804 (D:\MyEclipseWorkspaces2017\spring-boot-demo\target\classes started by Administrator in D:\MyEclipseWorkspaces2017\spring-boot-demo)
+2018-09-20 17:26:46.051 DEBUG 13804 --- [main] c.f.s.SpringBootDemoApplication          : Running with Spring Boot v2.0.4.RELEASE, Spring v5.0.8.RELEASE
+2018-09-20 17:26:46.053  INFO 13804 --- [main] c.f.s.SpringBootDemoApplication          : The following profiles are active: fhzz
+2018-09-20 17:26:46.102  INFO 13804 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6025e1b6: startup date [Thu Sep 20 17:26:46 CST 2018]; root of context hierarchy
+2018-09-20 17:26:46.710  INFO 13804 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'statFilter' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=druidConfiguration; factoryMethodName=statFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/fhzz/springbootdemo/configuration/druid/DruidConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration; factoryMethodName=statFilter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/stat/DruidFilterConfiguration.class]]
+2018-09-20 17:26:47.257  INFO 13804 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ee099308] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-20 17:26:47.845  INFO 13804 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-09-20 17:26:47.864  INFO 13804 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-09-20 17:26:47.864  INFO 13804 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-09-20 17:26:47.871  INFO 13804 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\Java\jdk1.8\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\TortoiseGit\bin;D:\Java\jdk1.8\bin;D:\Java\jdk1.8\jre\bin;D:\apache-maven-3.5.2\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;;.]
+2018-09-20 17:26:47.959  INFO 13804 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-09-20 17:26:47.960  INFO 13804 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1858 ms
+2018-09-20 17:26:48.330  WARN 13804 --- [localhost-startStop-1] c.a.druid.pool.DruidAbstractDataSource   : oracle.jdbc.driver.OracleDriver is deprecated.Having use oracle.jdbc.OracleDriver.
+2018-09-20 17:26:48.800  INFO 13804 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-20 17:26:48.800  INFO 13804 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
+2018-09-20 17:26:48.800  INFO 13804 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-20 17:26:48.800  INFO 13804 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-20 17:26:48.800  INFO 13804 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-20 17:26:48.801  INFO 13804 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-09-20 17:26:48.801  INFO 13804 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
+2018-09-20 17:26:48.801  INFO 13804 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2018-09-20 17:26:48.801  INFO 13804 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet statViewServlet mapped to [/druid/*]
+2018-09-20 17:26:48.802  INFO 13804 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-09-20 17:26:48.802  INFO 13804 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet statViewServlet mapped to [/druid/*]
+2018-09-20 17:26:48.802  INFO 13804 --- [localhost-startStop-1] o.s.boot.web.servlet.RegistrationBean    : Servlet statViewServlet was not registered (possibly already registered?)
+2018-09-20 17:26:49.346  INFO 13804 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2018-09-20 17:26:49.373  INFO 13804 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'masterPersistenceUnit'
+2018-09-20 17:26:49.386  INFO 13804 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: masterPersistenceUnit
+	...]
+2018-09-20 17:26:49.444  INFO 13804 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.17.Final}
+2018-09-20 17:26:49.445  INFO 13804 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-09-20 17:26:49.493  INFO 13804 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-09-20 17:26:49.602  INFO 13804 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2018-09-20 17:26:49.654  INFO 13804 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [byte[]] overrides previous : org.hibernate.type.BinaryType@3135bf25
+2018-09-20 17:26:49.654  INFO 13804 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [[B] overrides previous : org.hibernate.type.BinaryType@3135bf25
+2018-09-20 17:26:49.654  INFO 13804 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [Byte[]] overrides previous : org.hibernate.type.WrapperBinaryType@59c04bee
+2018-09-20 17:26:49.654  INFO 13804 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [[Ljava.lang.Byte;] overrides previous : org.hibernate.type.WrapperBinaryType@59c04bee
+2018-09-20 17:26:49.784  WARN 13804 --- [main] org.hibernate.id.UUIDHexGenerator        : HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+2018-09-20 17:26:50.079  INFO 13804 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'masterPersistenceUnit'
+2018-09-20 17:26:50.090  INFO 13804 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'slave1PersistenceUnit'
+2018-09-20 17:26:50.090  INFO 13804 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: slave1PersistenceUnit
+	...]
+2018-09-20 17:26:50.517  INFO 13804 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-2} inited
+2018-09-20 17:26:50.518  INFO 13804 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2018-09-20 17:26:50.536  INFO 13804 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [byte[]] overrides previous : org.hibernate.type.BinaryType@3135bf25
+2018-09-20 17:26:50.536  INFO 13804 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [[B] overrides previous : org.hibernate.type.BinaryType@3135bf25
+2018-09-20 17:26:50.536  INFO 13804 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [Byte[]] overrides previous : org.hibernate.type.WrapperBinaryType@59c04bee
+2018-09-20 17:26:50.537  INFO 13804 --- [main] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [[Ljava.lang.Byte;] overrides previous : org.hibernate.type.WrapperBinaryType@59c04bee
+2018-09-20 17:26:50.555  INFO 13804 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'slave1PersistenceUnit'
+2018-09-20 17:26:51.415  INFO 13804 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-20 17:26:51.556  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6025e1b6: startup date [Thu Sep 20 17:26:46 CST 2018]; root of context hierarchy
+2018-09-20 17:26:51.600  WARN 13804 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-09-20 17:26:51.660  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/index]}" onto public java.lang.String com.fhzz.springbootdemo.controller.attendance.AttendanceController.index(org.springframework.ui.Model)
+2018-09-20 17:26:51.661  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/openModifyAttendanceDetails]}" onto public java.lang.String com.fhzz.springbootdemo.controller.attendance.AttendanceController.openModifyAttendanceDetails(org.springframework.ui.Model,java.lang.String)
+2018-09-20 17:26:51.661  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/openAttendanceDetails]}" onto public java.lang.String com.fhzz.springbootdemo.controller.attendance.AttendanceController.openAttendanceDetails(org.springframework.ui.Model,java.lang.String)
+2018-09-20 17:26:51.661  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/modifyAttendanceDetails]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.attendance.AttendanceController.modifyAttendanceDetails(com.fhzz.springbootdemo.entity.master.attendance.TAttendanceDetail,javax.servlet.http.HttpServletRequest)
+2018-09-20 17:26:51.661  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/queryAttendanceList]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.attendance.AttendanceController.queryAttendanceList()
+2018-09-20 17:26:51.661  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/queryAttendanceDetails]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.attendance.AttendanceController.queryAttendanceDetails(java.lang.String)
+2018-09-20 17:26:51.662  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/queryAttendanceDetailsByYearMonth]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.attendance.AttendanceController.queryAttendanceDetailsByYearMonth(java.lang.String,java.lang.String,java.lang.String)
+2018-09-20 17:26:51.662  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/fileUpload]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.attendance.AttendanceController.fileUpload(org.springframework.web.multipart.MultipartFile,java.lang.String,java.lang.String)
+2018-09-20 17:26:51.662  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/getTitleTip]}" onto public java.lang.String com.fhzz.springbootdemo.controller.attendance.AttendanceController.getTitleTip(java.lang.String,java.lang.String)
+2018-09-20 17:26:51.662  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/attendance/download]}" onto public void com.fhzz.springbootdemo.controller.attendance.AttendanceController.Download(java.lang.String,javax.servlet.http.HttpServletResponse) throws java.io.UnsupportedEncodingException
+2018-09-20 17:26:51.663  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/bootstrap/bootstrapDemo]}" onto public java.lang.String com.fhzz.springbootdemo.controller.demo.bootstratp.BootstrapController.index(org.springframework.ui.Model)
+2018-09-20 17:26:51.663  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/druid/getAllByMasterMybatis]}" onto public java.util.List<com.fhzz.springbootdemo.entity.master.OracleDemoTable> com.fhzz.springbootdemo.controller.demo.druid.DruidRestController.getAllByMasterMybatis()
+2018-09-20 17:26:51.664  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/druid/getAllBySlave1Mybatis]}" onto public java.util.List<com.fhzz.springbootdemo.entity.slave1.MysqlDemoTable> com.fhzz.springbootdemo.controller.demo.druid.DruidRestController.getAllBySlave1Mybatis()
+2018-09-20 17:26:51.664  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/druid/getAllBySlave1Jpa]}" onto public java.util.List<com.fhzz.springbootdemo.entity.slave1.MysqlDemoTable> com.fhzz.springbootdemo.controller.demo.druid.DruidRestController.getAllBySlave1Jpa()
+2018-09-20 17:26:51.664  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/druid/getAllByMasterJpa]}" onto public java.util.List<com.fhzz.springbootdemo.entity.master.OracleDemoTable> com.fhzz.springbootdemo.controller.demo.druid.DruidRestController.getAllByMasterJpa()
+2018-09-20 17:26:51.667  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/index/index]}" onto public java.lang.String com.fhzz.springbootdemo.controller.demo.index.IndexController.index(org.springframework.ui.Model)
+2018-09-20 17:26:51.668  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/openList]}" onto public java.lang.String com.fhzz.springbootdemo.controller.demo.jpa.JpaController.list(org.springframework.ui.Model)
+2018-09-20 17:26:51.668  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/toAdd]}" onto public java.lang.String com.fhzz.springbootdemo.controller.demo.jpa.JpaController.toAdd()
+2018-09-20 17:26:51.669  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/toEdit]}" onto public java.lang.String com.fhzz.springbootdemo.controller.demo.jpa.JpaController.toEdit(org.springframework.ui.Model,java.lang.String)
+2018-09-20 17:26:51.670  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/delete]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.demo.jpa.JpaRestController.delete(java.lang.String)
+2018-09-20 17:26:51.670  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/queryList]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.demo.jpa.JpaRestController.list(com.fhzz.springbootdemo.entity.master.OracleDemoTable)
+2018-09-20 17:26:51.670  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/add]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.demo.jpa.JpaRestController.save(com.fhzz.springbootdemo.entity.master.OracleDemoTable) throws java.lang.Exception
+2018-09-20 17:26:51.670  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/demo/jpa/edit]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.demo.jpa.JpaRestController.edit(com.fhzz.springbootdemo.entity.master.OracleDemoTable)
+2018-09-20 17:26:51.671  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto public java.lang.String com.fhzz.springbootdemo.controller.login.LoginController.root(org.springframework.ui.Model)
+2018-09-20 17:26:51.672  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/openModifyPassword]}" onto public java.lang.String com.fhzz.springbootdemo.controller.login.LoginController.openModifyPassword(org.springframework.ui.Model)
+2018-09-20 17:26:51.673  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/modifyPassword]}" onto public java.util.Map<java.lang.String, java.lang.Object> com.fhzz.springbootdemo.controller.login.LoginController.modifyPassword(java.lang.String,java.lang.String)
+2018-09-20 17:26:51.674  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login]}" onto public java.lang.String com.fhzz.springbootdemo.controller.login.LoginController.login(org.springframework.ui.Model)
+2018-09-20 17:26:51.677  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-09-20 17:26:51.678  INFO 13804 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-20 17:26:51.708  INFO 13804 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-20 17:26:51.708  INFO 13804 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-20 17:26:51.771  WARN 13804 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2018-09-20 17:26:52.133  INFO 13804 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/jquery/**'], []
+2018-09-20 17:26:52.133  INFO 13804 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/bootstrap/**'], []
+2018-09-20 17:26:52.133  INFO 13804 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/js/**'], []
+2018-09-20 17:26:52.133  INFO 13804 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/css/**'], []
+2018-09-20 17:26:52.133  INFO 13804 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/download/**'], []
+2018-09-20 17:26:52.203  INFO 13804 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@120d6cbf, org.springframework.security.web.context.SecurityContextPersistenceFilter@210c1b9d, org.springframework.security.web.header.HeaderWriterFilter@4e5364a3, org.springframework.security.web.authentication.logout.LogoutFilter@2e0516a3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@11d1735e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3578a45b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@c190cfc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@70169464, org.springframework.security.web.session.SessionManagementFilter@62054faf, org.springframework.security.web.access.ExceptionTranslationFilter@43756cb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6dd38df2]
+2018-09-20 17:26:52.242  INFO 13804 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2018-09-20 17:26:52.249  INFO 13804 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-09-20 17:26:52.250  INFO 13804 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2018-09-20 17:26:52.251  INFO 13804 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-20 17:26:52.303  INFO 13804 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-09-20 17:26:52.304  INFO 13804 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'masterDataSource' has been autodetected for JMX exposure
+2018-09-20 17:26:52.304  INFO 13804 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'slave1DataSource' has been autodetected for JMX exposure
+2018-09-20 17:26:52.304  INFO 13804 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
+2018-09-20 17:26:52.309  INFO 13804 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'masterDataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=masterDataSource,type=DruidDataSource]
+2018-09-20 17:26:52.310  INFO 13804 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'slave1DataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=slave1DataSource,type=DruidDataSource]
+2018-09-20 17:26:52.310  INFO 13804 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2018-09-20 17:26:52.339  INFO 13804 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-09-20 17:26:52.341  INFO 13804 --- [main] c.f.s.SpringBootDemoApplication          : Started SpringBootDemoApplication in 6.587 seconds (JVM running for 6.904)
+2018-09-20 17:27:03.262  INFO 13804 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-09-20 17:27:03.262  INFO 13804 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-09-20 17:27:03.283  INFO 13804 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 21 ms
+2018-09-20 17:27:07.037 DEBUG 13804 --- [http-nio-8080-exec-6] c.f.s.d.m.s.m.T.findByUsername           : ==>  Preparing: SELECT ID, USERNAME, PASSWORD, REALNAME FROM T_USER WHERE USERNAME = ? 
+2018-09-20 17:27:07.130 DEBUG 13804 --- [http-nio-8080-exec-6] c.f.s.d.m.s.m.T.findByUsername           : ==> Parameters: 1510001135(String)
+2018-09-20 17:27:07.148 DEBUG 13804 --- [http-nio-8080-exec-6] c.f.s.d.m.s.m.T.findByUsername           : <==      Total: 1
+2018-09-20 17:27:07.420  INFO 13804 --- [http-nio-8080-exec-10] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-09-20 17:28:26.579 DEBUG 13804 --- [http-nio-8080-exec-3] c.f.s.d.m.s.m.T.findByUsername           : ==>  Preparing: SELECT ID, USERNAME, PASSWORD, REALNAME FROM T_USER WHERE USERNAME = ? 
+2018-09-20 17:28:26.581 DEBUG 13804 --- [http-nio-8080-exec-3] c.f.s.d.m.s.m.T.findByUsername           : ==> Parameters: 1510001135(String)
+2018-09-20 17:28:26.582 DEBUG 13804 --- [http-nio-8080-exec-3] c.f.s.d.m.s.m.T.findByUsername           : <==      Total: 1
