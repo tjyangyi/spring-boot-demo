@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Quartz概述</title>
+</head>
+<body>
+	<div>系统中已对quartz的持久化进行实现，编写新的定时任务时，只需要新建一个JOB集成AbstractJob，并实现execute方法（定时执行的内容）即可,例如：</div>
+	<pre>
+<code>
+@Component
+public class HelloWorldJob extends AbstractJob {
+	Log logger = LogFactory.getLog(HelloWorldJob.class);
+
+	public void execute(JobExecutionContext arg0) throws JobExecutionException {
+		logger.info("This is a first spring combine quartz !");
+		logger.info("Welcome to Spring_Quartz World!" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+		logger.info("Let's begin ! \n \n");
+	}
+
+}
+</code>
+	</pre>
+	然后在quartz可视化界面，添加新的job，配置cron表达式即可，例如
+	<img src="/images/demo/quartz/1.png" />
+
+
+</body>
+</html>

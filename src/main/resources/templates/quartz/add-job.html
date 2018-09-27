@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>add</title>
+<link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/common/fadingTip.js}"></script>
+<script type="text/javascript">
+	function submitAddForm(susccessCallback,failedCallback) {
+		$.ajax({
+			//几个参数需要注意一下
+			type : "POST", //方法类型
+			dataType : "json", //预期服务器返回的数据类型
+			url : "/quartz/addJob", //url
+			data : $('#addForm').serialize(),
+			success : function(response) {
+				console.log(response.result); //打印服务端返回的数据(调试用)
+				if (response.result) {
+					susccessCallback();
+					fadingTip('保存成功');
+				} else {
+					failedCallback();
+					fadingTip('保存失败');
+				}
+			},
+			error : function() {
+				failedCallback();
+				fadingTip('保存失败');
+			}
+		});
+	}
+</script>
+</head>
+<body class="container">
+	<div class="with:80%">
+		<form id="addForm" class="form-horizontal" th:action="@{/quartz/add}"
+			method="post">
+			<div class="form-group">
+				<label for="content" class="col-sm-4 control-label">CronExpression</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="cronExpression"
+						id="cronExpression" placeholder="CronExpression" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="content" class="col-sm-4 control-label">JobClass</label>
+				<div class="col-sm-8">
+					<select class="form-control" id="jobClass" name="jobClass">
+						<option th:each="jobName:${jobNameList}" th:value="${jobName}"
+							th:text="${jobName}"></option>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="num" class="col-sm-4 control-label">Job Name</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="jobName" id="jobName"
+						placeholder="Job Name" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="num" class="col-sm-4 control-label">Job Group</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="jobGroup"
+						id="jobGroup" placeholder="Job Group" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="num" class="col-sm-4 control-label">Trigger Name</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="triggerName"
+						id="triggerName" placeholder="Trigger Name" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="num" class="col-sm-4 control-label">Trigger
+					Group Name</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="triggerGroupName"
+						id="triggerGroupName" placeholder="Trigger Group Name" />
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>jobList</title>
+<link th:href="@{/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/bootstrap/css/bootstrap-table.css}" rel="stylesheet" />
+<link th:href="@{/bootstrap/css/bootstrap-dialog.css}" rel="stylesheet" />
+<script th:src="@{/jquery/jquery-3.3.1.min.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap-table.js}"></script>
+<script th:src="@{/bootstrap/js/bootstrap-dialog.js}"></script>
+<script th:src="@{/js/common/fadingTip.js}"></script>
+<script th:src="@{/js/common/date.js}"></script>
+<script th:src="@{/js/common/string.js}"></script>
+<script th:src="@{/js/common/boostrapI18N.js}"></script>
+<script th:src="@{/js/quartz/list.js}"></script>
+</head>
+<body>
+	<div id="toolbar" class="btn-group">
+		<button id="btn_add" type="button" class="btn btn-default">
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+		</button>
+	</div>
+
+	<table id="quartz-table">
+	</table>
+
+
+</body>
+</html>

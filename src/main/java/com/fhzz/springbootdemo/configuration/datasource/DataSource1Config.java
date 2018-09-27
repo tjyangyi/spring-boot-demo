@@ -38,11 +38,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @MapperScan(basePackages = "com.fhzz.springbootdemo.dao.master.mybatis", sqlSessionTemplateRef = "masterSqlSessionTemplate")
 @EnableTransactionManagement
 @EnableJpaRepositories(entityManagerFactoryRef = "masterEntityManagerFactory", transactionManagerRef = "masterJPATransactionManager", basePackages = {
-		"com.fhzz.springbootdemo.dao.master.jpa" }) // 设置Repository所在位置
+		"com.fhzz.springbootdemo.dao.master.jpa", "com.fhzz.springbootdemo.core.quartz.dao" }) // 设置Repository所在位置
 public class DataSource1Config {
 	@Autowired
 	private DruidDataSourceBuilder druidDataSourceBuilder;
-	
+
 	@Value("${spring.datasource.master.url}")
 	private String dbUrl;
 
@@ -55,16 +55,16 @@ public class DataSource1Config {
 	@Value("${spring.datasource.master.driverClassName}")
 	private String driverClassName;
 
-	//--------- Druid 数据源配置----------
+	// --------- Druid 数据源配置----------
 	@Bean(name = "masterDataSource")
 	@Qualifier("masterDataSource")
 	@Primary
 	public DataSource dataSource() {
 		return druidDataSourceBuilder.getDruidDataSource(username, password, dbUrl, driverClassName);
 	}
-	//--------- Druid 数据源配置----------
+	// --------- Druid 数据源配置----------
 
-	//--------- Mybatis配置 -------------
+	// --------- Mybatis配置 -------------
 	@Bean(name = "masterSqlSessionFactory")
 	@Primary
 	public SqlSessionFactory setSqlSessionFactory(@Qualifier("masterDataSource") DataSource dataSource)
@@ -95,7 +95,7 @@ public class DataSource1Config {
 			@Qualifier("masterSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
 		return new SqlSessionTemplate(sqlSessionFactory);
 	}
-	//--------- Mybatis配置 -------------
+	// --------- Mybatis配置 -------------
 
 	// ---------JPA配置--------------------
 	@Autowired
@@ -109,7 +109,8 @@ public class DataSource1Config {
 	@Bean(name = "masterEntityManagerFactory")
 	public LocalContainerEntityManagerFactoryBean masterEntityManagerFactory(EntityManagerFactoryBuilder builder,
 			@Qualifier("masterDataSource") DataSource dataSource) {
-		return builder.dataSource(dataSource).packages("com.fhzz.springbootdemo.entity.master") // 设置实体类所在位置
+		return builder.dataSource(dataSource)
+				.packages("com.fhzz.springbootdemo.entity.master", "com.fhzz.springbootdemo.core.quartz.entity") // 设置实体类所在位置
 				.persistenceUnit("masterPersistenceUnit").properties(getVendorProperties()).build();
 	}
 

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>user</title>
+<script type="text/javascript">
+	function submitEditForm(susccessCallback, failedCallback) {
+		$.ajax({
+			//几个参数需要注意一下
+			type : "POST", //方法类型
+			dataType : "json", //预期服务器返回的数据类型
+			url : "/quartz/editJob", //url
+			data : $('#editForm').serialize(),
+			success : function(response) {
+				console.log(response.result); //打印服务端返回的数据(调试用)
+				if (response.result) {
+					susccessCallback();
+					fadingTip('修改成功');
+				} else {
+					failedCallback();
+					fadingTip('修改失败');
+				}
+			},
+			error : function() {
+				failedCallback();
+				fadingTip('修改失败');
+			}
+		});
+	}
+</script>
+</head>
+<body class="container">
+	<div class="with:80%">
+		<form id="editForm" class="form-horizontal"
+			th:action="@{/quartz/edit}" th:object="${cronJobInfo}" method="post">
+			<div class="form-group">
+				<label for="content" class="col-sm-4 control-label">Cron
+					Expression</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="cronExpression"
+						id="cronExpression" th:value="*{cronExpression}"
+						placeholder="content" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="content" class="col-sm-4 control-label">Job
+					Class</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="jobClass"
+						id="jobClass" th:value="*{jobClass}" placeholder="jobClass"
+						readonly="readonly" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="content" class="col-sm-4 control-label">Job Name</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="jobName" id="jobName"
+						th:value="*{jobName}" placeholder="jobName" readonly="readonly" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="content" class="col-sm-4 control-label">Job
+					Group</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="jobGroup"
+						id="jobGroup" th:value="*{jobGroup}" placeholder="jobGroup"
+						readonly="readonly" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="content" class="col-sm-4 control-label">Trigger
+					Name</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="triggerName"
+						id="triggerName" th:value="*{triggerName}"
+						placeholder="triggerName" readonly="readonly" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="content" class="col-sm-4 control-label">Trigger
+					Group Name</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="triggerGroupName"
+						id="triggerGroupName" th:value="*{triggerGroupName}"
+						placeholder="triggerGroupName" readonly="readonly" />
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

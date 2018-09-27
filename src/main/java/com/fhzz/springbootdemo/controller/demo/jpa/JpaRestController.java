@@ -28,7 +28,6 @@ public class JpaRestController {
 		} else {
 			list = jpaService.getAllList();
 		}
-
 		result.put("totalCount", list.size());
 		result.put("result", list);
 		return result;
