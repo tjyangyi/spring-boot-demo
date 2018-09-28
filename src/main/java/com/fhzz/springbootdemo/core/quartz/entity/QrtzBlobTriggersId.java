@@ -13,7 +13,7 @@ import javax.persistence.Embeddable;
 public class QrtzBlobTriggersId implements java.io.Serializable {
 
 	// Fields
-
+	private static final long serialVersionUID = -8868488528389677272L;
 	private String schedName;
 	private String triggerName;
 	private String triggerGroup;

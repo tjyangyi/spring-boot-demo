@@ -23,7 +23,7 @@ import javax.persistence.Table;
 public class QrtzBlobTriggers implements java.io.Serializable {
 
 	// Fields
-
+	private static final long serialVersionUID = -1594958248292189973L;
 	private QrtzBlobTriggersId id;
 	private QrtzTriggers qrtzTriggers;
 	private byte[] blobData;
